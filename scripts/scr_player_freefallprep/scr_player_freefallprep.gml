@@ -31,9 +31,7 @@ function scr_player_freefallprep()
 	            movespeed = 4;
 	    }
 	    else
-	    {
 	        movespeed = 0;
-	    }
     
 	    if (movespeed > 4)
 	        movespeed--;

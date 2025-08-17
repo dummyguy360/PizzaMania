@@ -277,9 +277,7 @@ function scr_player_jump()
 	            image_speed = 0.7;
 	    }
 	    else
-	    {
 	        image_speed = 0.7;
-	    }
     
 	    if (floor(image_index) == (image_number - 1) && sprite_index == spr_suplexcancel)
 	        sprite_index = spr_fall;

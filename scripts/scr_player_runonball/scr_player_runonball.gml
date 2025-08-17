@@ -13,7 +13,7 @@ function scr_player_runonball()
 	if (!place_meeting(x, y + 1, obj_runonball))
 	{
 	    mach2 = 0;
-	    state = 0;
+	    state = states.normal;
 	    jumpAnim = 1;
 	    jumpstop = 0;
 	}
@@ -21,7 +21,7 @@ function scr_player_runonball()
 	if (key_jump && grounded && !key_down && !key_attack)
 	{
 	    vsp = -7;
-	    state = 51;
+	    state = states.jump;
 	    image_index = 0;
 	    machslideAnim = 1;
 	    jumpAnim = 1;

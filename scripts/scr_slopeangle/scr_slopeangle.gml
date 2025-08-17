@@ -2,17 +2,14 @@ function scr_slopeangle()
 {
 	var checkside = -1;
 	var height = sprite_get_bbox_bottom(mask_index) - sprite_get_bbox_top(mask_index);
-	var top = -3;
-	var i = 0;
 	array0 = y;
 	array1 = y;
 
-	while (i < 2)
+	for (var i = 0; i < 2; i++)
 	{
-	    top = -3;
 	    var ay = y;
     
-	    while (top < height)
+	    for (var top = -3; top < height; top++)
 	    {
 	        var check_1 = scr_solid_player(x + (1 * checkside), y + top);
 	        var check_2 = !scr_solid_player(x + (1 * checkside), (y + top) - 1);
@@ -22,8 +19,6 @@ function scr_slopeangle()
 	            ay = (y + top) - 1;
 	            break;
 	        }
-        
-	        top++;
 	    }
     
 	    if (i == 0)
@@ -32,7 +27,6 @@ function scr_slopeangle()
 	        array1 = ay;
     
 	    checkside = -checkside;
-	    i++;
 	}
 
 	var pointer1 = array0;

@@ -1,8 +1,8 @@
-if (state != 101)
+if (state != states.grabbed)
 {
     with (obj_player)
     {
-        if (y < other.y && attacking == 0 && state == 51 && vsp > 0)
+        if (y < other.y && attacking == 0 && state == states.jump && vsp > 0)
         {
             scr_sound(sound_stomp);
             
@@ -21,7 +21,7 @@ if (state != 101)
                     other.vsp = -5;
                     other.hsp = -other.image_xscale * 3;
                     instance_create(x, y + 50, obj_stompeffect);
-                    other.state = 98;
+                    other.state = states.stun;
                     stompAnim = 1;
                     other.image_index = 0;
                     vsp = -14;
@@ -32,7 +32,7 @@ if (state != 101)
                     other.vsp = -5;
                     other.hsp = -other.image_xscale * 3;
                     instance_create(x, y + 50, obj_stompeffect);
-                    other.state = 98;
+                    other.state = states.stun;
                     stompAnim = 1;
                     other.image_index = 0;
                     vsp = -9;

@@ -8,7 +8,7 @@ function scr_enemy_idle()
 
 	if (floor(image_index) == (image_number - 1) && roaming == 1 && (grounded || (grounded && !place_meeting(x, y, obj_platform))))
 	{
-	    state = 94;
+	    state = states.walk;
 	    image_index = 0;
 	}
 

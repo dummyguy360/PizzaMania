@@ -6,7 +6,7 @@ function scr_player_skateboard()
 
 	if (key_jump)
 	{
-	    state = 63;
+	    state = states.mach2;
 	    vsp = -6;
     
 	    with (instance_create(x + (xscale * movespeed), y, obj_skateboard))
@@ -20,7 +20,7 @@ function scr_player_skateboard()
 	if (scr_solid(x + 1, y) && xscale == 1)
 	{
 	    machhitAnim = 0;
-	    state = 65;
+	    state = states.bump;
 	    hsp = -2.5;
 	    vsp = -3;
 	    mach2 = 0;
@@ -32,7 +32,7 @@ function scr_player_skateboard()
 	else if (scr_solid(x - 1, y) && xscale == -1)
 	{
 	    machhitAnim = 0;
-	    state = 65;
+	    state = states.bump;
 	    hsp = 2.5;
 	    vsp = -3;
 	    mach2 = 0;

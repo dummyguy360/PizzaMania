@@ -17,9 +17,7 @@ function scr_player_slipnslide()
 	        movespeed -= 0.2;
 	}
 	else
-	{
 	    movespeed += 0.2;
-	}
 
 	machhitAnim = 0;
 	crouchslideAnim = 1;

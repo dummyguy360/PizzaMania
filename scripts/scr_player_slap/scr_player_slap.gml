@@ -7,7 +7,7 @@ function scr_player_slap()
 	    if (fallinganimation >= 40 && fallinganimation < 80)
 	    {
 	        sprite_index = spr_player_facestomp;
-	        state = 51;
+	        state = states.jump;
 	    }
 	}
 
@@ -23,9 +23,7 @@ function scr_player_slap()
 	        hsp = (move * movespeed) + 5;
 	}
 	else
-	{
 	    hsp = xscale * movespeed;
-	}
 
 	if (move != xscale && momemtum == 1 && movespeed != 0)
 	    movespeed -= 0.05;
@@ -142,13 +140,11 @@ function scr_player_slap()
 	if (floor(image_index) == (image_number - 1) && slapbuffer == 8)
 	{
 	    if (grounded)
-	    {
-	        state = 0;
-	    }
+	        state = states.normal;
 	    else if (!grounded)
 	    {
 	        sprite_index = spr_player_fall;
-	        state = 51;
+	        state = states.jump;
 	    }
 	}
 

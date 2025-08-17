@@ -3,7 +3,7 @@ function scr_enemy_hit()
 	if (scr_solid(x, y - 1) && (sprite_index == flyingspr || sprite_index == hitspr))
 	{
 	    image_index = 0;
-	    state = 91;
+	    state = states.hitceilling;
 	}
 
 	if (straightthrow == 1)
@@ -21,7 +21,7 @@ function scr_enemy_hit()
 	if (grounded && floor(vsp) > 0)
 	{
 	    instance_create(x, y, obj_landcloud);
-	    state = 98;
+	    state = states.stun;
 	    image_index = 0;
 	}
 
@@ -31,6 +31,6 @@ function scr_enemy_hit()
 	{
 	    image_index = 0;
 	    sprite_index = hitwallspr;
-	    state = 92;
+	    state = states.hitwall;
 	}
 }

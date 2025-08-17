@@ -24,7 +24,7 @@ function scr_player_grab()
 	    scr_sound(sound_slapswipe1);
 	    hsp = 0;
 	    movespeed = 0;
-	    state = 34;
+	    state = states.Throw;
 	    image_index = 0;
 	    image_speed = 0.35;
 	    scr_sound(sound_enemyslap);
@@ -32,7 +32,7 @@ function scr_player_grab()
 
 	if (key_attack2)
 	{
-	    state = 88;
+	    state = states.charge;
 	    instance_create(x, y, obj_jumpdust);
 	}
 
@@ -41,7 +41,7 @@ function scr_player_grab()
 	    scr_sound(sound_suplex1);
 	    hsp = 0;
 	    movespeed = 0;
-	    state = 40;
+	    state = states.punch;
 	    image_index = 1;
 	    image_speed = 0.35;
 	    scr_sound(sound_enemyslap);
@@ -52,7 +52,7 @@ function scr_player_grab()
 	    scr_sound(sound_suplex1);
 	    hsp = 0;
 	    movespeed = 0;
-	    state = 41;
+	    state = states.backkick;
 	    image_index = 1;
 	    image_speed = 0.35;
 	    scr_sound(sound_enemyslap);
@@ -63,7 +63,7 @@ function scr_player_grab()
 	    scr_sound(sound_suplex1);
 	    hsp = 0;
 	    movespeed = 0;
-	    state = 42;
+	    state = states.uppunch;
 	    image_index = 1;
 	    image_speed = 0.35;
 	    scr_sound(sound_enemyslap);
@@ -74,7 +74,7 @@ function scr_player_grab()
 	    scr_sound(sound_suplex1);
 	    hsp = 0;
 	    movespeed = 0;
-	    state = 43;
+	    state = states.shoulder;
 	    image_index = 1;
 	    image_speed = 0.35;
     
@@ -103,7 +103,7 @@ function scr_player_grab()
 	    movespeed = 0;
 	    sprite_index = spr_piledriver;
 	    vsp = -14;
-	    state = 36;
+	    state = states.superslam;
 	    image_index = 0;
 	    image_speed = 0.35;
 	}

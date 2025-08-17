@@ -47,9 +47,7 @@ function scr_player_Sjump()
 	        image_speed = 0;
 	    }
 	    else
-	    {
 	        image_speed = 1;
-	    }
 	}
 
 	if (sprite_index == spr_Sjumpcancelstart)

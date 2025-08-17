@@ -90,15 +90,15 @@ enum states
 	
 	//enemy states
 	idle = 86,
-	bounce = 87,			// isn't used anywhere
+	bounce = 87,
 	charge = 88,
-	pizzagoblinthrow = 89,	// isn't used anywhere
+	pizzagoblinthrow = 89,
 	turn = 90,
-	hitceilling = 91,		// isn't used anywhere
-	hitwall = 92,			// isn't used anywhere
-	rolling = 93,			// isn't used anywhere
+	hitceilling = 91,
+	hitwall = 92,
+	rolling = 93,
 	walk = 94,
-	fall = 95,				// isn't used anywhere
+	fall = 95,
 	land = 96,
 	hit = 97,
 	stun = 98,

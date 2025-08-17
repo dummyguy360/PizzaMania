@@ -16,7 +16,7 @@ function scr_player_throw()
 	sprite_index = spr_punch;
 
 	if (floor(image_index) == (image_number - 1))
-	    state = 0;
+	    state = states.normal;
 
 	image_speed = 0.35;
 }

@@ -2,6 +2,7 @@ function scr_fakepeppino_hit()
 {
 	hsp = image_xscale * movespeed;
 
+	//Grab player
 	if (place_meeting(x, y, obj_player) && obj_player.state != states.gameover)
 	{
 	    with (obj_player)
@@ -37,6 +38,7 @@ function scr_fakepeppino_hit()
 	    movespeed = 0;
 	}
 
+	//Attack
 	if (sprite_index == spr_fakepeppino_grabattack && floor(image_index) == (image_number - 1))
 	{
 	    with (obj_player)
@@ -79,9 +81,7 @@ function scr_fakepeppino_hit()
 	        }
         
 	        if (obj_player.shotgunAnim == 0)
-	        {
 	            global.playerhealth -= 1;
-	        }
 	        else if (obj_player.shotgunAnim == 1)
 	        {
 	            obj_player.shotgunAnim = 0;

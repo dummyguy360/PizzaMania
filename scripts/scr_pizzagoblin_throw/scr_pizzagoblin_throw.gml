@@ -3,28 +3,28 @@ function scr_pizzagoblin_throw()
 	if (!variable_global_exists("throw_frame"))
 	{
 	    global.throw_frame = 0;
-	    global.throw_frame[53] = 2;
-	    global.throw_frame[51] = 6;
-	    global.throw_frame[58] = 2;
-	    global.throw_frame[59] = 2;
-	    global.throw_frame[60] = 2;
-	    global.throw_frame[52] = 2;
+	    global.throw_frame[obj_pizzagoblin] = 2;
+	    global.throw_frame[obj_cheeserobot] = 6;
+	    global.throw_frame[obj_spitcheese] = 2;
+	    global.throw_frame[obj_trash] = 2;
+	    global.throw_frame[obj_invtrash] = 2;
+	    global.throw_frame[obj_robot] = 2;
 		
 	    global.throw_sprite = spr_plug;
-	    global.throw_sprite[53] = spr_pizzagoblin_throwbomb;
-	    global.throw_sprite[51] = spr_cheeserobot_attack;
-	    global.throw_sprite[58] = spr_spitcheese_spit;
-	    global.throw_sprite[59] = spr_trash_throw;
-	    global.throw_sprite[60] = spr_invtrash_throw;
-	    global.throw_sprite[52] = spr_robot_attack;
+	    global.throw_sprite[obj_pizzagoblin] = spr_pizzagoblin_throwbomb;
+	    global.throw_sprite[obj_cheeserobot] = spr_cheeserobot_attack;
+	    global.throw_sprite[obj_spitcheese] = spr_spitcheese_spit;
+	    global.throw_sprite[obj_trash] = spr_trash_throw;
+	    global.throw_sprite[obj_invtrash] = spr_invtrash_throw;
+	    global.throw_sprite[obj_robot] = spr_robot_attack;
 		
 	    global.reset_timer = 0;
-	    global.reset_timer[53] = 200;
-	    global.reset_timer[51] = 200;
-	    global.reset_timer[59] = 100;
-	    global.reset_timer[60] = 100;
-	    global.reset_timer[52] = 200;
-	    global.reset_timer[58] = 100;
+	    global.reset_timer[obj_pizzagoblin] = 200;
+	    global.reset_timer[obj_cheeserobot] = 200;
+	    global.reset_timer[obj_trash] = 100;
+	    global.reset_timer[obj_invtrash] = 100;
+	    global.reset_timer[obj_robot] = 200;
+	    global.reset_timer[obj_spitcheese] = 100;
 	}
 
 	hsp = 0;

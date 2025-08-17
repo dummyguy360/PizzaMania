@@ -39,7 +39,7 @@ function scr_player_charge()
 	{
 	    scr_sound(sound_suplex1);
 	    movespeed = 0;
-	    state = 65;
+	    state = states.bump;
 	    hsp = -2.5;
 	    vsp = -3;
 	    mach2 = 0;
@@ -51,7 +51,7 @@ function scr_player_charge()
 	{
 	    scr_sound(sound_suplex1);
 	    movespeed = 0;
-	    state = 65;
+	    state = states.bump;
 	    hsp = 2.5;
 	    vsp = -3;
 	    mach2 = 0;

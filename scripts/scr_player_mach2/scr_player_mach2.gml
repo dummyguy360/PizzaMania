@@ -224,7 +224,7 @@ function scr_player_mach2()
 	    if (((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope))) && sprite_index != spr_dive)
 	    {
 	        wallspeed = 6;
-	        state = 10;
+	        state = states.climbwall;
 	    }
     
 	    if (!instance_exists(obj_dashcloud) && grounded)

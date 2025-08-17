@@ -1,5 +1,3 @@
-if (levelselect == 1)
-{
-}
+if (levelselect == 1) { }
 
 draw_self();

@@ -4,7 +4,7 @@ function scr_enemy_grabbed()
 	stunned = 200;
 	obj_player.baddiegrabbedID = id;
 
-	if (obj_player.state == 21 || obj_player.state == 39 || obj_player.state == 34 || obj_player.state == 35 || obj_player.state == 88)
+	if (obj_player.state == states.grabbing || obj_player.state == states.grab || obj_player.state == states.Throw || obj_player.state == states.slam || obj_player.state == states.charge)
 	{
 	    x = obj_player.x + (obj_player.xscale * 15);
 	    y = obj_player.y;
@@ -40,18 +40,18 @@ function scr_enemy_grabbed()
 	        }
 	    }
     
-	    if (!(state == 39 || state == 21 || state == 34 || state == 35 || state == 88 || state == 40 || state == 36 || state == 41 || state == 42 || state == 43))
+	    if (!(state == states.grab || state == states.grabbing || state == states.Throw || state == states.slam || state == states.charge || state == states.punch || state == states.superslam || state == states.backkick || state == states.uppunch || state == states.shoulder))
 	    {
 	        other.x = x;
 	        other.y = y;
-	        other.state = 98;
+	        other.state = states.stun;
 	        other.image_index = 0;
 	    }
 	}
 
 	hsp = 0;
 
-	if (obj_player.state == 40 && floor(obj_player.image_index) == 2)
+	if (obj_player.state == states.punch && floor(obj_player.image_index) == 2)
 	{
 	    global.hit += 1;
     
@@ -64,7 +64,7 @@ function scr_enemy_grabbed()
 	    thrown = 1;
 	    x = obj_player.x;
 	    y = obj_player.y;
-	    state = 98;
+	    state = states.stun;
 	    hsp = -image_xscale * 25;
 	    grav = 0;
 	    vsp = -2;
@@ -80,7 +80,7 @@ function scr_enemy_grabbed()
 	    }
 	}
 
-	if (obj_player.state == 41 && floor(obj_player.image_index) == 2)
+	if (obj_player.state == states.backkick && floor(obj_player.image_index) == 2)
 	{
 	    global.hit += 1;
     
@@ -93,7 +93,7 @@ function scr_enemy_grabbed()
 	    thrown = 1;
 	    x = obj_player.x;
 	    y = obj_player.y;
-	    state = 98;
+	    state = states.stun;
 	    image_xscale *= -1;
 	    hsp = -image_xscale * 20;
 	    vsp = -7;
@@ -109,7 +109,7 @@ function scr_enemy_grabbed()
 	    }
 	}
 
-	if (obj_player.state == 43 && floor(obj_player.image_index) == 2)
+	if (obj_player.state == states.shoulder && floor(obj_player.image_index) == 2)
 	{
 	    global.hit += 1;
     
@@ -122,7 +122,7 @@ function scr_enemy_grabbed()
 	    thrown = 1;
 	    x = obj_player.x;
 	    y = obj_player.y;
-	    state = 98;
+	    state = states.stun;
 	    hsp = -image_xscale * 10;
 	    vsp = -10;
 	    global.combotime = 60;
@@ -137,7 +137,7 @@ function scr_enemy_grabbed()
 	    }
 	}
 
-	if (obj_player.state == 34 && floor(obj_player.image_index) == 2)
+	if (obj_player.state == states.Throw && floor(obj_player.image_index) == 2)
 	{
 	    global.hit += 1;
     
@@ -149,12 +149,12 @@ function scr_enemy_grabbed()
 	    thrown = 1;
 	    x = obj_player.x;
 	    y = obj_player.y;
-	    state = 98;
+	    state = states.stun;
 	    hsp = -image_xscale * 10;
 	    vsp = -10;
 	}
 
-	if (obj_player.state == 42 && floor(obj_player.image_index) == 2)
+	if (obj_player.state == states.uppunch && floor(obj_player.image_index) == 2)
 	{
 	    global.hit += 1;
     
@@ -168,7 +168,7 @@ function scr_enemy_grabbed()
 	    x = obj_player.x;
 	    y = obj_player.y;
 	    hsp = -image_xscale * 2;
-	    state = 98;
+	    state = states.stun;
 	    vsp = -20;
 	    global.combotime = 60;
 	    instance_create(x, y, obj_slapstar);
@@ -182,13 +182,13 @@ function scr_enemy_grabbed()
 	    }
 	}
 
-	if (obj_player.state == 88)
+	if (obj_player.state == states.charge)
 	{
 	    x = obj_player.x + (obj_player.xscale * 15);
 	    y = obj_player.y;
 	}
 
-	if (obj_player.state == 65)
+	if (obj_player.state == states.bump)
 	{
 	    instance_create(x, y, obj_slapstar);
 	    instance_create(x, y, obj_baddiegibs);
@@ -204,7 +204,7 @@ function scr_enemy_grabbed()
 	    thrown = 1;
 	    x = obj_player.x;
 	    y = obj_player.y;
-	    state = 98;
+	    state = states.stun;
 	    hsp = -image_xscale * 10;
 	    vsp = -10;
     
@@ -215,7 +215,7 @@ function scr_enemy_grabbed()
 	    }
 	}
 
-	if (obj_player.state == 36)
+	if (obj_player.state == states.superslam)
 	{
 	    if (obj_player.character == "P")
 	    {
@@ -299,7 +299,7 @@ function scr_enemy_grabbed()
 	        thrown = 1;
 	        x = obj_player.x;
 	        y = obj_player.y;
-	        state = 98;
+	        state = states.stun;
 	        hsp = -image_xscale * 10;
 	        vsp = -10;
 	    }

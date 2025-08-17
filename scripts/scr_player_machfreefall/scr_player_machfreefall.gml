@@ -159,7 +159,7 @@ function scr_player_machfreefall()
 	        flash = 1;
 	        sprite_index = spr_mach2jump;
 	        vsp = -6;
-	        state = 63;
+	        state = states.mach2;
 	    }
     
 	    if (sprite_index == spr_playerN_pogobounce && floor(image_index) == 3)

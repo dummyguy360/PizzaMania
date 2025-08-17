@@ -40,9 +40,7 @@ function scr_player_pistol()
 	            state = states.mach2;
 	        }
 	        else
-	        {
-	            state = 0;
-	        }
+	            state = states.normal;
 	    }
     
 	    if (floor(image_index) == (image_number - 1) && sprite_index != spr_player_crouchshoot && sprite_index != spr_player_shootup && sprite_index != spr_player_shootdiagonal && sprite_index != spr_player_pistolair && !key_down && move != 0 && mach2 > 99)
@@ -52,9 +50,7 @@ function scr_player_pistol()
 	        state = states.mach3;
 	    }
 	    else if (floor(image_index) == (image_number - 1) && key_down && sprite_index != spr_player_shootup && sprite_index != spr_player_shootdiagonal && sprite_index != spr_player_pistolair)
-	    {
 	        state = states.crouch;
-	    }
 	    else if (grounded && vsp > 0 && global.was_grounded == 1)
 	    {
 	        sprite_index = spr_playerV_revolverslide;
@@ -207,9 +203,7 @@ function scr_player_pistol()
 	            state = states.mach2;
 	        }
 	        else
-	        {
-	            state = 0;
-	        }
+	            state = states.normal;
 	    }
     
 	    if (floor(image_index) == (image_number - 1) && sprite_index != spr_player_crouchshoot && sprite_index != spr_player_shootup && sprite_index != spr_player_shootdiagonal && sprite_index != spr_player_pistolair && !key_down && move != 0 && mach2 > 99)

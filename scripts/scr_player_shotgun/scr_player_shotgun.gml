@@ -22,12 +22,12 @@ function scr_player_shotgun()
 	    if (grounded)
 	    {
 	        sprite_index = spr_shotgun_idle;
-	        state = 0;
+	        state = states.normal;
 	    }
 	    else
 	    {
 	        sprite_index = spr_shotgun_fall;
-	        state = 51;
+	        state = states.jump;
 	    }
 	}
 

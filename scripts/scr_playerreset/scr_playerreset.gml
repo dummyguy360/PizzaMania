@@ -8,7 +8,7 @@ function scr_playerreset()
 
 	global.seconds = 59;
 	global.minutes = 1;
-	obj_player.state = 0;
+	obj_player.state = states.normal;
 	obj_player.visible = true;
 	obj_player.player_x = 240;
 	obj_player.player_y = 434;

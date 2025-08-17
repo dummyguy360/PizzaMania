@@ -1,12 +1,14 @@
+/// @description Perform collisions, but also do extra checks for grinding and ladder-climbing
 function scr_collide_player()
 {
-	grounded = 0;
-	grinding = 0;
+	grounded = false;
+	grinding = false;
+	
+	// Vertical
 	var temp = abs(vsp);
-
 	if (temp > 0)
 	{
-	    while (1)
+	    while (true)
 	    {
 	        if (!scr_solid_player(x, y + sign(vsp)))
 	        {
@@ -26,15 +28,17 @@ function scr_collide_player()
 	    }
 	}
 
+	// Horizontal
 	temp = abs(hsp);
-
 	if (temp > 0)
 	{
-	    while (1)
+	    while (true)
 	    {
+			// Move up slope
 	        if (scr_solid_player(x + sign(hsp), y) && !scr_solid_player(x + sign(hsp), y - 1))
 	            y--;
         
+			// Move down slope
 	        if (!scr_solid_player(x + sign(hsp), y) && !scr_solid_player(x + sign(hsp), y + 1) && scr_solid_player(x + sign(hsp), y + 2))
 	            y++;
         
@@ -56,11 +60,15 @@ function scr_collide_player()
 	    }
 	}
 
+	//Gravity
 	if (vsp < 20)
 	    vsp += grav;
 
+	// Check if a wall is below me
 	grounded |= scr_solid(x, y + 1);
+	// Check if I'm on a platform
 	grounded |= (!place_meeting(x, y, obj_platform) && place_meeting(x, y + 1, obj_platform));
+	// Check if I'm on a grindrail
 	grinding = !place_meeting(x, y, obj_grindrail) && place_meeting(x, y + 1, obj_grindrail);
 	grounded |= grinding;
 }

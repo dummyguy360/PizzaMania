@@ -40,7 +40,7 @@ function scr_getinput()
 	        instance_create(x, y, obj_taunteffect);
 	        character = "N";
 	        scr_characterspr();
-	        state = 44;
+	        state = states.backbreaker;
 	        image_index = random_range(0, 7);
 	        sprite_index = spr_taunt;
 	    }
@@ -63,7 +63,7 @@ function scr_getinput()
 	        instance_create(x, y, obj_taunteffect);
 	        character = "V";
 	        scr_characterspr();
-	        state = 44;
+	        state = states.backbreaker;
 	        image_index = random_range(0, 7);
 	        sprite_index = spr_taunt;
 	    }
@@ -86,7 +86,7 @@ function scr_getinput()
 	        instance_create(x, y, obj_taunteffect);
 	        character = "M";
 	        scr_characterspr();
-	        state = 44;
+	        state = states.backbreaker;
 	        image_index = random_range(0, 7);
 	        sprite_index = spr_taunt;
 	    }

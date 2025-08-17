@@ -19,7 +19,7 @@ function scr_player_knightpepattack()
 	{
 	    image_index = 0;
 	    sprite_index = spr_knightpep_idle;
-	    state = 17;
+	    state = states.knightpep;
 	}
 
 	image_speed = 0.35;

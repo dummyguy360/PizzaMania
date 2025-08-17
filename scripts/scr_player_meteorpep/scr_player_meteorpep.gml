@@ -15,9 +15,7 @@ function scr_player_meteorpep()
 	    hsp = floor(-xscale * movespeed);
 	}
 	else
-	{
 	    hsp = 0;
-	}
 
 	if (scr_solid(x - 1, y) && xscale == 1 && hsp != 0)
 	{
@@ -63,7 +61,7 @@ function scr_player_meteorpep()
 	}
 
 	if (sprite_index == spr_meteorpep_land && floor(image_index) == (image_number - 1))
-	    state = 0;
+	    state = states.normal;
 
 	image_speed = 0.35;
 }

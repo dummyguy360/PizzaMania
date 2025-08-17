@@ -68,6 +68,6 @@ function scr_enemy_stun()
     
 	    image_index = 0;
 	    sprite_index = idlespr;
-	    state = 86;
+	    state = states.idle;
 	}
 }

@@ -13,7 +13,7 @@ function scr_player_barrelslipnslide()
 
 	if (floor(image_index) == 6)
 	{
-	    state = 79;
+	    state = states.barrelroll;
 	    flash = 1;
 	}
 	else

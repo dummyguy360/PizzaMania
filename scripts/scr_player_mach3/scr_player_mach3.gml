@@ -54,9 +54,7 @@ function scr_player_mach3()
 	        movespeed -= 0.05;
 	}
 	else if (movespeed > 12 && move != xscale)
-	{
 	    movespeed -= 0.05;
-	}
 
 	crouchslideAnim = 1;
 

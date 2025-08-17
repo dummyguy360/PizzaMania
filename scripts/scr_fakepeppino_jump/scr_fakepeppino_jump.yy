@@ -6,6 +6,6 @@
   "isCompatibility": true,
   "parent": {
     "name": "Fake Peppino States",
-    "path": "folders/Scripts/Fake Peppino States.yy",
+    "path": "folders/Scripts/Enemy States/Fake Peppino States.yy",
   },
 }

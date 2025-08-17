@@ -277,10 +277,8 @@ function scr_player_normal()
 	        else if (floor(movespeed) == 7)
 	            movespeed = 7;
 	    }
-	    else
-	    {
+		else
 	        movespeed = 0;
-	    }
     
 	    if (movespeed > 7)
 	        movespeed -= 0.1;
@@ -308,9 +306,7 @@ function scr_player_normal()
 	            image_speed = 0.6;
 	    }
 	    else
-	    {
 	        image_speed = 0.35;
-	    }
     
 	    if (key_slap2 && !key_down && !key_up && suplexmove == 0 && shotgunAnim == 0 && character != "M" && character != "V")
 	    {
@@ -503,9 +499,7 @@ function scr_player_normal()
 	            movespeed = 7;
 	    }
 	    else
-	    {
 	        movespeed = 0;
-	    }
     
 	    if (movespeed > 7)
 	        movespeed -= 0.1;

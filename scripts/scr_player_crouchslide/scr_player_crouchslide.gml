@@ -16,7 +16,7 @@ function scr_player_crouchslide()
 	    movespeed = 0;
 
 	if (movespeed == 0 && character == "M")
-	    state = 0;
+	    state = states.normal;
 
 	if (key_jump && character == "M" && sprite_index != spr_dive)
 	{

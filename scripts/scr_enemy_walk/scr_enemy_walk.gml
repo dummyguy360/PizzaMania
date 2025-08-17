@@ -17,9 +17,7 @@ function scr_enemy_walk()
 	}
 
 	if (grounded && !place_meeting(x, y, obj_platform))
-	{
 	    sprite_index = walkspr;
-	}
 	else
 	{
 	    sprite_index = idlespr;
@@ -47,9 +45,7 @@ function scr_enemy_walk()
 	            state = states.charge;
 	        }
 	        else
-	        {
 	            image_xscale *= -1;
-	        }
 	    }
 	}
 

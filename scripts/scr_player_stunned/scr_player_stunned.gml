@@ -29,7 +29,7 @@ function scr_player_stunned()
 	if (floor(image_index) == 53)
 	{
 	    mask_index = spr_player_mask;
-	    state = 0;
+	    state = states.normal;
 	    sprite_index = spr_player_idle;
 	    image_index = 0;
 	}

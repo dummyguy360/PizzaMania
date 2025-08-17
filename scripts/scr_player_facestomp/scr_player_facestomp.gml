@@ -20,7 +20,7 @@ function scr_player_facestomp()
 	    movespeed = 0;
 
 	if (!key_down)
-	    state = 51;
+	    state = states.jump;
 
 	landAnim = 1;
 
@@ -31,14 +31,14 @@ function scr_player_facestomp()
 
 	if (vsp > 15)
 	{
-	    state = 67;
+	    state = states.freefall;
 	    superslam = 0;
 	}
 
 	if (grounded && (!place_meeting(x, y + 1, obj_destructibles) || place_meeting(x, y + 1, obj_metalblock)) && vsp > 0)
 	{
 	    scr_sound(sfx_facestomp);
-	    state = 70;
+	    state = states.freefallland;
 	    jumpAnim = 1;
 	    jumpstop = 0;
 	    image_index = 0;
@@ -54,9 +54,7 @@ function scr_player_facestomp()
 	}
 
 	if (facestompAnim == 0)
-	{
 	    sprite_index = spr_player_facestomp;
-	}
 	else if (facestompAnim == 1)
 	{
 	    sprite_index = spr_player_facestomphit;
@@ -75,7 +73,7 @@ function scr_player_facestomp()
 	    sprite_index = spr_player_hanstandjump;
 	    stompAnim = 0;
 	    hsp = 0;
-	    state = 15;
+	    state = states.handstandjump;
 	    jumpAnim = 1;
 	    jumpstop = 0;
 	    image_index = 0;

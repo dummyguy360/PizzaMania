@@ -18,9 +18,7 @@ function scr_player_freefall()
 	        movespeed = 4;
 	}
 	else
-	{
 	    movespeed = 0;
-	}
 
 	if (falldamage < 5)
 	    falldamage += 0.35;

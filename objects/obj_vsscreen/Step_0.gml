@@ -2,9 +2,7 @@ if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
 if (pepx != 0)
-{
     pepx += 5;
-}
 else if (flashed == 0)
 {
     flash = 1;

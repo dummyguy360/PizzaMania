@@ -15,9 +15,7 @@ function scr_player_machroll()
 	if (grounded)
 	{
 	    if (character != "V")
-	    {
 	        sprite_index = spr_machroll;
-	    }
 	    else if (rollanim == 0)
 	    {
 	        sprite_index = spr_playerV_divekickstart;

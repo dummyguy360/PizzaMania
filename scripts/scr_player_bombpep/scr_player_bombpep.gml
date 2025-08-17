@@ -10,7 +10,7 @@ function scr_player_bombpep()
 	    scr_sound(sound_slapswipe1);
 	    image_index = 0;
 	    sprite_index = spr_player_throw;
-	    state = 34;
+	    state = states.Throw;
     
 	    with (instance_create(x, y, obj_bomb))
 	    {
@@ -62,7 +62,7 @@ function scr_player_bombpep()
 	    alarm[5] = 2;
 	    alarm[7] = 60;
 	    hurted = 1;
-	    state = 0;
+	    state = states.normal;
 	    sprite_index = spr_player_idle;
 	    image_index = 0;
 	}

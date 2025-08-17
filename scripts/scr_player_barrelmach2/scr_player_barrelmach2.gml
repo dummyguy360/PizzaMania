@@ -8,13 +8,13 @@ function scr_player_barrelmach2()
 
 	if (!grounded)
 	{
-	    state = 76;
+	    state = states.barrelfall;
 	    image_index = 0;
 	}
 
 	if (!key_attack && grounded)
 	{
-	    state = 77;
+	    state = states.barrelnormal;
 	    image_index = 0;
 	    mach2 = 0;
 	}
@@ -22,7 +22,7 @@ function scr_player_barrelmach2()
 	if (scr_solid(x + 1, y) && image_xscale == 1)
 	{
 	    barrel = 0;
-	    state = 65;
+	    state = states.bump;
 	    hsp = -2;
 	    vsp = -2;
 	    mach2 = 0;
@@ -43,7 +43,7 @@ function scr_player_barrelmach2()
 	if (scr_solid(x - 1, y) && image_xscale == -1)
 	{
 	    barrel = 0;
-	    state = 65;
+	    state = states.bump;
 	    hsp = 2;
 	    vsp = -2;
 	    mach2 = 0;

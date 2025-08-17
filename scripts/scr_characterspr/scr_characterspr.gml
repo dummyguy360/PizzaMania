@@ -2,6 +2,7 @@ function scr_characterspr()
 {
 	with (obj_player)
 	{
+		// Peppino
 	    if (character == "P")
 	    {
 	        spr_knightpepidle = spr_knightpep_idle;
@@ -114,6 +115,7 @@ function scr_characterspr()
 	        spr_charge = spr_player_charge;
 	        spr_palette = spr_peppalette;
 	    }
+		// The Noise
 	    else if (character == "N")
 	    {
 	        spr_knightpepidle = spr_playerN_knightidle;
@@ -217,6 +219,7 @@ function scr_characterspr()
 	        spr_charge = spr_playerN_charge;
 	        spr_palette = spr_noisepalette;
 	    }
+		// Vigilante
 	    else if (character == "V")
 	    {
 	        spr_idle = spr_playerV_idle;
@@ -308,6 +311,7 @@ function scr_characterspr()
 	        spr_charge = spr_playerN_charge;
 	        spr_palette = spr_noisepalette;
 	    }
+		// Pepperman
 	    else if (character == "M")
 	    {
 	        spr_idle = spr_pepperman_idle;
@@ -379,6 +383,7 @@ function scr_characterspr()
 	        spr_charge = spr_pepperman_shoulderstart;
 	        spr_palette = spr_noisepalette;
 	    }
+		// Gerome lmao
 	    else if (character == "G")
 	    {
 	        spr_idle = spr_gerome_keyidle;

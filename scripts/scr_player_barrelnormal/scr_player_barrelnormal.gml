@@ -9,21 +9,21 @@ function scr_player_barrelnormal()
 
 	if (!grounded && !key_jump)
 	{
-	    state = 76;
+	    state = states.barrelfall;
 	    image_index = 0;
 	    hsp = 0;
 	}
 
 	if ((key_down && grounded) || scr_solid(x, y - 3))
 	{
-	    state = 72;
+	    state = states.barrelcrouch;
 	    image_index = 0;
 	}
 
 	if (key_attack && grounded)
 	{
 	    movespeed = 0;
-	    state = 75;
+	    state = states.barrelmach1;
 	    landAnim = 0;
 	}
 

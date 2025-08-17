@@ -64,9 +64,7 @@ function scr_player_climbwall()
 	        vsp = 0;
         
 	        if (mach2 < 100)
-	        {
 	            state = states.mach2;
-	        }
 	        else
 	        {
 	            movespeed = 12;
@@ -79,9 +77,7 @@ function scr_player_climbwall()
 	    if (place_meeting(x + 1, y, obj_destructibles) || place_meeting(x + 1, y, obj_destructibles))
 	    {
 	        if (mach2 < 100)
-	        {
 	            state = states.mach2;
-	        }
 	        else
 	        {
 	            state = states.mach3;
@@ -141,7 +137,7 @@ function scr_player_climbwall()
 	        movespeed = 10;
 	        image_index = 0;
 	        sprite_index = spr_mach2jump;
-	        state = 63;
+	        state = states.mach2;
 	    }
     
 	    if (key_jump)
@@ -153,7 +149,7 @@ function scr_player_climbwall()
 	        movespeed = 10;
 	        image_index = 0;
 	        sprite_index = spr_mach2jump;
-	        state = 63;
+	        state = states.mach2;
 	    }
     
 	    if (!scr_solid(x + 1, y) && !scr_solid(x - 1, y))
@@ -164,7 +160,7 @@ function scr_player_climbwall()
 	        image_index = 0;
 	        movespeed = 10;
 	        sprite_index = spr_mach2jump;
-	        state = 63;
+	        state = states.mach2;
 	    }
     
 	    if (place_meeting(x + 1, y, obj_destructibles) || place_meeting(x + 1, y, obj_destructibles))
@@ -173,9 +169,7 @@ function scr_player_climbwall()
 	        dir = xscale;
         
 	        if (mach2 < 100)
-	        {
 	            state = states.mach2;
-	        }
 	        else
 	        {
 	            state = states.mach3;

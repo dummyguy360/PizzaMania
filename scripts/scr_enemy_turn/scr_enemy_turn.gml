@@ -5,7 +5,7 @@ function scr_enemy_turn()
 
 	if (floor(image_index) == (image_number - 1))
 	{
-	    state = 86;
+	    state = states.idle;
 	    image_index = 0;
 	    sprite_index = idlespr;
 	    image_xscale *= -1;
