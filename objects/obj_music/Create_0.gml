@@ -1,0 +1,15 @@
+playedbefore = music_title;
+currentlyplaying = sound_pizzagot;
+currentlyjingling = 0;
+jingle = 0;
+global.panic = 0;
+global.music_transition_type = 1;
+fade_duration = 15;
+current_track_volume = 0.7;
+next_track_volume = 0;
+sound_pitch = 1;
+pitchslider = 1;
+next_track = -1;
+fading_out = 0;
+fade_timer = 0;
+fade_duration = 30;

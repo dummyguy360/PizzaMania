@@ -1,0 +1,9 @@
+image_index = 1;
+image_speed = 0;
+level = "DESERT";
+target_x = 0;
+target_y = 0;
+targetRoom = Realtitlescreen;
+gate_badland = 0;
+gate_industrial = 0;
+gate_sewer = 0;

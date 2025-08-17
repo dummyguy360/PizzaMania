@@ -1,0 +1,12 @@
+image_speed = 0;
+hurtpoints = 0;
+timepoints = 0;
+escapetimepoints = 0;
+treasurepoints = 0;
+lastbesttimeminutes = 99;
+lastbesthurt = 99;
+lastbesttimeseconds = 99;
+obj_music.pitch = 1;
+obj_music.pitchslider = obj_music.pitch;
+depth = 70;
+image_index = 1;

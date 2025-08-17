@@ -1,0 +1,11 @@
+{
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_fakepeppino_idle",
+  "isDnD": false,
+  "isCompatibility": true,
+  "parent": {
+    "name": "Fake Peppino States",
+    "path": "folders/Scripts/Fake Peppino States.yy",
+  },
+}

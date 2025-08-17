@@ -1,0 +1,25 @@
+function scr_player_door()
+{
+	hsp = 0;
+	mach2 = 0;
+	jumpAnim = 1;
+	dashAnim = 1;
+	landAnim = 0;
+	moveAnim = 1;
+	stopAnim = 1;
+	crouchslideAnim = 1;
+	crouchAnim = 1;
+	machhitAnim = 0;
+	sprite_index = spr_lookdoor;
+
+	if (character == "M")
+	    image_speed = 0.7;
+
+	if (floor(image_index) == 4)
+	{
+	    image_speed = 0;
+    
+	    if (character == "M")
+	        image_index = 13;
+	}
+}
