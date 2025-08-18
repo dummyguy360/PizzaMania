@@ -36,9 +36,7 @@ with (obj_player)
             state = states.bump;
         }
         else if (state == states.bombpep && hurted == 0)
-        {
             instance_create(x, y, obj_bombexplosion);
-        }
         else if (state == states.boxxedpep)
         {
             scr_sound(sound_losetransformation);
@@ -144,9 +142,7 @@ with (obj_player)
             }
             
             if (obj_player.shotgunAnim == 0)
-            {
                 global.playerhealth -= 1;
-            }
             else if (obj_player.shotgunAnim == 1)
             {
                 obj_player.shotgunAnim = 0;

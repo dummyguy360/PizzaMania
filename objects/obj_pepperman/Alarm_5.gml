@@ -14,6 +14,6 @@ if (room == AT_roomboss)
     obj_player.hsp = 0;
     obj_player.y = 562;
     obj_player.sprite_index = spr_player_levelcomplete;
-    obj_player.state = 47;
+    obj_player.state = states.bossintro;
     instance_create(1230, 562, obj_noise);
 }

@@ -1,13 +1,13 @@
 if (room == rank_room || room == timesuproom)
     visible = false;
 
-if (obj_player.state == 46)
+if (obj_player.state == states.pizzathrow)
     visible = false;
 
 if (sprite_index == spr_toppintomato_intro && image_index >= (image_number - 1))
     intro = 0;
 
-if (global.tomatofollow == 1)
+if (global.tomatofollow == true)
 {
     if (!intro)
     {
@@ -22,12 +22,12 @@ if (global.tomatofollow == 1)
     
     depth = -6;
     
-    if (global.cheesefollow == 1)
+    if (global.cheesefollow == true)
     {
         ds_queue_enqueue(followQueue, obj_pizzakincheese.x + (image_xscale * 4));
         ds_queue_enqueue(followQueue, obj_pizzakincheese.y - 2);
     }
-    else if (global.shroomfollow == 1)
+    else if (global.shroomfollow == true)
     {
         ds_queue_enqueue(followQueue, obj_pizzakinshroom.x + (image_xscale * 4));
         ds_queue_enqueue(followQueue, obj_pizzakinshroom.y - 2);
@@ -47,5 +47,5 @@ if (global.tomatofollow == 1)
     }
 }
 
-if (global.playerhealth == 1 && global.tomatofollow == 1)
+if (global.playerhealth == 1 && global.tomatofollow == true)
     sprite_index = spr_pizzakintomato_panic;

@@ -1,6 +1,6 @@
-if ((state == 51 || state == 56 || state == 63) && other.drop == 0)
+if ((state == states.jump || state == states.Sjump || state == states.mach2) && other.drop == 0)
 {
-    state = 68;
+    state = states.hang;
     image_xscale = -1;
     other.hooked = 1;
     

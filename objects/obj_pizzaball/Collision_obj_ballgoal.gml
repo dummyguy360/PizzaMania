@@ -2,7 +2,7 @@ if (vsp > 0)
 {
     instance_destroy();
     instance_destroy(obj_pizzaballblock);
-    obj_player.state = 44;
+    obj_player.state = states.backbreaker;
     obj_player.sprite_index = obj_player.spr_victory;
     obj_player.image_index = 0;
     
@@ -19,8 +19,6 @@ if (vsp > 0)
             scr_sound(sounds[irandom(array_length_1d(sounds) - 1)]);
         }
         else if (character == "G")
-        {
             scr_sound(sound_geromegot);
-        }
     }
 }

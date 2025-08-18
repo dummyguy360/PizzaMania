@@ -1,2 +1,2 @@
-if (state != 101)
+if (state != states.grabbed)
     scr_collide();

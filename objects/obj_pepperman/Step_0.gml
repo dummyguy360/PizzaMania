@@ -86,7 +86,7 @@ else
 if (floor(image_index) == 0 && charging == 1 && grounded)
     instance_create(x, y + 90, obj_cloudeffect);
 
-if (obj_player.state == 39 || obj_player.state == 36 || !grounded)
+if (obj_player.state == states.grab || obj_player.state == states.superslam || !grounded)
 {
     stunned = 1;
     movespeed = 0;
@@ -134,7 +134,7 @@ if (grounded && thrown == 1)
         sprite_index = spr_peppermanlow_hurt;
 }
 
-if (thrown == 0 && (obj_player.state == 21 || obj_player.state == 39 || obj_player.state == 34 || obj_player.state == 40 || obj_player.state == 42 || obj_player.state == 36 || obj_player.state == 43 || obj_player.state == 41))
+if (thrown == 0 && (obj_player.state == states.grabbing || obj_player.state == states.grab || obj_player.state == states.Throw || obj_player.state == states.punch || obj_player.state == states.uppunch || obj_player.state == states.superslam || obj_player.state == states.shoulder || obj_player.state == states.backkick))
 {
     charging = 0;
     chargingdown = 0;
@@ -143,7 +143,7 @@ if (thrown == 0 && (obj_player.state == 21 || obj_player.state == 39 || obj_play
     
     if (place_meeting(x, y, obj_player))
     {
-        if (obj_player.state == 40 && floor(obj_player.image_index) == 2)
+        if (obj_player.state == states.punch && floor(obj_player.image_index) == 2)
         {
             instance_create(x + (obj_player.xscale * 30), y, obj_bumpeffect);
             thrown = 1;
@@ -151,7 +151,7 @@ if (thrown == 0 && (obj_player.state == 21 || obj_player.state == 39 || obj_play
             vsp = -6;
         }
         
-        if (obj_player.state == 41 && floor(obj_player.image_index) == 2)
+        if (obj_player.state == states.backkick && floor(obj_player.image_index) == 2)
         {
             instance_create(x + (-obj_player.xscale * 50), y, obj_bumpeffect);
             thrown = 1;
@@ -160,7 +160,7 @@ if (thrown == 0 && (obj_player.state == 21 || obj_player.state == 39 || obj_play
             vsp = -6;
         }
         
-        if (obj_player.state == 43 && floor(obj_player.image_index) == 2)
+        if (obj_player.state == states.shoulder && floor(obj_player.image_index) == 2)
         {
             instance_create(x, y + 20, obj_bumpeffect);
             thrown = 1;
@@ -168,14 +168,14 @@ if (thrown == 0 && (obj_player.state == 21 || obj_player.state == 39 || obj_play
             vsp = -10;
         }
         
-        if (obj_player.state == 34 && floor(obj_player.image_index) == 2)
+        if (obj_player.state == states.Throw && floor(obj_player.image_index) == 2)
         {
             thrown = 1;
             hsp = -image_xscale * 7;
             vsp = -10;
         }
         
-        if (obj_player.state == 42 && floor(obj_player.image_index) == 2)
+        if (obj_player.state == states.uppunch && floor(obj_player.image_index) == 2)
         {
             instance_create(x + (-obj_player.xscale * 15), y - 50, obj_bumpeffect);
             thrown = 1;
@@ -185,7 +185,7 @@ if (thrown == 0 && (obj_player.state == 21 || obj_player.state == 39 || obj_play
         }
     }
     
-    if (obj_player.state == 36)
+    if (obj_player.state == states.superslam)
     {
         if (floor(obj_player.image_index) == 0)
         {
@@ -260,24 +260,24 @@ if (flash == 1 && alarm[3] <= 0)
 
 if (hp > 6)
 {
-    normalspr = 140;
-    hurtspr = 134;
-    chargespr = 135;
+    normalspr = spr_pepperman;
+    hurtspr = spr_pepperman_hurt;
+    chargespr = spr_pepperman_charge;
     stunspr = spr_pepperman_stun;
 }
 
 if (hp <= 6 && hp > 3)
 {
-    normalspr = 144;
-    hurtspr = 142;
-    chargespr = 143;
+    normalspr = spr_peppermanmid;
+    hurtspr = spr_peppermanmid_hurt;
+    chargespr = spr_peppermanmid_charge;
     stunspr = spr_peppermanmid_stun;
 }
 else if (hp <= 3)
 {
-    normalspr = 139;
-    hurtspr = 137;
-    chargespr = 138;
+    normalspr = spr_peppermanlow;
+    hurtspr = spr_peppermanlow_hurt;
+    chargespr = spr_peppermanlow_charge;
     stunspr = spr_peppermanlow_stun;
 }
 

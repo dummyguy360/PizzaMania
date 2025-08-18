@@ -1,7 +1,7 @@
 hp = 2;
-type = 0;
+type = false;
 
-if (type == 0)
+if (type == false)
 {
     sprite_index = sprite387;
     image_speed = 0;

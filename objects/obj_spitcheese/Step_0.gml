@@ -1,38 +1,38 @@
 switch (state)
 {
-    case 86:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case 88:
+    case states.charge:
         scr_enemy_charge();
         break;
     
-    case 90:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case 94:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case 96:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case 97:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case 98:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case 89:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case 101:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
 }
@@ -40,7 +40,7 @@ switch (state)
 if (x != obj_player.x)
     image_xscale = -sign(x - obj_player.x);
 
-if (state == 98 && stunned > 40 && birdcreated == 0)
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -48,29 +48,29 @@ if (state == 98 && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != 98)
+if (state != states.stun)
     birdcreated = 0;
 
 if (bombreset > 0)
     bombreset--;
 
-if (state != 89 && bombreset == 0)
+if (state != states.pizzagoblinthrow && bombreset == 0)
 {
-    if (state == 94 || state == 86)
+    if (state == states.walk || state == states.idle)
     {
         scr_sound(sound_enemythrow);
         image_index = 0;
-        state = 89;
+        state = states.pizzagoblinthrow;
     }
 }
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != 101)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != 98)
+if (state != states.stun)
     thrown = 0;
 
 if (boundbox == 0)

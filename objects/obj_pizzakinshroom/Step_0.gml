@@ -7,7 +7,7 @@ if (obj_player.state == states.pizzathrow)
 if (sprite_index == spr_toppinshroom_intro && image_index >= (image_number - 1))
     intro = 0;
 
-if (global.shroomfollow == 1)
+if (global.shroomfollow == true)
 {
     image_alpha = obj_player.image_alpha;
     
@@ -33,5 +33,5 @@ if (global.shroomfollow == 1)
     }
 }
 
-if (global.playerhealth == 1 && global.shroomfollow == 1)
+if (global.playerhealth == 1 && global.shroomfollow == true)
     sprite_index = spr_pizzakinshroom_panic;

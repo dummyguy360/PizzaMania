@@ -1,4 +1,4 @@
-if (obj_player.y < y && obj_player.state == 51)
+if (obj_player.y < y && obj_player.state == states.jump)
 {
     scr_sound(sound_enemyslap);
     
@@ -21,11 +21,11 @@ if (obj_player.y < y && obj_player.state == 51)
     }
 }
 
-if (obj_player.state == 63)
+if (obj_player.state == states.mach2)
 {
     instance_create(obj_player.x, obj_player.y, obj_bumpeffect);
     movespeed = 0;
-    obj_player.state = 50;
+    obj_player.state = states.tackle;
     obj_player.image_index = 0;
     
     if (obj_player.x != x)
@@ -43,7 +43,7 @@ if (obj_player.state == 63)
     }
 }
 
-if (obj_player.state == 83)
+if (obj_player.state == states.mach3)
 {
     scr_sound(sound_combo4);
     obj_camera.shake_mag = 3;
@@ -56,7 +56,7 @@ if (obj_player.state == 83)
     charging = 0;
     stunned = 1;
     movespeed = 0;
-    obj_player.state = 50;
+    obj_player.state = states.tackle;
     obj_player.image_index = 0;
     
     if (obj_player.x != x)
@@ -136,7 +136,7 @@ if (obj_player.state == 83)
 
 with (obj_player)
 {
-    if ((state != 50 && state != 66) && !(y < other.y) && state != 39 && state != 36 && grabbing == 0 && other.stunned == 0)
+    if ((state != states.tackle && state != states.hurt) && !(y < other.y) && state != states.grab && state != states.superslam && grabbing == 0 && other.stunned == 0)
     {
         if (x != other.x)
             xscale = -sign(x - other.x);
@@ -144,6 +144,6 @@ with (obj_player)
         hsp = -xscale * 4;
         vsp = -4;
         image_index = 0;
-        state = 65;
+        state = states.bump;
     }
 }

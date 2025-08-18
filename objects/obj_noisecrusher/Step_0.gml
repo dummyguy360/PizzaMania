@@ -1,23 +1,23 @@
 switch (state)
 {
-    case 86:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case 87:
+    case states.bounce:
         scr_enemy_bounce();
         break;
     
-    case 98:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case 101:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
 }
 
-if (state == 98 && stunned > 40 && birdcreated == 0)
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -25,20 +25,20 @@ if (state == 98 && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != 98)
+if (state != states.stun)
     birdcreated = 0;
 
-if (state == 86 && obj_player.x != x)
+if (state == states.idle && obj_player.x != x)
     image_xscale = sign(obj_player.x - x);
 
-if (state == 86)
+if (state == states.idle)
     attack--;
 
-if (attack <= 0 && state == 86)
+if (attack <= 0 && state == states.idle)
 {
     sprite_index = jumpprepspr;
     image_index = 0;
-    state = 87;
+    state = states.bounce;
 }
 
 if (global.bosshealth == 5)
@@ -50,10 +50,10 @@ if (helmet == 0)
     stunfallspr = spr_noisecrusher_stun;
     walkspr = spr_noisecrusher_bounce;
     grabbedspr = spr_noisecrusher_stun;
-    jumpprepspr = 24;
-    jumpspr = 22;
+    jumpprepspr = spr_noisecrusher_jumpprep;
+    jumpspr = spr_noisecrusher_jump;
     landspr = spr_noisecrusher_land;
-    airspr = 16;
+    airspr = spr_noisecrusher_air;
 }
 else
 {
@@ -61,10 +61,10 @@ else
     stunfallspr = spr_noisecrusherhelmet_stun;
     walkspr = spr_noisecrusherhelmet_bounce;
     grabbedspr = spr_noisecrusherhelmet_stun;
-    jumpprepspr = 23;
-    jumpspr = 21;
+    jumpprepspr = spr_noisecrusherhelmet_jumpprep;
+    jumpspr = spr_noisecrusherhelmet_jump;
     landspr = spr_noisecrusherhelmet_land;
-    airspr = 15;
+    airspr = spr_noisecrusherhelmet_air;
 }
 
 if (global.bosshealth <= 0)
@@ -72,7 +72,7 @@ if (global.bosshealth <= 0)
 
 if (caughtplayer == 1 && !grounded)
 {
-    obj_player.state = 65;
+    obj_player.state = states.bump;
     obj_player.image_index = 0;
     obj_player.x = x;
     obj_player.y = y;
@@ -80,7 +80,7 @@ if (caughtplayer == 1 && !grounded)
 
 if (caughtplayer == 1 && grounded)
 {
-    obj_player.state = 8;
+    obj_player.state = states.boxxedpep;
     
     if (obj_player.sprite_index != spr_boxxedpep_intro)
     {
@@ -99,10 +99,10 @@ if (caughtplayer == 1 && grounded)
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != 101)
+if (state != states.grabbed)
     depth = 0;
 
 scr_collide();
 
-if (state != 98)
+if (state != states.stun)
     thrown = 0;

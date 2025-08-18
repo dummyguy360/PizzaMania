@@ -7,6 +7,4 @@ if (instance_exists(obj_pepperman))
     }
 }
 else
-{
     instance_destroy();
-}

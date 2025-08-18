@@ -77,11 +77,11 @@ with (obj_player)
     targetRoom = hub_room1;
     flash = 0;
     global.key_inv = 0;
-    global.shroomfollow = 0;
-    global.cheesefollow = 0;
-    global.tomatofollow = 0;
-    global.sausagefollow = 0;
-    global.pineapplefollow = 0;
+    global.shroomfollow = false;
+    global.cheesefollow = false;
+    global.tomatofollow = false;
+    global.sausagefollow = false;
+    global.pineapplefollow = false;
     global.keyget = 0;
     global.collect = 0;
     global.ammo = 0;
@@ -129,6 +129,8 @@ with (obj_player)
     draw_angle = 0;
     character = "P";
     baddiegrabbedID = obj_solid;
+	
+	#region Player Sprites
     spr_knightpepidle = spr_knightpep_idle;
     spr_knightpepwalk = spr_knightpep_walk;
     spr_knightpepjumpstart = spr_knightpep_jumpstart;
@@ -241,6 +243,8 @@ with (obj_player)
     spr_charge = spr_player_charge;
     spr_Sjumpcancelstart = spr_player_Sjumpcancelstart;
     spr_Sjumpcancel = spr_player_Sjumpcancel;
+	#endregion
+	
     paletteselect = 1;
     global.panic = 0;
     colorchange = 0;

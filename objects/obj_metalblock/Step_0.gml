@@ -15,16 +15,16 @@ if (place_meeting(x, y + 1, obj_player) || place_meeting(x, y - 1, obj_player) |
 
 var bullet = instance_place(x + 32, y, obj_pistolbullet);
 
-if (bullet == -4)
+if (bullet == noone)
     bullet = instance_place(x - 32, y, obj_pistolbullet);
 
-if (bullet == -4)
+if (bullet == noone)
     bullet = instance_place(x, y + 32, obj_pistolbullet);
 
-if (bullet == -4)
+if (bullet == noone)
     bullet = instance_place(x, y - 32, obj_pistolbullet);
 
-if (bullet != -4 && bullet.dynamite == 1)
+if (bullet != noone && bullet.dynamite == 1)
 {
     with (bullet)
         instance_destroy();

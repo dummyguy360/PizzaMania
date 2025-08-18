@@ -1,6 +1,6 @@
 with (obj_player)
 {
-    if (state == 17 || state == 18 || state == 11)
+    if (state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes)
     {
         with (instance_create(x, y, obj_knightdebris))
             image_index = 0;
@@ -29,13 +29,11 @@ with (obj_player)
         image_index = 0;
         obj_player.image_index = 0;
         obj_player.flash = 1;
-        state = 65;
+        state = states.bump;
     }
     else if (state == 20 && hurted == 0)
-    {
         instance_create(x, y, obj_bombexplosion);
-    }
-    else if (state != 66 && hurted == 0 && cutscene == 0 && state != 65)
+    else if (state != states.hurt && hurted == 0 && cutscene == 0 && state != states.bump)
     {
         scr_sound(sound_damage);
         global.hurtcounter += 1;
@@ -50,7 +48,7 @@ with (obj_player)
         movespeed = 10;
         vsp = -8;
         instance_create(x, y, obj_spikehurteffect);
-        state = 66;
+        state = states.hurt;
         image_index = 0;
         flash = 1;
     }

@@ -23,9 +23,7 @@ if (global.keyget == 0 && obj_player.state != states.knightpep && obj_player.sta
             scr_sound(sounds[irandom(array_length_1d(sounds) - 1)]);
         }
         else if (character == "G")
-        {
             scr_sound(sound_geromegot);
-        }
     }
     
     obj_player.state = states.keyget;

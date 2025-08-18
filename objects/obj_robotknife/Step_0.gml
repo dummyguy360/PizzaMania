@@ -1,9 +1,7 @@
 repeat (abs(vsp))
 {
     if (!place_meeting(x, y + sign(vsp), obj_null))
-    {
         y += sign(vsp);
-    }
     else
     {
         vsp = 0;
@@ -19,9 +17,7 @@ repeat (abs(hsp))
         y--;
     
     if (!place_meeting(x + sign(hsp), y, obj_null))
-    {
         x += sign(hsp);
-    }
     else
     {
         hsp = 0;

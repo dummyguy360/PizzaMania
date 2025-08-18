@@ -4,6 +4,4 @@ if (sprite_index == chargespr || sprite_index == hurtspr)
     alarm[6] = 10;
 }
 else
-{
     flashing = 0;
-}

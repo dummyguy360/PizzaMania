@@ -1,4 +1,4 @@
-if (obj_player.state == 46)
+if (obj_player.state == states.pizzathrow)
 {
     if (framereset == 0)
     {
@@ -36,7 +36,7 @@ if (place_meeting(x + 1, y, obj_player) && sprite_index != spr_hungrypillar_happ
     with (obj_player)
     {
         xscale = -other.image_xscale;
-        state = 65;
+        state = states.bump;
         hsp = -xscale * 10;
         vsp = -6;
         image_index = 0;

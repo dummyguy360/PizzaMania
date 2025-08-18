@@ -1,5 +1,5 @@
 with (other.id)
 {
-    if ((other.state == 98 && other.thrown == 1) || (other.state == 101 && obj_player.state == 36))
+    if ((other.state == states.stun && other.thrown == 1) || (other.state == states.grabbed && obj_player.state == states.superslam))
         instance_destroy();
 }

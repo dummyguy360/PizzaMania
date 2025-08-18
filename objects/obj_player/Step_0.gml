@@ -393,7 +393,7 @@ with (obj_player)
     
     if (instance_exists(obj_chargeeffect))
     {
-        if ((state == 83 && sprite_index != spr_dive) || (state == 56 && sprite_index == spr_crazyrun) || (state == 15 && sprite_index == spr_Sjumpcancel))
+        if ((state == states.mach3 && sprite_index != spr_dive) || (state == states.Sjump && sprite_index == spr_crazyrun) || (state == states.handstandjump && sprite_index == spr_Sjumpcancel))
             obj_chargeeffect.show = 1;
         else
             obj_chargeeffect.show = 0;
@@ -433,15 +433,13 @@ with (obj_player)
             draw_angle = 0;
     }
     
-    if (state == 15 && sprite_index == spr_Sjumpcancelstart)
+    if (state == states.handstandjump && sprite_index == spr_Sjumpcancelstart)
     {
         vsp = 0;
         grav = 0;
     }
     else
-    {
         grav = 0.5;
-    }
     
     trail_timer++;
     
@@ -523,9 +521,7 @@ with (obj_player)
             scr_sound(sound_dash1);
     }
     else
-    {
         audio_stop_sound(sound_dash1);
-    }
     
     if ((state == states.mach2 && sprite_index != spr_dive) || (state == states.climbwall && mach2 < 100 && character != "N"))
     {
@@ -533,9 +529,7 @@ with (obj_player)
             scr_sound(sound_dash2);
     }
     else
-    {
         audio_stop_sound(sound_dash2);
-    }
     
     if (state == states.chainsaw)
     {
@@ -543,9 +537,7 @@ with (obj_player)
             scr_sound(sound_chainsaw);
     }
     else
-    {
         audio_stop_sound(sound_chainsaw);
-    }
     
     if ((state == states.mach3 && sprite_index != spr_dive) || (state == states.climbwall && mach2 == 100 && character != "N"))
     {
@@ -555,9 +547,7 @@ with (obj_player)
                 scr_sound(sound_maxspeed);
         }
         else if (!audio_is_playing(sound_peppermanmach))
-        {
             scr_sound(sound_peppermanmach);
-        }
     }
     else
     {
@@ -573,9 +563,7 @@ with (obj_player)
             scr_sound(sound_machroll);
     }
     else
-    {
         audio_stop_sound(sound_machroll);
-    }
     
     if (state == states.machslide && mach2 > 99)
     {
@@ -585,9 +573,7 @@ with (obj_player)
                 scr_sound(sound_machslideboost);
         }
         else if (!audio_is_playing(sound_peppermanturn))
-        {
             scr_sound(sound_peppermanturn);
-        }
     }
     else
     {
@@ -603,9 +589,7 @@ with (obj_player)
             scr_sound(sound_noisejetpack);
     }
     else
-    {
         audio_stop_sound(sound_noisejetpack);
-    }
     
     if (state == states.handstandjump && handstand != 2)
     {
@@ -613,9 +597,7 @@ with (obj_player)
             scr_sound(sound_suplexdash);
     }
     else
-    {
         audio_stop_sound(sound_suplexdash);
-    }
     
     if (state == states.freefall || (state == states.chainsawpogo && sprite_index == spr_pepperman_groundpound && vsp > 0))
     {
@@ -623,9 +605,7 @@ with (obj_player)
             scr_sound(sound_groundpoundloop);
     }
     else
-    {
         audio_stop_sound(sound_groundpoundloop);
-    }
     
     if (state == states.grind || state == states.knightpepslopes)
     {
@@ -633,20 +613,14 @@ with (obj_player)
             scr_sound(sound_knightslide);
     }
     else
-    {
         audio_stop_sound(sound_knightslide);
-    }
     
     if (sprite_index == spr_player_winding && state != states.normal)
         windingAnim = 0;
     
-    if (state == states.Sjumpprep)
-    {
-    }
+    if (state == states.Sjumpprep) { }
     else
-    {
         audio_stop_sound(sound_superjumpcharge2);
-    }
     
     if (suplexmove == 1 && scr_solid(x, y + 1))
     {
@@ -700,7 +674,7 @@ with (obj_player)
     else
         grabbing = 0;
     
-    if ((state == states.mach3 && sprite_index != spr_dive) || state == states.chainsaw || state == states.chainsawpogo || state == states.hookshot || state == states.skateboard || state == 28 || state == states.freefall || state == states.Sjump || state == states.machroll || (state == states.handstandjump && (sprite_index == spr_player_hanstandjump || character == "V")) || state == states.machfreefall || state == states.charge || (state == states.superslam && sprite_index == spr_piledriver) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.boxxedpep || state == states.cheesepep || (state == states.machslide && sprite_index == spr_machslideboost3) || state == states.cheeseball || (state == states.handstandjump && handstand != 0) || (state == 61 && character == "M") || (sprite_index == spr_dive && character == "M"))
+    if ((state == states.mach3 && sprite_index != spr_dive) || state == states.chainsaw || state == states.chainsawpogo || state == states.hookshot || state == states.skateboard || state == states.mach4 || state == states.freefall || state == states.Sjump || state == states.machroll || (state == states.handstandjump && (sprite_index == spr_player_hanstandjump || character == "V")) || state == states.machfreefall || state == states.charge || (state == states.superslam && sprite_index == spr_piledriver) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.boxxedpep || state == states.cheesepep || (state == states.machslide && sprite_index == spr_machslideboost3) || state == states.cheeseball || (state == states.handstandjump && handstand != 0) || (state == states.crouchslide && character == "M") || (sprite_index == spr_dive && character == "M"))
         instakillmove = 1;
     else
         instakillmove = 0;

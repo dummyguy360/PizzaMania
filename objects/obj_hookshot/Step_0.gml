@@ -56,9 +56,7 @@ if ((hooked == 1 && obj_player.state != states.hookshot) || obj_player.state != 
 
 var _temp_local_var_8 = abs(vsp);
 
-if (abs(vsp) <= 0)
-{
-}
+if (abs(vsp) <= 0) { }
 else
 {
     while (1)
@@ -74,17 +72,13 @@ else
             break;
         }
         else
-        {
             vsp = 0;
-        }
     }
 }
 
 _temp_local_var_8 = abs(hsp);
 
-if (abs(hsp) <= 0)
-{
-}
+if (abs(hsp) <= 0) { }
 else
 {
     while (1)
@@ -110,9 +104,7 @@ else
             break;
         }
         else
-        {
             hsp = 0;
-        }
     }
 }
 

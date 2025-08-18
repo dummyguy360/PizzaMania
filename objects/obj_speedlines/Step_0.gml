@@ -14,6 +14,6 @@ else
 
 with (obj_player)
 {
-    if (state != 63)
+    if (state != states.mach2)
         instance_destroy(other.id);
 }

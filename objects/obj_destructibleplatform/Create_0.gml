@@ -1,3 +1,3 @@
-falling = 0;
+falling = false;
 reset = 200;
 image_speed = 0;

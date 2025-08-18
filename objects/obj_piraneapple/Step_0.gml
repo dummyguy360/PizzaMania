@@ -91,10 +91,10 @@ if (boundbox == 0)
 
 var bullet = instance_place(x + 1, y, obj_pistolbullet);
 
-if (bullet == -4)
+if (bullet == noone)
     bullet = instance_place(x - 1, y, obj_pistolbullet);
 
-if (bullet != -4)
+if (bullet != noone)
 {
     shot = 1;
     

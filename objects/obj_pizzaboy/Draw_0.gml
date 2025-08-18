@@ -5,9 +5,7 @@ if (thrown == 1)
     draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, render_angle, image_blend, image_alpha);
 }
 else
-{
     draw_self();
-}
 
 if (flash)
 {
@@ -15,6 +13,4 @@ if (flash)
     draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
     shader_reset();
 }
-else
-{
-}
+else { }

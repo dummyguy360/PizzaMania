@@ -46,7 +46,7 @@ if (sprite_index == spr_grabbiehand_catch && released == 0 && grabbing == 1)
 
 if ((x <= (dropspotx + 5) && x >= (dropspotx - 5)) && (y <= (dropspoty + 5) && y >= (dropspoty - 5)) && released == 0 && grabbing == 1)
 {
-    obj_player.state = 67;
+    obj_player.state = states.freefall;
     image_index = 0;
     sprite_index = spr_grabbiehand_release;
     released = 1;

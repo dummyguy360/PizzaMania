@@ -10,7 +10,7 @@ if (instance_exists(ID))
     
     with (ID)
     {
-        if (state != 86 && state != 94)
+        if (state != states.idle && state != states.walk)
         {
             hitboxcreate = 0;
             instance_destroy(other.id);

@@ -23,9 +23,7 @@ if (pause == 1)
         scr_sound(music_pause);
 }
 else
-{
     audio_stop_sound(music_pause);
-}
 
 if (pause == 1)
 {

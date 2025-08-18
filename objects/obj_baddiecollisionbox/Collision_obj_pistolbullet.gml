@@ -16,7 +16,7 @@ if (instance_exists(baddieID) && baddieID.hp > 0)
     baddieID.vsp = -10;
     baddieID.image_index = 0;
     baddieID.stunned = 200;
-    baddieID.state = 98;
+    baddieID.state = states.stun;
 }
 
 instance_destroy(other.id);

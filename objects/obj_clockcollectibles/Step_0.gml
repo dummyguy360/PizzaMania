@@ -22,9 +22,7 @@ if (cantcollect == 1)
     }
 }
 else if (cantcollect == 0)
-{
     image_alpha = 1;
-}
 
 if (drop == 1)
     scr_collide();

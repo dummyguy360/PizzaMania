@@ -4,11 +4,11 @@ if (stunned == 1 && stunhp == 0 && alarm[1] > 40 && slapped == 0 && sprite_index
     x = obj_player.x + (obj_player.xscale * 20);
     charging = 0;
     chargingdown = 0;
-    state = 39;
+    state = states.grab;
     movespeed = 0;
     slapped = 1;
     instance_create(x + (obj_player.xscale * 40), y, obj_punchdust);
-    obj_player.state = 39;
+    obj_player.state = states.grab;
     instance_destroy(other.id);
 }
 

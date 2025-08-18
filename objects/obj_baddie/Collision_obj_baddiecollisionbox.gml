@@ -4,7 +4,7 @@ if (object_index != obj_pizzaball)
     {
         if (instance_exists(baddieID) && baddieID != other.id)
         {
-            if ((baddieID.state == 98 && baddieID.hsp != 0 && baddieID.thrown == 1) || (baddieID.state == 101 && obj_player.state == 36))
+            if ((baddieID.state == states.stun && baddieID.hsp != 0 && baddieID.thrown == 1) || (baddieID.state == states.grabbed && obj_player.state == states.superslam))
                 instance_destroy(other.id);
         }
     }

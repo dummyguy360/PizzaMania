@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1 && type == 0)
+if (ds_list_find_index(global.saveroom, id) == -1 && type == false)
 {
     with (instance_create(x + 32, y + 32, obj_debris))
         sprite_index = spr_bigdebris;
@@ -29,7 +29,7 @@ if (ds_list_find_index(global.saveroom, id) == -1 && type == 0)
     ds_list_add(global.saveroom, id);
 }
 
-if (ds_list_find_index(global.saveroom, id) == -1 && type == 1)
+if (ds_list_find_index(global.saveroom, id) == -1 && type == true)
 {
     with (instance_create(x + 32, y + 32, obj_sausageman_dead))
         sprite_index = spr_bigdoughblockdead;

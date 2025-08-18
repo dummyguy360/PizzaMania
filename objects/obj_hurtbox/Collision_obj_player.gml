@@ -63,9 +63,7 @@ with (obj_player)
         }
         
         if (obj_player.shotgunAnim == 0)
-        {
             global.playerhealth -= 1;
-        }
         else if (obj_player.shotgunAnim == 1)
         {
             obj_player.shotgunAnim = 0;

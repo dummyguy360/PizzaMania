@@ -1,4 +1,4 @@
-if (obj_player.state != states.hurt && global.tomatofollow == 0)
+if (obj_player.state != states.hurt && global.tomatofollow == false)
 {
     image_index = 0;
     intro = 1;
@@ -15,7 +15,7 @@ if (obj_player.state != states.hurt && global.tomatofollow == 0)
     obj_tv.alarm[0] = 150;
     global.toppintotal += 1;
     scr_sound(sound_toppingot);
-    global.tomatofollow = 1;
+    global.tomatofollow = true;
     panic = 0;
     
     with (obj_player)
@@ -31,8 +31,6 @@ if (obj_player.state != states.hurt && global.tomatofollow == 0)
             scr_sound(sounds[irandom(array_length_1d(sounds) - 1)]);
         }
         else if (character == "G")
-        {
             scr_sound(sound_geromegot);
-        }
     }
 }

@@ -1,4 +1,4 @@
-if (obj_player.state != states.hurt && global.shroomfollow == 0)
+if (obj_player.state != states.hurt && global.shroomfollow == false)
 {
     image_index = 0;
     intro = 1;
@@ -15,6 +15,6 @@ if (obj_player.state != states.hurt && global.shroomfollow == 0)
     obj_tv.alarm[0] = 150;
     global.toppintotal += 1;
     scr_sound(sound_toppingot);
-    global.shroomfollow = 1;
+    global.shroomfollow = true;
     panic = 0;
 }

@@ -5,7 +5,7 @@ image_xscale = obj_pepperman.image_xscale;
 if (obj_pepperman.charging == 0)
     instance_destroy();
 
-if (obj_player.state == 83)
+if (obj_player.state == states.mach3)
     mask_index = spr_masknull;
 else
     mask_index = spr_chargeeffect;

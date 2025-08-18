@@ -10,7 +10,7 @@ if (hooked == 1 && drop == 0)
         with (obj_player)
         {
             jumpAnim = 0;
-            state = 51;
+            state = states.jump;
             machslideAnim = 1;
             image_index = 0;
             vsp = 1;
@@ -24,7 +24,7 @@ if (hooked == 1 && drop == 0)
 if (place_meeting(x, y - 1, obj_hookend) && hooked == 1)
 {
     drop = 1;
-    obj_player.state = 51;
+    obj_player.state = states.jump;
     hooked = 0;
     vsp = random_range(-4, 0);
     hsp = random_range(-4, 4);

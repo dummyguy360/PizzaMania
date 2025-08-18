@@ -5,6 +5,4 @@ if (flash)
     shader_reset();
 }
 else
-{
     draw_self();
-}

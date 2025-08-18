@@ -33,7 +33,7 @@ if (instance_exists(ID))
         
         if (object_index == obj_noisecrusher)
         {
-            if (state != 87)
+            if (state != states.bounce)
             {
                 hitboxcreate = 0;
                 instance_destroy(other.id);

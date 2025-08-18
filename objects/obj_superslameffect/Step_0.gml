@@ -1,5 +1,5 @@
 x = obj_player.x;
 y = obj_player.y;
 
-if (obj_player.state != 67)
+if (obj_player.state != states.freefall)
     instance_destroy();

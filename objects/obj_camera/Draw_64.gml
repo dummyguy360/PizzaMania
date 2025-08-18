@@ -47,29 +47,17 @@ if (obj_player.state != states.gameover)
                 draw_sprite_ext(spr_pepinoHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
         }
         else if (stun)
-        {
             draw_sprite_ext(spr_pepinoHUDstun, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (victory_state)
-        {
             draw_sprite_ext(spr_pepinoHUDhappy, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (mach1)
-        {
             draw_sprite_ext(spr_pepinoHUDmach1, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (mach2)
-        {
             draw_sprite_ext(spr_pepinoHUDmach2, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (mach3)
-        {
             draw_sprite_ext(spr_pepinoHUDmach3, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (hurt)
-        {
             draw_sprite_ext(spr_pepinoHUDhurt, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
     }
     
     if (obj_player.character == "N")
@@ -84,29 +72,17 @@ if (obj_player.state != states.gameover)
                 draw_sprite_ext(spr_noiseHUD_idle, -1, 150, 100, 1, 1, 1, c_white, alpha);
         }
         else if (stun)
-        {
             draw_sprite_ext(spr_noiseHUD_hurt, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (victory_state)
-        {
             draw_sprite_ext(spr_noiseHUD_happy, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (mach1)
-        {
             draw_sprite_ext(spr_noiseHUD_mach1, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (mach2)
-        {
             draw_sprite_ext(spr_noiseHUD_mach2, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (mach3)
-        {
             draw_sprite_ext(spr_noiseHUD_mach3, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (hurt)
-        {
             draw_sprite_ext(spr_noiseHUD_hurt, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
     }
     
     if (obj_player.character == "V")
@@ -121,29 +97,17 @@ if (obj_player.state != states.gameover)
                 draw_sprite_ext(spr_playerV_normalHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
         }
         else if (stun)
-        {
             draw_sprite_ext(spr_playerV_hurtHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (victory_state)
-        {
             draw_sprite_ext(spr_playerV_happyHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (mach1)
-        {
             draw_sprite_ext(spr_playerV_machHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (mach2)
-        {
             draw_sprite_ext(spr_playerV_machHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (mach3)
-        {
             draw_sprite_ext(spr_playerV_machHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
         else if (hurt)
-        {
             draw_sprite_ext(spr_playerV_hurtHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
-        }
     }
     
     if (obj_player.character == "M")

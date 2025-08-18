@@ -7,26 +7,26 @@ if (obj_player.character != "G" || room != rank_room || room != Realtitlescreen 
     
     var pop, idle;
     
-    switch (global.stylethreshold)
+	switch (global.stylethreshold)
     {
         case 0:
-            pop = 931;
-            idle = 930;
+            pop = spr_mildpop;
+            idle = spr_mild;
             break;
         
         case 1:
-            pop = 933;
-            idle = 932;
+            pop = spr_antsypop;
+            idle = spr_antsy;
             break;
         
         case 2:
-            pop = 935;
-            idle = 934;
+            pop = spr_madpop;
+            idle = spr_mad;
             break;
         
         case 3:
-            pop = 937;
-            idle = 936;
+            pop = spr_crazypop;
+            idle = spr_crazy;
             break;
     }
     
@@ -80,23 +80,23 @@ if (obj_player.character != "G" || room != rank_room || room != Realtitlescreen 
         switch (global.stylethreshold)
         {
             case 0:
-                pop = 931;
-                idle = 930;
+                pop = spr_mildpop;
+                idle = spr_mild;
                 break;
             
             case 1:
-                pop = 933;
-                idle = 932;
+                pop = spr_antsypop;
+                idle = spr_antsy;
                 break;
             
             case 2:
-                pop = 935;
-                idle = 934;
+                pop = spr_madpop;
+                idle = spr_mad;
                 break;
             
             case 3:
-                pop = 937;
-                idle = 936;
+                pop = spr_crazypop;
+                idle = spr_crazy;
                 break;
         }
         
@@ -151,26 +151,26 @@ if (obj_player.character != "G" || room != rank_room || room != Realtitlescreen 
         switch (global.stylethreshold)
         {
             case 0:
-                pop = 931;
-                idle = 930;
+                pop = spr_mildpop;
+                idle = spr_mild;
                 squish_scale = 0.05;
                 break;
             
             case 1:
-                pop = 933;
-                idle = 932;
+                pop = spr_antsypop;
+                idle = spr_antsy;
                 squish_scale = 0.1;
                 break;
             
             case 2:
-                pop = 935;
-                idle = 934;
+                pop = spr_madpop;
+                idle = spr_mad;
                 squish_scale = 0.2;
                 break;
             
             case 3:
-                pop = 937;
-                idle = 936;
+                pop = spr_crazypop;
+                idle = spr_crazy;
                 squish_scale = 0.3;
                 break;
         }

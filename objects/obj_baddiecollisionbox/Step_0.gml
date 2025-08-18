@@ -196,7 +196,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
                 if (other.baddieID.state == states.walk || other.baddieID.state == states.turn)
                     other.baddieID.state = states.idle;
                 
-                if (other.baddieID.state == 87)
+                if (other.baddieID.state == states.bounce)
                 {
                     stunned = 30;
                     other.baddieID.state = states.stun;

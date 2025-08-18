@@ -1,14 +1,14 @@
 if (sprite_index == spr_boxcrusher_fall)
 {
     other.image_index = 0;
-    other.state = 65;
+    other.state = states.bump;
     other.x = x;
     other.y = y;
 }
 
 if (sprite_index == spr_boxcrusher_land)
 {
-    other.state = 8;
+    other.state = states.boxxedpep;
     
     if (other.sprite_index != spr_boxxedpep_intro)
     {

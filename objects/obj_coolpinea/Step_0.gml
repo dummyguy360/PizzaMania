@@ -1,35 +1,35 @@
 switch (state)
 {
-    case 86:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case 90:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case 94:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case 96:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case 97:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case 98:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case 101:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
 }
 
-if (state == 98 && stunned > 40 && birdcreated == 0)
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -37,7 +37,7 @@ if (state == 98 && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != 98)
+if (state != states.stun)
     birdcreated = 0;
 
 if (hp <= 0)
@@ -46,7 +46,7 @@ if (hp <= 0)
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (hitboxcreate == 0 && (state == 86 || state == 94))
+if (hitboxcreate == 0 && (state == states.idle || state == states.walk))
 {
     hitboxcreate = 1;
     
@@ -54,10 +54,10 @@ if (hitboxcreate == 0 && (state == 86 || state == 94))
         ID = other.id;
 }
 
-if (state != 101)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != 98)
+if (state != states.stun)
     thrown = 0;
 
 if (boundbox == 0)

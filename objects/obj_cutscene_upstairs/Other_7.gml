@@ -1,7 +1,7 @@
 image_speed = 0;
 obj_player.visible = true;
 obj_camera.visible = true;
-obj_player.state = 54;
+obj_player.state = states.comingoutdoor;
 
 if (instance_exists(obj_pizzakinshroom))
     obj_pizzakinshroom.visible = true;

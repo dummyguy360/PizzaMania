@@ -17,9 +17,7 @@ if (fadealpha > 1)
                     room_goto(obj_player.targetRoom);
             }
             else
-            {
                 show_debug_message("ERROR: targetRoom is not a valid room index: " + string(obj_player.targetRoom));
-            }
         }
     }
 }

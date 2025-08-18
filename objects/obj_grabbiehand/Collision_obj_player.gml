@@ -2,7 +2,7 @@ if (sprite_index == spr_grabbiehand_fall)
 {
     with (obj_player)
     {
-        if (state == 8)
+        if (state == states.boxxedpep)
         {
             scr_sound(sound_losetransformation);
             
@@ -22,7 +22,7 @@ if (sprite_index == spr_grabbiehand_fall)
                 image_index = 4;
         }
         
-        if (state == 6 || state == 7)
+        if (state == states.cheesepep || state == states.cheesepepstick)
         {
             scr_sound(sound_losetransformation);
             instance_create(x, y, obj_slimedebris);
@@ -42,7 +42,7 @@ if (sprite_index == spr_grabbiehand_fall)
     sprite_index = spr_grabbiehand_catch;
     other.image_index = 0;
     obj_player.sprite_index = spr_player_catched;
-    other.state = 65;
+    other.state = states.bump;
     other.x = x;
     other.y = y;
     other.vsp = 0;
@@ -54,7 +54,7 @@ if (sprite_index == spr_grabbiehand_catch)
 {
     other.vsp = 0;
     other.hsp = 0;
-    other.state = 65;
+    other.state = states.bump;
     obj_player.sprite_index = spr_player_catched;
     other.x = x;
     other.y = y;

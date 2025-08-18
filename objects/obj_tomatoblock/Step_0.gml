@@ -27,7 +27,7 @@ with (obj_barrel)
 {
     var block = instance_place(x, y + 1, obj_tomatoblock);
     
-    if (block != -4)
+    if (block != noone)
     {
         with (block)
         {

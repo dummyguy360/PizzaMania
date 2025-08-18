@@ -1,30 +1,30 @@
 switch (state)
 {
-    case 86:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case 90:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case 94:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case 96:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case 97:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case 98:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case 101:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
 }
@@ -55,10 +55,10 @@ if (cigar == 0)
     grabbedspr = spr_pizzaboy;
 }
 
-if (state != 101)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != 98)
+if (state != states.stun)
     thrown = 0;
 
 if (flash == 1 && alarm[2] <= 0)

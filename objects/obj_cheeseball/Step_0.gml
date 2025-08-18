@@ -11,10 +11,10 @@ if (!scr_slope() && instance_place(x + sign(hsp), y, obj_solid))
 scr_collide();
 var bullet = instance_place(x + 1, y, obj_pistolbullet);
 
-if (bullet == -4)
+if (bullet == noone)
     bullet = instance_place(x - 1, y, obj_pistolbullet);
 
-if (bullet != -4)
+if (bullet != noone)
 {
     repeat (8)
         instance_create(x, y, obj_slimedebris);

@@ -1,6 +1,6 @@
-if (hurted == 0 && cutscene == 0 && state != 56 && state != 58)
+if (hurted == 0 && cutscene == 0 && state != states.Sjump && state != states.Sjumpprep)
 {
-    if (state == 17 || state == 18)
+    if (state == states.knightpep || state == states.knightpepattack)
     {
         scr_sound(sfx_metaldestroy);
         
@@ -30,6 +30,6 @@ if (hurted == 0 && cutscene == 0 && state != 56 && state != 58)
     vsp = -4;
     image_index = 0;
     sprite_index = spr_bombpep_end;
-    state = 20;
+    state = states.bombpep;
     bombpeptimer = 0;
 }

@@ -1,6 +1,6 @@
 with (obj_player)
 {
-    if (grounded && state != 83)
+    if (grounded && state != states.mach3)
     {
         xscale = other.image_xscale;
         mach2 = 100;

@@ -1,4 +1,4 @@
-if (sprite_index == sprgot && obj_player.state != 16)
+if (sprite_index == sprgot && obj_player.state != states.gottreasure)
     instance_destroy();
 
 if (spr == spr_cheeseblob)

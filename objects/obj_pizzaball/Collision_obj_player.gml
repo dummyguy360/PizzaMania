@@ -1,4 +1,4 @@
-if (obj_player.character == "M" && obj_player.state == 83 && flying == 0)
+if (obj_player.character == "M" && obj_player.state == states.mach3 && flying == 0)
 {
     scr_sound(sound_combo1);
     global.golfhit += 1;

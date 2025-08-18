@@ -1,4 +1,4 @@
-if (floor(image_index) == (image_number - 1) && sprite_index == spr_cheeseblock && falling == 1)
+if (floor(image_index) == (image_number - 1) && sprite_index == spr_cheeseblock && falling == true)
 {
     image_speed = 0;
     mask_index = spr_masknull;
@@ -13,7 +13,7 @@ if (reset < 0 && !place_meeting(x, y, obj_player))
     reset = 200;
     visible = true;
     image_speed = 0.35;
-    falling = 0;
+    falling = false;
     mask_index = spr_railh2;
     sprite_index = spr_cheeseblockreform;
 }
