@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Vigilante",
-    "path": "folders/Sprites/Player/Vigilante.yy",
+    "name": "Vigilante HUD",
+    "path": "folders/Sprites/HUD/Player HUD/Vigilante HUD.yy",
   },
 }
