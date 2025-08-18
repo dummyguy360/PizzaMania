@@ -1,7 +1,10 @@
-var app_id = "1376316632447713432";
-ready = 0;
+/// @description Initialize Discord.
 
-if (!np_initdiscord(app_id, 1, 0))
+#macro DISCORD_APP_ID "1376316632447713432"
+
+ready = false;
+
+if (!np_initdiscord(DISCORD_APP_ID, true, np_steam_app_id_empty))
 {
     show_message("If you tried to fix NekoPresence, then congrats. I'm not sure how to do it.");
     instance_destroy();
