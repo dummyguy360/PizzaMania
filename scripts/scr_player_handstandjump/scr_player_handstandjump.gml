@@ -2,9 +2,9 @@ function scr_player_handstandjump()
 {
 	if (handstand == 0)
 	{
-	    landAnim = 0;
+	    landAnim = false;
 	    hsp = xscale * movespeed;
-	    momemtum = 1;
+	    momemtum = true;
 	    dir = xscale;
 	    move = key_right + key_left;
 	    move2 = key_right2 + key_left2;
@@ -51,7 +51,7 @@ function scr_player_handstandjump()
 	        sprite_index = spr_crouchslip;
         
 	        if (character == "P")
-	            machhitAnim = 0;
+	            machhitAnim = false;
         
 	        state = states.crouchslide;
 	    }
@@ -60,14 +60,14 @@ function scr_player_handstandjump()
 	    {
 	        wallspeed = 0;
 	        image_index = 0;
-	        machhitAnim = 0;
+	        machhitAnim = false;
 	        state = states.climbwall;
 	    }
 	    else if (!grounded && scr_solid(x - 1, y) && xscale == -1 && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	    {
 	        wallspeed = 0;
 	        image_index = 0;
-	        machhitAnim = 0;
+	        machhitAnim = false;
 	        state = states.climbwall;
 	    }
     
@@ -80,8 +80,8 @@ function scr_player_handstandjump()
 	        vsp = -3;
 	        mach2 = 0;
 	        image_index = 0;
-	        machslideAnim = 1;
-	        machhitAnim = 0;
+	        machslideAnim = true;
+	        machhitAnim = false;
 	        instance_create(x + 10, y + 10, obj_bumpeffect);
 	    }
     
@@ -94,8 +94,8 @@ function scr_player_handstandjump()
 	        vsp = -3;
 	        mach2 = 0;
 	        image_index = 0;
-	        machslideAnim = 1;
-	        machhitAnim = 0;
+	        machslideAnim = true;
+	        machhitAnim = false;
 	        instance_create(x - 10, y + 10, obj_bumpeffect);
 	    }
     
@@ -129,7 +129,7 @@ function scr_player_handstandjump()
 	            image_speed = 0.8;
 	            sprite_index = spr_chainsawstart;
 	            grav = 0.5;
-	            flash = 0;
+	            flash = false;
 	            state = states.chainsaw;
 	        }
         
@@ -141,7 +141,7 @@ function scr_player_handstandjump()
 	            if (!grounded)
 	            {
 	                sprite_index = spr_suplexcancel;
-	                jumpAnim = 0;
+	                jumpAnim = false;
 	                fallAnim = 0;
 	                mach2 = 0;
 	                movespeed = 0;
@@ -164,7 +164,7 @@ function scr_player_handstandjump()
 	            if (!grounded)
 	            {
 	                sprite_index = spr_suplexcancel;
-	                jumpAnim = 1;
+	                jumpAnim = true;
 	                mach2 = 0;
 	                movespeed = 0;
 	                grav = 0.5;
@@ -182,9 +182,9 @@ function scr_player_handstandjump()
 
 	if (handstand == 1)
 	{
-	    landAnim = 0;
+	    landAnim = false;
 	    hsp = xscale * movespeed;
-	    momemtum = 1;
+	    momemtum = true;
 	    dir = xscale;
 	    move = key_right + key_left;
 	    move2 = key_right2 + key_left2;
@@ -238,7 +238,7 @@ function scr_player_handstandjump()
 	        if (!grounded)
 	        {
 	            sprite_index = spr_suplexcancel;
-	            jumpAnim = 0;
+	            jumpAnim = false;
 	            fallAnim = 0;
 	            mach2 = 0;
 	            movespeed = 0;
@@ -252,7 +252,7 @@ function scr_player_handstandjump()
 	{
 	    image_speed = 0.5;
 	    hsp = xscale * movespeed;
-	    momemtum = 1;
+	    momemtum = true;
 	    dir = xscale;
     
 	    if (sprite_index == spr_Sjumpcancelstart && floor(image_index) == (image_number - 1))
@@ -278,7 +278,7 @@ function scr_player_handstandjump()
 	            if (character == "N")
 	                sprite_index = spr_playerN_rollgetup;
             
-	            machhitAnim = 1;
+	            machhitAnim = true;
 	            state = states.mach2;
 	            mach2 = 75;
 	        }
@@ -287,14 +287,14 @@ function scr_player_handstandjump()
 	        {
 	            handstand = 0;
 	            wallspeed = 6;
-	            machhitAnim = 0;
+	            machhitAnim = false;
 	            state = states.climbwall;
 	        }
 	        else if (!grounded && scr_solid(x - 1, y) && xscale == -1 && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(x - 1, y, obj_destructibles))
 	        {
 	            handstand = 0;
 	            wallspeed = 6;
-	            machhitAnim = 0;
+	            machhitAnim = false;
 	            state = states.climbwall;
 	        }
 	    }

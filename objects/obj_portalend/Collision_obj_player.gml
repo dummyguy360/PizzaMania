@@ -1,4 +1,4 @@
-if (obj_player.state != states.portal && global.panic == 1)
+if (obj_player.state != states.portal && global.panic == true)
 {
     obj_player.hsp = 0;
     global.lap += 1;

@@ -28,17 +28,17 @@ with (obj_player)
         vsp = -3;
         image_index = 0;
         obj_player.image_index = 0;
-        obj_player.flash = 1;
+        obj_player.flash = true;
         state = states.bump;
     }
-    else if (state == 20 && hurted == 0)
+    else if (state == 20 && hurted == false)
         instance_create(x, y, obj_bombexplosion);
-    else if (state != states.hurt && hurted == 0 && cutscene == 0 && state != states.bump)
+    else if (state != states.hurt && hurted == false && cutscene == false && state != states.bump)
     {
         scr_sound(sound_damage);
         global.hurtcounter += 1;
         alarm[8] = 60;
-        hurted = 1;
+        hurted = true;
         
         if (xscale == other.image_xscale)
             sprite_index = spr_player_jumphurt;
@@ -50,6 +50,6 @@ with (obj_player)
         instance_create(x, y, obj_spikehurteffect);
         state = states.hurt;
         image_index = 0;
-        flash = 1;
+        flash = true;
     }
 }

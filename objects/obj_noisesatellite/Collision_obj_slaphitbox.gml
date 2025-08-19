@@ -13,7 +13,7 @@ if (hp == 0 && !(state == states.stun && stunned > 40) && state != states.grabbe
     instance_create(x, y, obj_spikehurteffect);
     other.image_xscale = image_xscale;
     slapped = 1;
-    flash = 1;
+    flash = true;
     instance_create(x, y, obj_bumpeffect);
     stunned = 200;
     

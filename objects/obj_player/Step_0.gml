@@ -468,7 +468,7 @@ with (obj_player)
     if (global.playerhealth <= 0 && character == "G" && killreset == 0)
     {
         image_alpha = 0;
-        cutscene = 1;
+        cutscene = true;
         grav = 0;
         vsp = 0;
         hsp = 0;
@@ -506,11 +506,11 @@ with (obj_player)
     if (character == "P")
     {
         if (anger == 0)
-            angry = 0;
+            angry = false;
         
         if (anger > 0)
         {
-            angry = 1;
+            angry = true;
             anger -= 1;
         }
     }
@@ -616,16 +616,16 @@ with (obj_player)
         audio_stop_sound(sound_knightslide);
     
     if (sprite_index == spr_player_winding && state != states.normal)
-        windingAnim = 0;
+        windingAnim = false;
     
     if (state == states.Sjumpprep) { }
     else
         audio_stop_sound(sound_superjumpcharge2);
     
-    if (suplexmove == 1 && scr_solid(x, y + 1))
+    if (suplexmove == true && scr_solid(x, y + 1))
     {
-        suplexmove = 0;
-        flash = 1;
+        suplexmove = false;
+        flash = true;
     }
     
     if (sprite_index == spr_player_idlevomit && image_index > 28 && image_index < 43)
@@ -640,7 +640,7 @@ with (obj_player)
     if (global.playerhealth == 1 && !instance_exists(obj_sweat) && obj_player.state == states.normal)
         instance_create(x, y, obj_sweat);
     
-    if (angry == 1 && !instance_exists(obj_angrycloud) && obj_player.state == states.normal)
+    if (angry == true && !instance_exists(obj_angrycloud) && obj_player.state == states.normal)
         instance_create(x, y, obj_angrycloud);
     
     if (global.combotime > 0 && global.moveset != 1)
@@ -658,41 +658,41 @@ with (obj_player)
     if (input_buffer_highjump < 8)
         input_buffer_highjump++;
     
-    if (key_particles == 1)
+    if (key_particles == true)
         instance_create(random_range(x + 25, x - 25), random_range(y + 35, y - 25), obj_keyeffect);
     
-    if (inv_frames == 0 && hurted == 0)
+    if (inv_frames == false && hurted == false)
         image_alpha = 1;
     
     if ((state == states.mach2 && sprite_index != spr_dive) || state == states.charge || state == states.skateboard || state == states.chainsaw || (state == states.handstandjump && (sprite_index == spr_player_hanstandjump || character == "V")) || state == states.knightpep || state == states.boxxedpep || state == states.cheesepep || state == states.knightpepslopes || state == states.knightpepattack || state == states.bombpep || state == states.facestomp || state == states.machfreefall || state == states.facestomp || state == states.machroll || (state == states.mach3 && sprite_index != spr_dive) || state == states.freefall || state == states.Sjump)
-        attacking = 1;
+        attacking = true;
     else
-        attacking = 0;
+        attacking = false;
     
     if (state == states.Throw || state == states.punch || state == states.backkick || state == states.shoulder || state == states.uppunch)
-        grabbing = 1;
+        grabbing = true;
     else
-        grabbing = 0;
+        grabbing = false;
     
     if ((state == states.mach3 && sprite_index != spr_dive) || state == states.chainsaw || state == states.chainsawpogo || state == states.hookshot || state == states.skateboard || state == states.mach4 || state == states.freefall || state == states.Sjump || state == states.machroll || (state == states.handstandjump && (sprite_index == spr_player_hanstandjump || character == "V")) || state == states.machfreefall || state == states.charge || (state == states.superslam && sprite_index == spr_piledriver) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.boxxedpep || state == states.cheesepep || (state == states.machslide && sprite_index == spr_machslideboost3) || state == states.cheeseball || (state == states.handstandjump && handstand != 0) || (state == states.crouchslide && character == "M") || (sprite_index == spr_dive && character == "M"))
-        instakillmove = 1;
+        instakillmove = true;
     else
-        instakillmove = 0;
+        instakillmove = false;
     
-    if (flash == 1 && alarm[0] <= 0)
+    if (flash == true && alarm[0] <= 0)
         alarm[0] = 0.15 * room_speed;
     
     if (state != states.mach3 && state != states.machslide)
-        autodash = 0;
+        autodash = false;
     
     if ((state != states.jump && state != states.crouchjump && state != states.slap) || vsp < 0)
         fallinganimation = 0;
     
     if (state != states.freefallland && state != states.normal && state != states.machslide)
-        facehurt = 0;
+        facehurt = false;
     
     if (state != states.normal && state != states.machslide)
-        machslideAnim = 0;
+        machslideAnim = false;
     
     if (state != states.normal)
     {
@@ -701,25 +701,25 @@ with (obj_player)
     }
     
     if (state != states.mach1 && state != states.jump && state != states.hookshot && state != states.handstandjump && state != states.normal && state != states.mach2 && state != states.mach3 && state != states.freefallprep && state != states.knightpep && state != states.shotgun && state != states.knightpepslopes)
-        momemtum = 0;
+        momemtum = false;
     
     if (state != states.Sjump && state != states.Sjumpprep)
         a = 0;
     
     if (state != states.facestomp)
-        facestompAnim = 0;
+        facestompAnim = false;
     
     if (state != states.freefall && state != states.facestomp && state != states.superslam && state != states.freefallland)
         superslam = 0;
     
     if (state != states.mach2)
-        machpunchAnim = 0;
+        machpunchAnim = false;
     
     if (state != states.jump)
         ladderbuffer = 0;
     
     if (state != states.jump)
-        stompAnim = 0;
+        stompAnim = false;
     
     if (((state == states.mach3 && sprite_index != spr_dive) || (state == states.mach2 && sprite_index != spr_dive) || state == states.hookshot || (state == states.Sjump && sprite_index != spr_crazyrun) || state == states.machroll || state == states.charge || (state == states.machslide && mach2 >= 100)) && !instance_exists(obj_mach3effect))
     {
@@ -762,14 +762,14 @@ with (obj_player)
         mask_index = spr_crouchmask;
     
     if (state == states.gottreasure || sprite_index == spr_knightpep_start || sprite_index == spr_knightpep_thunder || sprite_index == spr_playerN_knightsword || sprite_index == spr_playerN_knightstart || state == states.keyget || state == states.door || state == states.victory || state == states.comingoutdoor || state == states.gameover)
-        cutscene = 1;
+        cutscene = true;
     else
-        cutscene = 0;
+        cutscene = false;
     
     if (state != states.hurt)
         hurtsound = 0;
     
-    if ((place_meeting(x, y, obj_door) || place_meeting(x, y, obj_keydoor) || (place_meeting(x, y, obj_exitgate) && global.panic == 1)) && !instance_exists(obj_uparrow) && scr_solid(x, y + 1) && state == states.normal)
+    if ((place_meeting(x, y, obj_door) || place_meeting(x, y, obj_keydoor) || (place_meeting(x, y, obj_exitgate) && global.panic == true)) && !instance_exists(obj_uparrow) && scr_solid(x, y + 1) && state == states.normal)
         instance_create(x, y, obj_uparrow);
     
     if (state == states.mach2 && !instance_exists(obj_speedlines))

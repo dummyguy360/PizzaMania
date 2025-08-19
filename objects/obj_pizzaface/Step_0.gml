@@ -4,7 +4,7 @@ y = median(y - maxspeed, obj_player.y, y + maxspeed);
 if (global.geromerooms < 10)
     instance_destroy();
 
-if (hitboxcreate == 0 && obj_player.instakillmove == 0 && obj_player.state != states.handstandjump)
+if (hitboxcreate == 0 && obj_player.instakillmove == false && obj_player.state != states.handstandjump)
 {
     hitboxcreate = 1;
     
@@ -15,7 +15,7 @@ if (hitboxcreate == 0 && obj_player.instakillmove == 0 && obj_player.state != st
     }
 }
 
-if (place_meeting(x, y, obj_player) && (obj_player.instakillmove == 1 || obj_player.state == states.handstandjump))
+if (place_meeting(x, y, obj_player) && (obj_player.instakillmove == true || obj_player.state == states.handstandjump))
 {
     repeat (6)
     {

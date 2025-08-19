@@ -38,7 +38,7 @@ if (sprite_index == spr_grabbiehand_fall)
     
     grav = 0;
     vsp = 0;
-    grabbing = 1;
+    grabbing = true;
     sprite_index = spr_grabbiehand_catch;
     other.image_index = 0;
     obj_player.sprite_index = spr_player_catched;

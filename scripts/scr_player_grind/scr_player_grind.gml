@@ -1,8 +1,8 @@
 function scr_player_grind()
 {
 	vsp = 0;
-	machhitAnim = 0;
-	crouchslideAnim = 1;
+	machhitAnim = false;
+	crouchslideAnim = true;
 	hsp = xscale * movespeed;
 
 	if (!grinding)
@@ -21,7 +21,7 @@ function scr_player_grind()
 	{
 	    vsp = -9;
 	    state = states.mach2;
-	    grinding = 0;
+	    grinding = false;
 	}
 
 	if (character == "P")

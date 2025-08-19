@@ -7,7 +7,7 @@ function scr_fakepeppino_hit()
 	{
 	    with (obj_player)
 	    {
-	        if (state != states.hurt && hurted == 0 && cutscene == 0 && state != states.bump)
+	        if (state != states.hurt && hurted == false && cutscene == false && state != states.bump)
 	        {
 	            if (state != states.backbreaker)
 	            {
@@ -48,7 +48,7 @@ function scr_fakepeppino_hit()
         
 	        alarm[8] = 60;
 	        alarm[7] = 120;
-	        hurted = 1;
+	        hurted = true;
         
 	        if (xscale == other.image_xscale)
 	            sprite_index = spr_hurtjump;
@@ -80,11 +80,11 @@ function scr_fakepeppino_hit()
 	            instance_create(x, y, obj_pizzaloss);
 	        }
         
-	        if (obj_player.shotgunAnim == 0)
+	        if (obj_player.shotgunAnim == false)
 	            global.playerhealth -= 1;
-	        else if (obj_player.shotgunAnim == 1)
+	        else if (obj_player.shotgunAnim == true)
 	        {
-	            obj_player.shotgunAnim = 0;
+	            obj_player.shotgunAnim = false;
             
 	            with (instance_create(x, y, obj_knightdebris))
 	            {
@@ -96,7 +96,7 @@ function scr_fakepeppino_hit()
 	        instance_create(x, y, obj_spikehurteffect);
 	        state = states.hurt;
 	        image_index = 0;
-	        flash = 1;
+	        flash = true;
 	    }
     
 	    state = states.idle;

@@ -5,13 +5,13 @@ function scr_player_climbwall()
 	    if (windingAnim < 200)
 	        windingAnim++;
     
-	    suplexmove = 0;
+	    suplexmove = false;
 	    vsp = -wallspeed;
     
 	    if (wallspeed < 12)
 	        wallspeed += 0.25;
     
-	    crouchslideAnim = 1;
+	    crouchslideAnim = true;
     
 	    if (character != "P")
 	        sprite_index = spr_climbwall;
@@ -48,7 +48,7 @@ function scr_player_climbwall()
         
 	        image_index = 0;
 	        state = states.Sjumpland;
-	        machhitAnim = 0;
+	        machhitAnim = false;
 	        sprite_index = spr_Sjumpland;
 	    }
     
@@ -132,7 +132,7 @@ function scr_player_climbwall()
 	    {
 	        tauntstoredsprite = spr_null;
 	        dir = xscale;
-	        flash = 1;
+	        flash = true;
 	        vsp = -9;
 	        movespeed = 10;
 	        image_index = 0;
@@ -144,7 +144,7 @@ function scr_player_climbwall()
 	    {
 	        tauntstoredsprite = spr_null;
 	        dir = xscale;
-	        flash = 1;
+	        flash = true;
 	        vsp = -9;
 	        movespeed = 10;
 	        image_index = 0;

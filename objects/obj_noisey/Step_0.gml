@@ -48,7 +48,7 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
 if (state != states.stun)
     birdcreated = 0;
 
-if (flash == 1 && alarm[2] <= 0)
+if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
 if (hitboxcreate == 0 && (state == states.idle || state == states.walk) && obj_player.state != states.mach3)

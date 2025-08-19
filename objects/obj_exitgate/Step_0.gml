@@ -1,7 +1,7 @@
-if (global.panic == 1)
+if (global.panic == true)
     image_index = 1;
 
-if (place_meeting(x, y, obj_player) && obj_player.state != states.comingoutdoor && image_index == 1 && global.panic == 0)
+if (place_meeting(x, y, obj_player) && obj_player.state != states.comingoutdoor && image_index == 1 && global.panic == false)
 {
     ds_list_add(global.saveroom, id);
     image_index = 0;

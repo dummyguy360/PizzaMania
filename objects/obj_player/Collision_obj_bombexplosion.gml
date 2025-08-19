@@ -1,4 +1,4 @@
-if (hurted == 0 && cutscene == 0 && state != states.Sjump && state != states.Sjumpprep)
+if (hurted == false && cutscene == false && state != states.Sjump && state != states.Sjumpprep)
 {
     if (state == states.knightpep || state == states.knightpepattack)
     {
@@ -26,7 +26,7 @@ if (hurted == 0 && cutscene == 0 && state != states.Sjump && state != states.Sju
             obj_player.hsp = sign(x - other.x) * 5;
     }
     
-    hurted = 1;
+    hurted = true;
     vsp = -4;
     image_index = 0;
     sprite_index = spr_bombpep_end;

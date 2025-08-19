@@ -54,7 +54,7 @@ walkspr = spr_robot_walk;
 stunspr = spr_robot_stun;
 grabbedspr = spr_robot_stun;
 
-if (flash == 1 && alarm[2] <= 0)
+if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
 if (state != states.grabbed)

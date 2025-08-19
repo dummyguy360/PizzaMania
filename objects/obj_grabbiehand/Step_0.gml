@@ -19,17 +19,17 @@ if ((x <= (xstarte + 6) && x >= (xstarte - 6)) && (y <= (ystarte + 6) && y >= (y
     }
 }
 
-if (grounded && sprite_index == spr_grabbiehand_fall && grabbing == 0)
+if (grounded && sprite_index == spr_grabbiehand_fall && grabbing == false)
 {
     grav = 0;
     sprite_index = spr_grabbiehand_idle;
     vsp = -3;
 }
 
-if ((y <= (ystarte + 6) && y >= (ystarte - 6)) && vsp == -3 && grabbing == 0)
+if ((y <= (ystarte + 6) && y >= (ystarte - 6)) && vsp == -3 && grabbing == false)
     vsp = 0;
 
-if (sprite_index == spr_grabbiehand_catch && released == 0 && grabbing == 1)
+if (sprite_index == spr_grabbiehand_catch && released == 0 && grabbing == true)
 {
     if (dropspotx > x)
         x += 4;
@@ -44,7 +44,7 @@ if (sprite_index == spr_grabbiehand_catch && released == 0 && grabbing == 1)
         y -= 4;
 }
 
-if ((x <= (dropspotx + 5) && x >= (dropspotx - 5)) && (y <= (dropspoty + 5) && y >= (dropspoty - 5)) && released == 0 && grabbing == 1)
+if ((x <= (dropspotx + 5) && x >= (dropspotx - 5)) && (y <= (dropspoty + 5) && y >= (dropspoty - 5)) && released == 0 && grabbing == true)
 {
     obj_player.state = states.freefall;
     image_index = 0;
@@ -52,10 +52,10 @@ if ((x <= (dropspotx + 5) && x >= (dropspotx - 5)) && (y <= (dropspoty + 5) && y
     released = 1;
 }
 
-if (sprite_index == spr_grabbiehand_release && floor(image_index) == (image_number - 1) && released == 1 && grabbing == 1)
+if (sprite_index == spr_grabbiehand_release && floor(image_index) == (image_number - 1) && released == 1 && grabbing == true)
     sprite_index = spr_grabbiehand_idle;
 
-if (sprite_index == spr_grabbiehand_idle && released == 1 && grabbing == 1)
+if (sprite_index == spr_grabbiehand_idle && released == 1 && grabbing == true)
 {
     if (xstarte > x)
         x += 4;
@@ -70,9 +70,9 @@ if (sprite_index == spr_grabbiehand_idle && released == 1 && grabbing == 1)
         y -= 4;
 }
 
-if ((x <= (xstarte + 6) && x >= (xstarte - 6)) && (y <= (ystarte + 6) && y >= (ystarte - 6)) && grabbing == 1 && sprite_index == spr_grabbiehand_idle)
+if ((x <= (xstarte + 6) && x >= (xstarte - 6)) && (y <= (ystarte + 6) && y >= (ystarte - 6)) && grabbing == true && sprite_index == spr_grabbiehand_idle)
 {
-    grabbing = 0;
+    grabbing = false;
     released = 0;
 }
 

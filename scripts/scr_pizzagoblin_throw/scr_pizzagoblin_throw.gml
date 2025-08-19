@@ -2,6 +2,7 @@ function scr_pizzagoblin_throw()
 {
 	if (!variable_global_exists("throw_frame"))
 	{
+		// What frame should the enemy be on to throw stuff
 	    global.throw_frame = 0;
 	    global.throw_frame[obj_pizzagoblin] = 2;
 	    global.throw_frame[obj_cheeserobot] = 6;
@@ -10,6 +11,7 @@ function scr_pizzagoblin_throw()
 	    global.throw_frame[obj_invtrash] = 2;
 	    global.throw_frame[obj_robot] = 2;
 		
+		// What sprite should the enemy go to when throwing
 	    global.throw_sprite = spr_plug;
 	    global.throw_sprite[obj_pizzagoblin] = spr_pizzagoblin_throwbomb;
 	    global.throw_sprite[obj_cheeserobot] = spr_cheeserobot_attack;
@@ -18,6 +20,7 @@ function scr_pizzagoblin_throw()
 	    global.throw_sprite[obj_invtrash] = spr_invtrash_throw;
 	    global.throw_sprite[obj_robot] = spr_robot_attack;
 		
+		// How long before the enemy throws something again
 	    global.reset_timer = 0;
 	    global.reset_timer[obj_pizzagoblin] = 200;
 	    global.reset_timer[obj_cheeserobot] = 200;
@@ -27,18 +30,23 @@ function scr_pizzagoblin_throw()
 	    global.reset_timer[obj_spitcheese] = 100;
 	}
 
+	// Stop moving
 	hsp = 0;
 
+	// Change speed if I'm touching a rail
 	if (place_meeting(x, y + 1, obj_railh))
 	    hsp = -5;
 	else if (place_meeting(x, y + 1, obj_railh2))
 	    hsp = 5;
 
+	// Check if bomb timer expired and I'm on the right animation frame
 	if (bombreset == 0 && floor(image_index) == global.throw_frame[object_index])
 	{
+		// Set bomb timer and animation frame
 	    bombreset = global.reset_timer[object_index];
 	    sprite_index = global.throw_sprite[object_index];
     
+		// Spawn the right projectile
 	    switch (object_index)
 	    {
 	        case obj_pizzagoblin:
@@ -91,12 +99,14 @@ function scr_pizzagoblin_throw()
 	    }
 	}
 
+	// If I'm standing then return to idle
 	if (floor(image_index) == (image_number - 1) && grounded)
 	{
 	    state = states.idle;
 	    image_index = 0;
 	}
 
+	// Bump away from enemies and one-way walls?
 	if (!grounded && hsp < 0)
 	    hsp += 0.1;
 	else if (!grounded && hsp > 0)

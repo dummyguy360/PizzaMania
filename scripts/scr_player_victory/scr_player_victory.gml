@@ -2,14 +2,14 @@ function scr_player_victory()
 {
 	hsp = 0;
 	mach2 = 0;
-	jumpAnim = 1;
+	jumpAnim = true;
 	dashAnim = 1;
-	landAnim = 0;
-	moveAnim = 1;
-	stopAnim = 1;
-	crouchslideAnim = 1;
-	crouchAnim = 1;
-	machhitAnim = 0;
+	landAnim = false;
+	moveAnim = true;
+	stopAnim = true;
+	crouchslideAnim = true;
+	crouchAnim = true;
+	machhitAnim = false;
 
 	if (place_meeting(x, y, obj_keydoor))
 	{

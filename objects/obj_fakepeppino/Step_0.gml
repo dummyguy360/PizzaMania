@@ -1,7 +1,7 @@
 if (obj_player.character == "G")
     instance_destroy();
 
-if (global.panic == 1 && obj_player.character != "G")
+if (global.panic == true && obj_player.character != "G")
 {
     switch (state)
     {
@@ -29,7 +29,7 @@ if (place_meeting(x + hsp, y, obj_destructibles))
         instance_destroy();
 }
 
-if (global.panic == 1)
+if (global.panic == true)
     appeartimer--;
 
 if (appeartimer == 0)

@@ -48,7 +48,7 @@ if (jingle == 0)
     if (room == Titlescreen || room == gerome_room1)
         currentlyplaying = music_outside;
     
-    if (global.panic == 0)
+    if (global.panic == false)
     {
         switch (room)
         {
@@ -120,31 +120,31 @@ if (jingle == 0)
 if (instance_exists(obj_player) && obj_player.state != 57 && room != rank_room && room != timesuproom && obj_player.state != 16 && obj_player.sprite_index != obj_player.spr_Timesup)
     jingle = 0;
 
-if (global.panic == 1 && jingle == 0 && global.lap == 1 && obj_player.character == "P")
+if (global.panic == true && jingle == 0 && global.lap == 1 && obj_player.character == "P")
     currentlyplaying = music_pizzatime;
 
-if (global.panic == 1 && jingle == 0 && global.lap > 1 && obj_player.character == "P")
+if (global.panic == true && jingle == 0 && global.lap > 1 && obj_player.character == "P")
     currentlyplaying = music_escapetheme2;
 
-if (global.panic == 1 && jingle == 0 && global.lap == 1 && obj_player.character == "N")
+if (global.panic == true && jingle == 0 && global.lap == 1 && obj_player.character == "N")
     currentlyplaying = music_noiseescape;
 
-if (global.panic == 1 && jingle == 0 && global.lap > 1 && obj_player.character == "N")
+if (global.panic == true && jingle == 0 && global.lap > 1 && obj_player.character == "N")
     currentlyplaying = music_escapeN;
 
-if (global.panic == 1 && jingle == 0 && global.lap == 1 && obj_player.character == "V")
+if (global.panic == true && jingle == 0 && global.lap == 1 && obj_player.character == "V")
     currentlyplaying = music_escape3;
 
-if (global.panic == 1 && jingle == 0 && global.lap > 1 && obj_player.character == "V")
+if (global.panic == true && jingle == 0 && global.lap > 1 && obj_player.character == "V")
     currentlyplaying = music_escape4;
 
-if (global.panic == 1 && jingle == 0 && global.lap == 1 && obj_player.character == "M")
+if (global.panic == true && jingle == 0 && global.lap == 1 && obj_player.character == "M")
     currentlyplaying = music_escape3;
 
-if (global.panic == 1 && jingle == 0 && global.lap > 1 && obj_player.character == "M")
+if (global.panic == true && jingle == 0 && global.lap > 1 && obj_player.character == "M")
     currentlyplaying = music_escape4;
 
-if (global.panic == 1 && jingle == 0 && obj_player.character == "G")
+if (global.panic == true && jingle == 0 && obj_player.character == "G")
     currentlyplaying = music_gerome;
 
 if (jingle == 0)

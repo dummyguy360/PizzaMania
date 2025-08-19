@@ -14,7 +14,7 @@ function scr_player_barrelslipnslide()
 	if (floor(image_index) == 6)
 	{
 	    state = states.barrelroll;
-	    flash = 1;
+	    flash = true;
 	}
 	else
 	    image_speed = 0.35;

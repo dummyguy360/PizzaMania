@@ -63,13 +63,13 @@ function scr_player_Sjumpprep()
 
 	start_running = 1;
 	alarm[4] = 14;
-	jumpAnim = 1;
+	jumpAnim = true;
 	dashAnim = 1;
-	landAnim = 0;
-	machslideAnim = 1;
-	moveAnim = 1;
-	stopAnim = 1;
-	crouchslideAnim = 1;
-	crouchAnim = 1;
+	landAnim = false;
+	machslideAnim = true;
+	moveAnim = true;
+	stopAnim = true;
+	crouchslideAnim = true;
+	crouchAnim = true;
 	image_speed = (character == "P") ? 0.35 : 0.7;
 }

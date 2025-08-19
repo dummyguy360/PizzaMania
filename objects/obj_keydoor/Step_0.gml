@@ -1,4 +1,4 @@
-if (obj_player.state == states.normal && obj_player.key_up && global.key_inv == 1 && place_meeting(x, y, obj_player))
+if (obj_player.state == states.normal && obj_player.key_up && global.key_inv == true && place_meeting(x, y, obj_player))
 {
     if (obj_player.character != "G")
         ds_list_add(global.saveroom, id);
@@ -10,7 +10,7 @@ if (obj_player.state == states.normal && obj_player.key_up && global.key_inv == 
     sprite_index = spr_doorkeyopen;
     image_speed = 0.35;
     instance_create(x + 50, y + 50, obj_lock);
-    global.key_inv = 0;
+    global.key_inv = false;
     
     if (obj_player.character == "G")
     {

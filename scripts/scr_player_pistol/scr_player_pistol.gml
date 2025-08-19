@@ -4,13 +4,13 @@ function scr_player_pistol()
 	{
 	    hsp = xscale * movespeed;
 	    move = key_left + key_right;
-	    jumpAnim = 1;
+	    jumpAnim = true;
 	    dashAnim = 1;
-	    landAnim = 0;
-	    moveAnim = 1;
-	    stopAnim = 1;
-	    crouchslideAnim = 1;
-	    crouchAnim = 1;
+	    landAnim = false;
+	    moveAnim = true;
+	    stopAnim = true;
+	    crouchslideAnim = true;
+	    crouchAnim = true;
     
 	    if (move != 0)
 	    {
@@ -58,7 +58,7 @@ function scr_player_pistol()
 	        state = states.crouchslide;
 	    }
     
-	    if (shoot == 1 && floor(image_index) == 0 && (sprite_index == spr_playerV_revolvershoot || sprite_index == spr_playerV_airrevolver))
+	    if (shoot == true && floor(image_index) == 0 && (sprite_index == spr_playerV_revolvershoot || sprite_index == spr_playerV_airrevolver))
 	    {
 	        with (obj_camera)
 	        {
@@ -78,10 +78,10 @@ function scr_player_pistol()
         
 	        var ID = instance_create(box + (xscale * 10), y, obj_pistolbullet);
 	        ID.hspeed = xscale * 15;
-	        shoot = 0;
+	        shoot = false;
 	    }
     
-	    if (shoot == 1 && floor(image_index) == 0 && sprite_index == spr_player_crouchshoot)
+	    if (shoot == true && floor(image_index) == 0 && sprite_index == spr_player_crouchshoot)
 	    {
 	        with (obj_camera)
 	        {
@@ -101,10 +101,10 @@ function scr_player_pistol()
         
 	        var ID = instance_create(box + (xscale * 10), y + 20, obj_pistolbullet);
 	        ID.hspeed = xscale * 15;
-	        shoot = 0;
+	        shoot = false;
 	    }
     
-	    if (shoot == 1 && floor(image_index) == 0 && sprite_index == spr_player_shootup)
+	    if (shoot == true && floor(image_index) == 0 && sprite_index == spr_player_shootup)
 	    {
 	        with (obj_camera)
 	        {
@@ -121,10 +121,10 @@ function scr_player_pistol()
 	        var box = bbox_top;
 	        var ID = instance_create(x + (-xscale * 16), box, obj_pistolbullet);
 	        ID.vspeed = -15;
-	        shoot = 0;
+	        shoot = false;
 	    }
     
-	    if (shoot == 1 && floor(image_index) == 0 && sprite_index == spr_player_shootdiagonal)
+	    if (shoot == true && floor(image_index) == 0 && sprite_index == spr_player_shootdiagonal)
 	    {
 	        with (obj_camera)
 	        {
@@ -147,14 +147,14 @@ function scr_player_pistol()
 	        var ID = instance_create(x + (-xscale * 5), box + 12, obj_pistolbullet);
 	        ID.vspeed = -15;
 	        ID.hspeed = xscale * 15;
-	        shoot = 0;
+	        shoot = false;
 	    }
     
 	    if (key_shoot && !grounded && floor(image_index) == (image_number - 1))
 	    {
 	        image_index = 0;
 	        sprite_index = spr_playerV_airrevolver;
-	        shoot = 1;
+	        shoot = true;
 	    }
     
 	    if (floor(image_index) != (image_number - 1))
@@ -167,13 +167,13 @@ function scr_player_pistol()
 	{
 	    hsp = xscale * movespeed;
 	    move = key_left + key_right;
-	    jumpAnim = 1;
+	    jumpAnim = true;
 	    dashAnim = 1;
-	    landAnim = 0;
-	    moveAnim = 1;
-	    stopAnim = 1;
-	    crouchslideAnim = 1;
-	    crouchAnim = 1;
+	    landAnim = false;
+	    moveAnim = true;
+	    stopAnim = true;
+	    crouchslideAnim = true;
+	    crouchAnim = true;
     
 	    if (move != 0)
 	    {
@@ -213,7 +213,7 @@ function scr_player_pistol()
 	        state = states.mach3;
 	    }
     
-	    if (shoot == 1 && floor(image_index) == 0 && sprite_index == spr_playerV_dynamitethrow)
+	    if (shoot == true && floor(image_index) == 0 && sprite_index == spr_playerV_dynamitethrow)
 	    {
 	        with (instance_create(x + (xscale * 10), y - 5, obj_pistoleffect))
 	            image_xscale = other.xscale;
@@ -232,7 +232,7 @@ function scr_player_pistol()
 	        else
 	            ID.hspeed = 6 * xscale;
         
-	        shoot = 0;
+	        shoot = false;
 	    }
 	}
 }

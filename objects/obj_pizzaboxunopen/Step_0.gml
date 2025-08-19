@@ -11,9 +11,9 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
     
     if (obj_player.state == states.mach2)
     {
-        if (obj_player.machpunchAnim == 0)
+        if (obj_player.machpunchAnim == false)
         {
-            obj_player.machpunchAnim = 1;
+            obj_player.machpunchAnim = true;
             obj_player.image_index = 0;
         }
     }

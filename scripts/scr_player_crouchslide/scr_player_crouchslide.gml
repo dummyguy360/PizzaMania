@@ -25,7 +25,7 @@ function scr_player_crouchslide()
 	    if (instance_exists(obj_highjumpcloud1))
 	        instance_create(x, y, obj_highjumpcloud1);
     
-	    flash = 1;
+	    flash = true;
 	    vsp = -15;
 	    global.was_grounded = 1;
 	    image_index = 0;
@@ -53,7 +53,7 @@ function scr_player_crouchslide()
 	        sprite_index = spr_playerN_rollgetup;
     
 	    if (character == "N")
-	        machhitAnim = 1;
+	        machhitAnim = true;
     
 	    if (character != "M")
 	    {
@@ -65,7 +65,7 @@ function scr_player_crouchslide()
 	    if (character == "M")
 	    {
 	        sprite_index = spr_mach4;
-	        flash = 0;
+	        flash = false;
 	        mach2 = 100;
 	        state = states.mach3;
 	        movespeed = 12;
@@ -74,7 +74,7 @@ function scr_player_crouchslide()
 
 	if (key_down && !key_jump && !grounded && !place_meeting(x, y, obj_dashpad))
 	{
-	    flash = 0;
+	    flash = false;
 	    vsp = 15;
 	    sprite_index = spr_dive;
 	}
@@ -87,9 +87,9 @@ function scr_player_crouchslide()
 	    state = states.crouch;
 	    movespeed = 0;
 	    mach2 = 0;
-	    crouchslideAnim = 1;
+	    crouchslideAnim = true;
 	    image_index = 0;
-	    crouchAnim = 1;
+	    crouchAnim = true;
 	    start_running = 1;
 	    alarm[4] = 14;
 	}
@@ -104,11 +104,11 @@ function scr_player_crouchslide()
 	    image_index = 0;
     
 	    if (character != "M")
-	        machslideAnim = 1;
+	        machslideAnim = true;
 	    else
-	        machslideAnim = 0;
+	        machslideAnim = false;
     
-	    machhitAnim = 0;
+	    machhitAnim = false;
 	    instance_create(x + 10, y + 10, obj_bumpeffect);
 	}
 
@@ -123,11 +123,11 @@ function scr_player_crouchslide()
 	    image_index = 0;
     
 	    if (character != "M")
-	        machslideAnim = 1;
+	        machslideAnim = true;
 	    else
-	        machslideAnim = 0;
+	        machslideAnim = false;
     
-	    machhitAnim = 0;
+	    machhitAnim = false;
 	    instance_create(x - 10, y + 10, obj_bumpeffect);
 	}
 

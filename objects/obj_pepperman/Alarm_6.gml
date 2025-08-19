@@ -1,6 +1,6 @@
 if (sprite_index == chargespr || sprite_index == hurtspr)
 {
-    flash = 1;
+    flash = true;
     alarm[6] = 10;
 }
 else

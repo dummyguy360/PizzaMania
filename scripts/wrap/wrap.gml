@@ -1,5 +1,10 @@
+/// @description wrap(value,min,max)
+/// @param value
+/// @param min
+/// @param max
 function wrap()
 {
+	//returns the value wrapped.  If it is above or below the threshold it will wrap around
 	var _val = argument[0];
 	var _max = argument[2];
 	var _min = argument[1];

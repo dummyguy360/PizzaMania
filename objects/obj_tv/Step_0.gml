@@ -188,7 +188,7 @@ if (!handled && global.combotime == 0 && tvsprite == spr_tvcombo)
     handled = 1;
 }
 
-if (!handled && global.panic == 1)
+if (!handled && global.panic == true)
 {
     tvsprite = spr_tvescape;
     image_speed = 0.1;
@@ -203,7 +203,7 @@ if (!handled && obj_player.state == states.keyget)
     handled = 1;
 }
 
-if (!handled && instance_exists(obj_noise_pushbutton) && obj_noise_pushbutton.hsp != 0 && global.panic == 0)
+if (!handled && instance_exists(obj_noise_pushbutton) && obj_noise_pushbutton.hsp != 0 && global.panic == false)
 {
     message = "Uh oh...";
     showtext = 1;

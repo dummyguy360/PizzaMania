@@ -54,7 +54,7 @@ walkspr = spr_cheeserobot_walk;
 stunspr = spr_cheeserobot_stun;
 grabbedspr = spr_cheeserobot_stun;
 
-if (flash == 1 && alarm[2] <= 0)
+if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
 if (hp <= 0)

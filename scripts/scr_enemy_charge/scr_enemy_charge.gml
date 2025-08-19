@@ -36,6 +36,7 @@ function scr_enemy_charge()
 	    sprite_index = spr_peasanto_attack;
 	}
 
+	//Pizzice
 	if (object_index == obj_pizzice)
 	{
 	    hsp = image_xscale * movespeed;
@@ -47,6 +48,7 @@ function scr_enemy_charge()
 	    sprite_index = spr_pizzice_walk;
 	}
 
+	//Fencer
 	if (object_index == obj_ninja)
 	{
 	    hsp = image_xscale * (movespeed * 2);

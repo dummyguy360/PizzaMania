@@ -1,3 +1,3 @@
-hurted = 0;
-inv_frames = 0;
-key_particles = 0;
+hurted = false;
+inv_frames = false;
+key_particles = false;

@@ -17,7 +17,7 @@ if (fadealpha > 1)
         room = rank_room;
     
     audio_stop_all();
-    global.panic = 0;
+    global.panic = false;
 }
 
 if (fadein == 0)

@@ -5,7 +5,7 @@ if (place_meeting(x, y - 1, obj_player) && (obj_player.x >= (x - 8) && obj_playe
 {
     obj_player.state = states.barrelcrouch;
     obj_player.image_index = 0;
-    obj_player.barrel = 1;
+    obj_player.barrel = true;
     obj_player.vsp = 10;
     instance_destroy();
 }
@@ -13,14 +13,14 @@ if (place_meeting(x, y - 1, obj_player) && (obj_player.x >= (x - 8) && obj_playe
 if (grounded)
 {
     hsp = 0;
-    bounce = 0;
+    bounce = false;
 }
 
-if (place_meeting(x - 5, y, obj_player) && obj_player.image_xscale == 1 && (obj_player.state == states.mach1 || obj_player.state == states.mach2 || obj_player.state == states.mach3) && bounce == 0)
+if (place_meeting(x - 5, y, obj_player) && obj_player.image_xscale == 1 && (obj_player.state == states.mach1 || obj_player.state == states.mach2 || obj_player.state == states.mach3) && bounce == false)
 {
     vsp = -3;
     hsp = 3;
-    bounce = 1;
+    bounce = true;
     obj_player.state = states.tackle;
     obj_player.image_index = 0;
     obj_player.mach2 = 0;
@@ -30,11 +30,11 @@ if (place_meeting(x - 5, y, obj_player) && obj_player.image_xscale == 1 && (obj_
         audio_play_sound(sfx_bump, 1, false);
 }
 
-if (place_meeting(x + 5, y, obj_player) && obj_player.image_xscale == -1 && (obj_player.state == states.mach1 || obj_player.state == states.mach2) && bounce == 0)
+if (place_meeting(x + 5, y, obj_player) && obj_player.image_xscale == -1 && (obj_player.state == states.mach1 || obj_player.state == states.mach2) && bounce == false)
 {
     vsp = -3;
     hsp = -3;
-    bounce = 1;
+    bounce = true;
     obj_player.state = states.tackle;
     obj_player.image_index = 0;
     audio_sound_gain(sfx_bump, 0.7, 0);

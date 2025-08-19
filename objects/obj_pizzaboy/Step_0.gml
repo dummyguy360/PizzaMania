@@ -61,5 +61,5 @@ if (state != states.grabbed)
 if (state != states.stun)
     thrown = 0;
 
-if (flash == 1 && alarm[2] <= 0)
+if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;

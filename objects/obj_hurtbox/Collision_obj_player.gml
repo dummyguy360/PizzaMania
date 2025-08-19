@@ -1,9 +1,9 @@
 with (obj_player)
 {
-    if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes) && cutscene == 0)
+    if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes) && cutscene == false)
         continue;
     
-    if (state == states.bombpep && hurted == 0)
+    if (state == states.bombpep && hurted == false)
         continue;
     
     if (state == states.boxxedpep)
@@ -12,7 +12,7 @@ with (obj_player)
     if (state == states.cheesepep || state == states.cheesepepstick)
         continue;
     
-    if (state != states.hurt && hurted == 0 && cutscene == 0 && state != states.bump)
+    if (state != states.hurt && hurted == false && cutscene == false && state != states.bump)
     {
         scr_sound(sound_touchspike);
         
@@ -30,7 +30,7 @@ with (obj_player)
         global.hurtcounter += 1;
         alarm[8] = 60;
         alarm[7] = 120;
-        hurted = 1;
+        hurted = true;
         
         if (xscale == other.image_xscale)
             sprite_index = spr_hurtjump;
@@ -62,11 +62,11 @@ with (obj_player)
             instance_create(x, y, obj_pizzaloss);
         }
         
-        if (obj_player.shotgunAnim == 0)
+        if (obj_player.shotgunAnim == false)
             global.playerhealth -= 1;
-        else if (obj_player.shotgunAnim == 1)
+        else if (obj_player.shotgunAnim == true)
         {
-            obj_player.shotgunAnim = 0;
+            obj_player.shotgunAnim = false;
             
             with (instance_create(x, y, obj_knightdebris))
             {
@@ -78,6 +78,6 @@ with (obj_player)
         instance_create(x, y, obj_spikehurteffect);
         state = states.hurt;
         image_index = 0;
-        flash = 1;
+        flash = true;
     }
 }

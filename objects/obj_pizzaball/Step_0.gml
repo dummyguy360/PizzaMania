@@ -51,7 +51,7 @@ if (flying > 0)
 if (state != states.stun)
     birdcreated = 0;
 
-if (flash == 1 && alarm[2] <= 0)
+if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
 if (hp != 5)

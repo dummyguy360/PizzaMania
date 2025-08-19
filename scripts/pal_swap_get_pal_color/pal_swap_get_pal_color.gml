@@ -1,5 +1,13 @@
+/// @description pal_swap_get_pal_color(palette sprite,pal index, color index)
+/// @param palette sprite
+/// @param pal index
+/// @param  color index
 function pal_swap_get_pal_color()
 {
+	//returns the color for the given palette for the given palette sprite.
+
+	//YOU MUST INDEX YOUR PALETTE FOR THIS TO WORK USING pal_swap_index_palette()!
+	//If you are going to index a palette do it once at the beginning of your game!
 	var _palettes = global.Pal_Map[? argument[0]];
 	var _current_pal = _palettes[| argument[1]];
 	return _current_pal[| argument[2]];

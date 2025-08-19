@@ -3,7 +3,7 @@ if (turning == 0)
 else
     hsp = -image_xscale * movespeed;
 
-if (flash == 1 && alarm[2] <= 0)
+if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
 if (state != states.grabbed)

@@ -6,7 +6,7 @@ if (grounded)
     sprite_index = spr_barrel;
     image_speed = 0;
     hsp = 0;
-    bounce = 0;
+    bounce = false;
 }
 
 if (!grounded)
@@ -15,7 +15,7 @@ if (!grounded)
     image_speed = 0.35;
 }
 
-if (place_meeting(x - 5, y, obj_player) && obj_player.dir == 1 && bounce == 0)
+if (place_meeting(x - 5, y, obj_player) && obj_player.dir == 1 && bounce == false)
 {
     vsp = -9;
     hsp = 7;
@@ -27,10 +27,10 @@ if (place_meeting(x - 5, y, obj_player) && obj_player.dir == 1 && bounce == 0)
         obj_player.state = states.tackle;
     }
     
-    bounce = 1;
+    bounce = true;
 }
 
-if (place_meeting(x + 5, y, obj_player) && obj_player.dir != 1 && bounce == 0)
+if (place_meeting(x + 5, y, obj_player) && obj_player.dir != 1 && bounce == false)
 {
     vsp = -9;
     hsp = -7;
@@ -42,16 +42,16 @@ if (place_meeting(x + 5, y, obj_player) && obj_player.dir != 1 && bounce == 0)
         obj_player.state = states.tackle;
     }
     
-    bounce = 1;
+    bounce = true;
 }
 
-if (place_meeting(x, y + 1, obj_player) && bounce == 0)
+if (place_meeting(x, y + 1, obj_player) && bounce == false)
 {
     vsp = -9;
     hsp = 0;
     obj_player.vsp = 4;
     obj_player.state = states.bump;
-    bounce = 1;
+    bounce = true;
 }
 
 if (place_meeting(x - 5, y, obj_spike) && !scr_sound(sound_destroyblock1))

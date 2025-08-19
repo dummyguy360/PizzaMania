@@ -183,9 +183,9 @@ if (obj_player.character != "G" || room != rank_room || room != Realtitlescreen 
         sprite = idle;
     
     if (sprite == spr_crazypop || sprite == spr_crazy)
-        obj_player.angry = 1;
+        obj_player.angry = true;
     else
-        obj_player.angry = 0;
+        obj_player.angry = false;
     
     if (global.style < 0 && global.stylethreshold == 0)
         global.style = 0;

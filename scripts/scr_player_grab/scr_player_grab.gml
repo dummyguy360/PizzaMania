@@ -94,7 +94,7 @@ function scr_player_grab()
 	    }
 	}
 
-	landAnim = 0;
+	landAnim = false;
 
 	if (key_jump)
 	{

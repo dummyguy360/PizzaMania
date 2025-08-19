@@ -1,4 +1,4 @@
-global.panic = 1;
+global.panic = true;
 global.seconds = 30;
 global.minutes = 1;
-global.keyget = 1;
+global.keyget = true;

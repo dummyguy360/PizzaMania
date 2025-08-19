@@ -41,7 +41,7 @@ if (obj_player.state != states.gameover)
         {
             if (global.playerhealth == 1)
                 draw_sprite_ext(spr_pepinoHUD1hp, -1, 150, 100, 1, 1, 1, c_white, alpha);
-            else if (obj_player.angry == 1)
+            else if (obj_player.angry == true)
                 draw_sprite_ext(spr_pepinoHUD3hp, -1, 150, 100, 1, 1, 1, c_white, alpha);
             else
                 draw_sprite_ext(spr_pepinoHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
@@ -66,7 +66,7 @@ if (obj_player.state != states.gameover)
         {
             if (global.playerhealth == 1)
                 draw_sprite_ext(spr_noiseHUD_lowhealth, -1, 150, 100, 1, 1, 1, c_white, alpha);
-            else if (obj_player.angry == 1)
+            else if (obj_player.angry == true)
                 draw_sprite_ext(spr_noiseHUD_angry, -1, 150, 100, 1, 1, 1, c_white, alpha);
             else
                 draw_sprite_ext(spr_noiseHUD_idle, -1, 150, 100, 1, 1, 1, c_white, alpha);
@@ -91,7 +91,7 @@ if (obj_player.state != states.gameover)
         {
             if (global.playerhealth == 1)
                 draw_sprite_ext(spr_playerV_angryHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
-            else if (obj_player.angry == 1)
+            else if (obj_player.angry == true)
                 draw_sprite_ext(spr_playerV_angryHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
             else
                 draw_sprite_ext(spr_playerV_normalHUD, -1, 150, 100, 1, 1, 1, c_white, alpha);
@@ -163,7 +163,7 @@ if (obj_player.state != states.gameover)
     }
 }
 
-if (global.key_inv == 1)
+if (global.key_inv == true)
 {
     draw_sprite_ext(spr_key, -1, 50, 30, 1, 1, 1, c_white, alpha);
     draw_sprite_ext(spr_inv, -1, 50, 30, 1, 1, 1, c_white, alpha);

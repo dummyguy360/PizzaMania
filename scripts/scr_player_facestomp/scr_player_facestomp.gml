@@ -1,7 +1,7 @@
 function scr_player_facestomp()
 {
 	move = key_left + key_right;
-	jumpAnim = 0;
+	jumpAnim = false;
 	hsp = move * movespeed;
 
 	if ((scr_solid(x + 1, y) && xscale == 1) || (scr_solid(x - 1, y) && xscale == -1))
@@ -22,7 +22,7 @@ function scr_player_facestomp()
 	if (!key_down)
 	    state = states.jump;
 
-	landAnim = 1;
+	landAnim = true;
 
 	if (vsp > 0)
 	    superslam++;
@@ -39,8 +39,8 @@ function scr_player_facestomp()
 	{
 	    scr_sound(sfx_facestomp);
 	    state = states.freefallland;
-	    jumpAnim = 1;
-	    jumpstop = 0;
+	    jumpAnim = true;
+	    jumpstop = false;
 	    image_index = 0;
     
 	    if (!place_meeting(x, y, obj_water2))
@@ -53,14 +53,14 @@ function scr_player_facestomp()
 	        audio_play_sound(sfx_land, 1, false);
 	}
 
-	if (facestompAnim == 0)
+	if (facestompAnim == false)
 	    sprite_index = spr_player_facestomp;
-	else if (facestompAnim == 1)
+	else if (facestompAnim == true)
 	{
 	    sprite_index = spr_player_facestomphit;
     
 	    if (floor(image_index) == 5)
-	        facestompAnim = 0;
+	        facestompAnim = false;
 	}
 
 	if (move != 0)
@@ -71,11 +71,11 @@ function scr_player_facestomp()
 	if (grounded && input_buffer_jump < 8 && vsp > 0)
 	{
 	    sprite_index = spr_player_hanstandjump;
-	    stompAnim = 0;
+	    stompAnim = false;
 	    hsp = 0;
 	    state = states.handstandjump;
-	    jumpAnim = 1;
-	    jumpstop = 0;
+	    jumpAnim = true;
+	    jumpstop = false;
 	    image_index = 0;
     
 	    if (!place_meeting(x, y, obj_water2))

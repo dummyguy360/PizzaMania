@@ -43,7 +43,7 @@ if (state != states.stun)
 if (hp <= 0)
     instance_destroy();
 
-if (flash == 1 && alarm[2] <= 0)
+if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
 if (hitboxcreate == 0 && (state == states.idle || state == states.walk))

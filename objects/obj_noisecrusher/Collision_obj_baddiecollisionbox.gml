@@ -7,7 +7,7 @@ if (instance_exists(other.baddieID))
             other.state = states.stun;
             instance_create(other.x, other.y, obj_slapstar);
             instance_create(other.x, other.y, obj_baddiegibs);
-            other.flash = 1;
+            other.flash = true;
             global.hit += 1;
             scr_sound(sound_tackleenemy);
             instance_create(x, y, obj_bumpeffect);

@@ -84,7 +84,7 @@ function scr_player_chainsaw()
 	    }
 	}
 
-	landAnim = 0;
+	landAnim = false;
 	hsp = xscale * movespeed;
 
 	if (move == -1 && xscale == 1 && global.chainsawcooldown == 0)
@@ -115,7 +115,7 @@ function scr_player_chainsaw()
 
 	if (sprite_index == spr_chainsawend)
 	{
-	    flash = 1;
+	    flash = true;
 	    image_index = 0;
     
 	    if (move != 0 || character == "N")

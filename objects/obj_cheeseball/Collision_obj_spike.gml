@@ -24,7 +24,7 @@ if (obj_player.state == states.cheeseball)
         obj_player.visible = true;
         image_index = 0;
         obj_player.image_index = 0;
-        obj_player.flash = 1;
+        obj_player.flash = true;
         state = states.bump;
     }
 }

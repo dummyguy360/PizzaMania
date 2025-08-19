@@ -4,10 +4,10 @@ if (invframes == 0)
     {
         with (obj_player)
         {
-            if (y > other.y && other.vsp > 1 && other.grounded == 0 && other.state == states.bounce)
+            if (y > other.y && other.vsp > 1 && other.grounded == false && other.state == states.bounce)
                 other.caughtplayer = 1;
             
-            if (y < other.y && attacking == 0 && state == states.jump && vsp > 0 && sprite_index != spr_player_stompprep)
+            if (y < other.y && attacking == false && state == states.jump && vsp > 0 && sprite_index != spr_player_stompprep)
             {
                 if (other.helmet == 0)
                 {
@@ -23,7 +23,7 @@ if (invframes == 0)
                 scr_sound(sound_stomp);
                 instance_create(x, y + 50, obj_stompeffect);
                 image_index = 0;
-                stompAnim = 1;
+                stompAnim = true;
                 sprite_index = spr_player_stompprep;
                 
                 if (key_jump2)
@@ -32,12 +32,12 @@ if (invframes == 0)
                     vsp = -9;
             }
             
-            if ((state == states.mach2 || state == states.mach3 || state == states.grab) && other.grounded == 1 && other.state == states.stun)
+            if ((state == states.mach2 || state == states.mach3 || state == states.grab) && other.grounded == true && other.state == states.stun)
             {
                 global.hit += 1;
                 instance_create(other.x, other.y, obj_slapstar);
                 instance_create(other.x, other.y, obj_baddiegibs);
-                other.flash = 1;
+                other.flash = true;
                 other.hp -= 1;
                 
                 if (other.hp <= 0)
@@ -50,7 +50,7 @@ if (invframes == 0)
                 other.image_index = 0;
                 other.stunned = 200;
                 other.state = states.stun;
-                machpunchAnim = 1;
+                machpunchAnim = true;
                 
                 if (!grounded && state != states.freefall && key_jump2)
                 {

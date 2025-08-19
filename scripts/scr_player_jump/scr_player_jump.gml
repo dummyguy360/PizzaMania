@@ -4,18 +4,18 @@ function scr_player_jump()
 	{
 	    move = key_left + key_right;
     
-	    if (momemtum == 0)
+	    if (momemtum == false)
 	        hsp = move * movespeed;
 	    else
 	        hsp = xscale * movespeed;
     
-	    if (move != xscale && momemtum == 1 && movespeed != 0)
+	    if (move != xscale && momemtum == true && movespeed != 0)
 	        movespeed -= 0.05;
     
 	    if (movespeed == 0)
-	        momemtum = 0;
+	        momemtum = false;
     
-	    if ((move == 0 && momemtum == 0) || scr_solid(x + hsp, y))
+	    if ((move == 0 && momemtum == false) || scr_solid(x + hsp, y))
 	    {
 	        movespeed = 0;
 	        mach2 = 0;
@@ -41,16 +41,16 @@ function scr_player_jump()
 	    {
 	        mach2 = 0;
 	        movespeed = 0;
-	        momemtum = 0;
+	        momemtum = false;
 	    }
     
 	    if (character != "M")
-	        landAnim = 1;
+	        landAnim = true;
     
-	    if (!key_jump2 && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
+	    if (!key_jump2 && jumpstop == false && vsp < 0.5 && stompAnim == false)
 	    {
 	        vsp /= 5;
-	        jumpstop = 1;
+	        jumpstop = true;
 	    }
     
 	    if (ladderbuffer > 0)
@@ -64,10 +64,10 @@ function scr_player_jump()
 	        state = states.freefallprep;
 	    }
     
-	    if (scr_solid(x, y - 1) && jumpstop == 0 && jumpAnim == 1)
+	    if (scr_solid(x, y - 1) && jumpstop == false && jumpAnim == true)
 	    {
 	        vsp = grav;
-	        jumpstop = 1;
+	        jumpstop = true;
 	    }
     
 	    if (key_down && !grounded && global.moveset == 1)
@@ -83,7 +83,7 @@ function scr_player_jump()
 	    {
 	        var sounds = [va_noise_woag, va_noise_wawaoh, va_noise_waow];
 	        scr_sound(sounds[irandom(array_length_1d(sounds) - 1)]);
-	        flash = 1;
+	        flash = true;
 	        vsp = -6;
 	        image_index = 0;
 	        sprite_index = spr_playerN_pogostart;
@@ -95,15 +95,15 @@ function scr_player_jump()
 	        scr_sound(sound_jump);
 	        sprite_index = spr_jump;
         
-	        if (shotgunAnim == 1)
+	        if (shotgunAnim == true)
 	            sprite_index = spr_shotgun_jump;
         
 	        instance_create(x, y, obj_highjumpcloud2);
-	        stompAnim = 0;
+	        stompAnim = false;
 	        vsp = -11;
 	        state = states.jump;
-	        jumpAnim = 1;
-	        jumpstop = 0;
+	        jumpAnim = true;
+	        jumpstop = false;
 	        image_index = 0;
 	        freefallstart = 0;
 	    }
@@ -113,7 +113,7 @@ function scr_player_jump()
 	        mach2 = 0;
 	        movespeed = 0;
 	        sprite_index = spr_mach1;
-	        jumpAnim = 1;
+	        jumpAnim = true;
 	        state = states.mach1;
 	        image_index = 0;
 	    }
@@ -123,7 +123,7 @@ function scr_player_jump()
 	        mach2 = 100;
 	        movespeed = 10;
 	        sprite_index = spr_mach4;
-	        jumpAnim = 0;
+	        jumpAnim = false;
 	        state = states.mach3;
 	        image_index = 0;
 	    }
@@ -139,13 +139,13 @@ function scr_player_jump()
 	    if (grounded && vsp > 0 && !key_attack)
 	    {
 	        if (key_attack)
-	            landAnim = 0;
+	            landAnim = false;
         
 	        input_buffer_secondjump = 0;
 	        airtaunt = 0;
 	        state = states.normal;
-	        jumpAnim = 1;
-	        jumpstop = 0;
+	        jumpAnim = true;
+	        jumpstop = false;
 	        image_index = 0;
 	        freefallstart = 0;
 	    }
@@ -188,15 +188,15 @@ function scr_player_jump()
 	            sprite_index = spr_player_freefall;
 	    }
     
-	    if (stompAnim == 0)
+	    if (stompAnim == false)
 	    {
-	        if (jumpAnim == 1)
+	        if (jumpAnim == true)
 	        {
 	            if (floor(image_index) == (image_number - 1))
-	                jumpAnim = 0;
+	                jumpAnim = false;
 	        }
         
-	        if (jumpAnim == 0)
+	        if (jumpAnim == false)
 	        {
 	            if (sprite_index == spr_airdash1)
 	                sprite_index = spr_airdash2;
@@ -218,7 +218,7 @@ function scr_player_jump()
 	        }
 	    }
     
-	    if (stompAnim == 1)
+	    if (stompAnim == true)
 	    {
 	        if (sprite_index == spr_stompprep && floor(image_index) == (image_number - 1))
 	            sprite_index = spr_stomp;
@@ -226,7 +226,7 @@ function scr_player_jump()
     
 	    if (key_attack && sprite_index != spr_airdash2 && sprite_index != spr_airdash1 && fallinganimation < 40 && global.moveset != 1)
 	    {
-	        stompAnim = 0;
+	        stompAnim = false;
 	        sprite_index = spr_airdash1;
 	        image_index = 0;
 	    }
@@ -241,7 +241,7 @@ function scr_player_jump()
 	        state = states.pistol;
 	        handstand = 0;
 	        image_index = 0;
-	        shoot = 1;
+	        shoot = true;
 	    }
     
 	    if (key_slap && key_up && character == "V")
@@ -253,10 +253,10 @@ function scr_player_jump()
 	        state = states.pistol;
 	        handstand = 1;
 	        image_index = 0;
-	        shoot = 1;
+	        shoot = true;
 	    }
     
-	    if (key_slap2 && shotgunAnim == 1 && global.ammo > 0)
+	    if (key_slap2 && shotgunAnim == true && global.ammo > 0)
 	    {
 	        global.ammo -= 1;
 	        instance_create(x, y + 80, obj_shotgunbulletdown);
@@ -282,7 +282,7 @@ function scr_player_jump()
 	    if (floor(image_index) == (image_number - 1) && sprite_index == spr_suplexcancel)
 	        sprite_index = spr_fall;
     
-	    if (key_slap2 && shotgunAnim == 1 && !instance_exists(obj_cutscene_upstairs))
+	    if (key_slap2 && shotgunAnim == true && !instance_exists(obj_cutscene_upstairs))
 	    {
 	        global.ammo -= 1;
 	        instance_create(x, y, obj_shotgunbullet);
@@ -291,10 +291,10 @@ function scr_player_jump()
 	        image_index = 0;
 	    }
     
-	    if (!key_down && !key_up && key_slap2 && suplexmove == 0 && shotgunAnim == 0 && character != "M" && character != "V")
+	    if (!key_down && !key_up && key_slap2 && suplexmove == false && shotgunAnim == false && character != "M" && character != "V")
 	    {
 	        instance_create(x, y, obj_slaphitbox);
-	        suplexmove = 1;
+	        suplexmove = true;
 	        vsp = 0;
 	        instance_create(x, y, obj_jumpdust);
 	        image_index = 0;
@@ -302,10 +302,10 @@ function scr_player_jump()
 	        state = states.handstandjump;
 	    }
     
-	    if (key_up && key_slap2 && suplexmove == 0 && shotgunAnim == 0 && character == "P")
+	    if (key_up && key_slap2 && suplexmove == false && shotgunAnim == false && character == "P")
 	    {
 	        instance_create(x, y, obj_slaphitbox);
-	        suplexmove = 1;
+	        suplexmove = true;
 	        handstand = 1;
 	        vsp = 0;
 	        instance_create(x, y, obj_jumpdust);
@@ -341,18 +341,18 @@ function scr_player_jump()
 	{
 	    move = key_left + key_right;
     
-	    if (momemtum == 0)
+	    if (momemtum == false)
 	        hsp = move * movespeed;
 	    else
 	        hsp = xscale * movespeed;
     
-	    if (move != xscale && momemtum == 1 && movespeed != 0)
+	    if (move != xscale && momemtum == true && movespeed != 0)
 	        movespeed -= 0.05;
     
 	    if (movespeed == 0)
-	        momemtum = 0;
+	        momemtum = false;
     
-	    if ((move == 0 && momemtum == 0) || scr_solid(x + hsp, y))
+	    if ((move == 0 && momemtum == false) || scr_solid(x + hsp, y))
 	    {
 	        movespeed = 0;
 	        mach2 = 0;
@@ -378,22 +378,22 @@ function scr_player_jump()
 	    {
 	        mach2 = 0;
 	        movespeed = 0;
-	        momemtum = 0;
+	        momemtum = false;
 	    }
     
-	    if (!key_jump2 && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
+	    if (!key_jump2 && jumpstop == false && vsp < 0.5 && stompAnim == false)
 	    {
 	        vsp /= 5;
-	        jumpstop = 1;
+	        jumpstop = true;
 	    }
     
 	    if (ladderbuffer > 0)
 	        ladderbuffer--;
     
-	    if (scr_solid(x, y - 1) && jumpstop == 0)
+	    if (scr_solid(x, y - 1) && jumpstop == false)
 	    {
 	        vsp = grav;
-	        jumpstop = 1;
+	        jumpstop = true;
 	    }
     
 	    if (key_jump)

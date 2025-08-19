@@ -1,6 +1,6 @@
 if (place_meeting(x, y + 1, obj_player) || place_meeting(x, y - 1, obj_player) || place_meeting(x - 1, y, obj_player) || place_meeting(x + 1, y, obj_player))
 {
-    if ((place_meeting(x + 1, y, obj_player) || place_meeting(x - 1, y, obj_player)) && (obj_player.state == states.mach3 || (obj_player.state == states.Sjump && obj_player.sprite_index == spr_playerN_crazyrun) || obj_player.state == states.knightpep || obj_player.state == states.knightpepslopes || obj_player.state == states.hookshot || (obj_player.state == states.chainsaw && obj_player.character == "N") || (obj_player.state == states.knightpep && obj_player.momemtum == 1)))
+    if ((place_meeting(x + 1, y, obj_player) || place_meeting(x - 1, y, obj_player)) && (obj_player.state == states.mach3 || (obj_player.state == states.Sjump && obj_player.sprite_index == spr_playerN_crazyrun) || obj_player.state == states.knightpep || obj_player.state == states.knightpepslopes || obj_player.state == states.hookshot || (obj_player.state == states.chainsaw && obj_player.character == "N") || (obj_player.state == states.knightpep && obj_player.momemtum == true)))
         instance_destroy();
     
     if (place_meeting(x, y - 1, obj_player) && (obj_player.state == states.knightpep || obj_player.state == states.hookshot || obj_player.state == states.chainsawpogo || (obj_player.state == states.freefallland && obj_player.falldamage == 5)))

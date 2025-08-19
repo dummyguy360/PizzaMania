@@ -3,6 +3,7 @@ function scr_enemy_land()
 	if (vsp > 0)
 	    hsp = 0;
 
+	//Animation
 	sprite_index = landspr;
 	image_speed = 0.35;
 

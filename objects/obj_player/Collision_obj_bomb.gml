@@ -1,4 +1,4 @@
-if (hurted == 0 && state != states.bombpep && state != states.Throw && other.countdown > 30)
+if (hurted == false && state != states.bombpep && state != states.Throw && other.countdown > 30)
 {
     scr_sound(sound_touchspike);
     bombpeptimer = 200;

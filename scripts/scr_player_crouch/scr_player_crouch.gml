@@ -15,10 +15,10 @@ function scr_player_crouch()
 
 	if (!grounded && !key_jump)
 	{
-	    jumpAnim = 0;
+	    jumpAnim = false;
 	    state = states.crouchjump;
 	    movespeed = 4;
-	    crouchAnim = 1;
+	    crouchAnim = true;
 	    image_index = 0;
 	}
 
@@ -29,25 +29,25 @@ function scr_player_crouch()
 	    state = states.crouchjump;
 	    movespeed = 4;
 	    image_index = 0;
-	    crouchAnim = 1;
-	    jumpAnim = 1;
+	    crouchAnim = true;
+	    jumpAnim = true;
 	}
 
 	if (grounded && !key_down && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && !key_jump)
 	{
 	    state = states.normal;
 	    movespeed = 0;
-	    crouchAnim = 1;
-	    jumpAnim = 1;
+	    crouchAnim = true;
+	    jumpAnim = true;
 	    image_index = 0;
 	    mask_index = spr_player_mask;
 	}
 
-	if (crouchAnim == 0)
+	if (crouchAnim == false)
 	{
 	    if (move == 0)
 	    {
-	        if (shotgunAnim == 0)
+	        if (shotgunAnim == false)
 	            sprite_index = spr_crouch;
 	        else
 	            sprite_index = spr_shotgun_duck;
@@ -57,24 +57,24 @@ function scr_player_crouch()
 	        sprite_index = spr_crawl;
 	}
 
-	if (crouchAnim == 1)
+	if (crouchAnim == true)
 	{
 	    if (move == 0)
 	    {
-	        if (shotgunAnim == 0)
+	        if (shotgunAnim == false)
 	            sprite_index = spr_couchstart;
 	        else
 	            sprite_index = spr_shotgun_goduck;
         
 	        if (floor(image_index) == (image_number - 1))
-	            crouchAnim = 0;
+	            crouchAnim = false;
 	    }
 	}
 
 	if (move != 0)
 	{
 	    xscale = move;
-	    crouchAnim = 0;
+	    crouchAnim = false;
 	}
 
 	if (key_taunt)
@@ -95,7 +95,7 @@ function scr_player_crouch()
 	    scr_sound(sound_pistolshot);
 	    state = states.pistol;
 	    image_index = 0;
-	    shoot = 1;
+	    shoot = true;
 	}
 
 	image_speed = 0.6;

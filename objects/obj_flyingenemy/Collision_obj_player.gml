@@ -1,8 +1,8 @@
-if (obj_player.y < y && obj_player.state != states.hurt && obj_player.attacking == 0)
+if (obj_player.y < y && obj_player.state != states.hurt && obj_player.attacking == false)
 {
     if (obj_player.key_jump2 && obj_player.y < y && obj_player.vsp > 0)
     {
-        bounce = 1;
+        bounce = true;
         image_index = 0;
         audio_sound_gain(sound_superjump, 0.7, 0);
         audio_play_sound(sound_superjump, 1, false);
@@ -21,20 +21,20 @@ if (obj_player.y < y && obj_player.state != states.hurt && obj_player.attacking 
     else
     {
         obj_player.vsp = -11;
-        bounce = 1;
+        bounce = true;
         image_index = 0;
         audio_sound_gain(sound_superjump, 0.7, 0);
         audio_play_sound(sound_superjump, 1, false);
     }
 }
 
-if (obj_player.mach2 >= 35 || obj_player.attacking == 1)
+if (obj_player.mach2 >= 35 || obj_player.attacking == true)
 {
     if (obj_player.state == states.facestomp)
     {
         obj_player.vsp = -6;
         obj_player.image_index = 0;
-        obj_player.facestompAnim = 1;
+        obj_player.facestompAnim = true;
     }
     
     instance_create(x, y, obj_slapstar);

@@ -8,13 +8,13 @@ function scr_player_tackle()
 	if (grounded && vsp > 0)
 	    hsp = 0;
 
-	jumpAnim = 1;
+	jumpAnim = true;
 	dashAnim = 1;
-	landAnim = 0;
-	moveAnim = 1;
-	stopAnim = 1;
-	crouchslideAnim = 1;
-	crouchAnim = 1;
+	landAnim = false;
+	moveAnim = true;
+	stopAnim = true;
+	crouchslideAnim = true;
+	crouchAnim = true;
 
 	if (floor(image_index) == (image_number - 1))
 	    state = states.normal;

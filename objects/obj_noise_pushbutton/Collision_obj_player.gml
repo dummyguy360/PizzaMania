@@ -1,7 +1,7 @@
 with (obj_player)
 {
     if (state == states.mach2)
-        machpunchAnim = 1;
+        machpunchAnim = true;
     
     if (state == states.mach2 || state == states.mach3)
     {

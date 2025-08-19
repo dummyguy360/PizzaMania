@@ -11,26 +11,26 @@ function scr_player_hurt()
 
 	combo = 0;
 	mach2 = 0;
-	bounce = 0;
+	bounce = false;
 
 	if (character != "G")
 	{
-	    jumpAnim = 1;
+	    jumpAnim = true;
 	    dashAnim = 1;
     
 	    if (grounded)
-	        landAnim = 0;
+	        landAnim = false;
 	    else
-	        landAnim = 1;
+	        landAnim = true;
 	}
 
-	jumpstop = 0;
-	moveAnim = 1;
-	stopAnim = 1;
-	crouchslideAnim = 1;
-	crouchAnim = 0;
-	machhitAnim = 0;
-	hurted = 1;
+	jumpstop = false;
+	moveAnim = true;
+	stopAnim = true;
+	crouchslideAnim = true;
+	crouchAnim = false;
+	machhitAnim = false;
+	hurted = true;
 	turning = 0;
 
 	if (instance_exists(obj_hook))

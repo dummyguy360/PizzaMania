@@ -7,17 +7,17 @@ function scr_player_barrelfloat()
 
 	if (key_jump)
 	{
-	    jumpstop = 1;
-	    jumpAnim = 1;
+	    jumpstop = true;
+	    jumpAnim = true;
 	    state = states.jump;
-	    landAnim = 0;
+	    landAnim = false;
 	    vsp = -7;
     
 	    with (instance_create(x, y, obj_barrelfloat))
 	        image_xscale = other.image_xscale;
     
 	    image_index = 0;
-	    barrel = 0;
+	    barrel = false;
 	}
 
 	movespeed = 2.5;

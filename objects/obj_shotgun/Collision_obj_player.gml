@@ -1,2 +1,2 @@
-obj_player.shotgunAnim = 1;
+obj_player.shotgunAnim = true;
 instance_destroy();

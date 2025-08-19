@@ -114,7 +114,7 @@ if (grounded && thrown == 1)
     obj_camera.shake_mag_acc = 4 / room_speed;
     thrown = 0;
     hp -= 1;
-    flash = 1;
+    flash = true;
     charging = 0;
     stunned = 1;
     movespeed = 0;
@@ -255,7 +255,7 @@ if (thrown == 0 && (obj_player.state == states.grabbing || obj_player.state == s
     stunned = 1;
 }
 
-if (flash == 1 && alarm[3] <= 0)
+if (flash == true && alarm[3] <= 0)
     alarm[3] = 0.01 * room_speed;
 
 if (hp > 6)

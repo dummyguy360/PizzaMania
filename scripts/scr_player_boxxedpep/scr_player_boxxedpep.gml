@@ -1,22 +1,22 @@
 function scr_player_boxxedpep()
 {
 	mask_index = spr_crouchmask;
-	key_particles = 0;
+	key_particles = false;
 	alarm[5] = 2;
 	alarm[7] = 60;
-	hurted = 1;
+	hurted = true;
 
 	if (key_jump)
 	    input_buffer_jump = 0;
 
-	if (!key_jump2 && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
+	if (!key_jump2 && jumpstop == false && vsp < 0.5 && stompAnim == false)
 	{
 	    vsp /= 2;
-	    jumpstop = 1;
+	    jumpstop = true;
 	}
 
 	if (grounded && vsp > 0)
-	    jumpstop = 0;
+	    jumpstop = false;
 
 	if (dir != xscale)
 	{
@@ -87,12 +87,12 @@ function scr_player_boxxedpep()
 	if (!instance_exists(obj_cloudeffect) && grounded && move != 0 && (sprite_index == spr_player_downslopes || sprite_index == spr_player_upslopes))
 	    instance_create(x, y + 43, obj_cloudeffect);
 
-	if (move != 0 && (floor(image_index) == 3 || floor(image_index) == 8) && steppy == 0)
+	if (move != 0 && (floor(image_index) == 3 || floor(image_index) == 8) && steppy == false)
 	{
 	    scr_sound(sound_step);
-	    steppy = 1;
+	    steppy = true;
 	}
 
 	if (move != 0 && floor(image_index) != 3 && floor(image_index) != 8)
-	    steppy = 0;
+	    steppy = false;
 }

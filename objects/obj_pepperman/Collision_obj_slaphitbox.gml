@@ -18,7 +18,7 @@ if (stunhp == 0 && !(stunned == 1 && alarm[1] > 40) && slapped == 0 && (sprite_i
     instance_create(x, y, obj_spikehurteffect);
     other.image_xscale = image_xscale;
     slapped = 1;
-    flash = 1;
+    flash = true;
     instance_create(x, y, obj_bumpeffect);
     alarm[1] = 100;
     

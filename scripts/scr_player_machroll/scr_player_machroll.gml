@@ -8,7 +8,7 @@ function scr_player_machroll()
 	    hsp = (xscale * movespeed) + 5;
 
 	mach2 = 100;
-	machslideAnim = 1;
+	machslideAnim = true;
 	move = key_right + key_left;
 	movespeed = 12;
 
@@ -52,7 +52,7 @@ function scr_player_machroll()
 	        if (character == "N")
 	            sprite_index = spr_playerN_rollgetup;
         
-	        machpunchAnim = 1;
+	        machpunchAnim = true;
 	    }
     
 	    state = states.mach3;
@@ -85,7 +85,7 @@ function scr_player_machroll()
 	        }
 	    }
     
-	    flash = 0;
+	    flash = false;
 	    combo = 0;
 	    state = states.bump;
 	    hsp = -2.5;
@@ -108,7 +108,7 @@ function scr_player_machroll()
     
 	    hsp = 0;
 	    image_speed = 0.35;
-	    flash = 0;
+	    flash = false;
 	    combo = 0;
 	    state = states.bump;
 	    hsp = 2.5;
@@ -120,9 +120,9 @@ function scr_player_machroll()
 	}
 
 	if (floor(image_index) == 0)
-	    flash = 1;
+	    flash = true;
 	else
-	    flash = 0;
+	    flash = false;
 
 	if (!instance_exists(obj_cloudeffect) && grounded)
 	    instance_create(x, y + 43, obj_cloudeffect);

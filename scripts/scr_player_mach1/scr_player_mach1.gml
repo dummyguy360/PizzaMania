@@ -2,7 +2,7 @@ function scr_player_mach1()
 {
 	dir = xscale;
 	move = key_left + key_right;
-	landAnim = 0;
+	landAnim = false;
 	sprite_index = spr_mach1;
 
 	if (scr_solid(x + 1, y) && xscale == 1 && !place_meeting(x + 1, y, obj_slope))
@@ -28,8 +28,8 @@ function scr_player_mach1()
 	if (character == "M" && movespeed < 12)
 	    movespeed += 1;
 
-	machhitAnim = 0;
-	crouchslideAnim = 1;
+	machhitAnim = false;
+	crouchslideAnim = true;
 
 	if (!place_meeting(x, y + 1, obj_railh) && !place_meeting(x, y + 1, obj_railh2))
 	    hsp = xscale * movespeed;
@@ -40,7 +40,7 @@ function scr_player_mach1()
 
 	if (grounded && xscale == 1 && move == -1)
 	{
-	    momemtum = 0;
+	    momemtum = false;
 	    mach2 = 0;
 	    movespeed = 0;
 	    image_index = 0;
@@ -49,7 +49,7 @@ function scr_player_mach1()
 
 	if (grounded && xscale == -1 && move == 1)
 	{
-	    momemtum = 0;
+	    momemtum = false;
 	    mach2 = 0;
 	    movespeed = 0;
 	    image_index = 0;
@@ -83,9 +83,9 @@ function scr_player_mach1()
 	if (!grounded)
 	{
 	    sprite_index = spr_airdash1;
-	    momemtum = 1;
+	    momemtum = true;
 	    state = states.jump;
-	    jumpAnim = 0;
+	    jumpAnim = false;
 	    image_index = 0;
 	}
 
@@ -110,28 +110,28 @@ function scr_player_mach1()
 	    scr_sound(sound_jump);
 	    sprite_index = spr_airdash1;
 	    dir = xscale;
-	    momemtum = 1;
+	    momemtum = true;
 	    vsp = -11;
 	    movespeed += 2;
 	    state = states.jump;
-	    jumpAnim = 1;
+	    jumpAnim = true;
 	    image_index = 0;
 	}
 
 	if (sprite_index == spr_pepperman_shoulderstart && image_index >= (image_number - 1))
 	{
 	    mach2 = 100;
-	    flash = 1;
+	    flash = true;
 	    state = states.mach2;
 	}
 
 	if (!instance_exists(obj_dashcloud) && grounded)
 	    instance_create(x, y, obj_dashcloud);
 
-	if (key_slap2 && !key_up && !key_down && suplexmove == 0 && character != "M" && character != "V")
+	if (key_slap2 && !key_up && !key_down && suplexmove == false && character != "M" && character != "V")
 	{
 	    instance_create(x, y, obj_slaphitbox);
-	    suplexmove = 1;
+	    suplexmove = true;
 	    vsp = 0;
 	    instance_create(x, y, obj_jumpdust);
 	    image_index = 0;
@@ -139,10 +139,10 @@ function scr_player_mach1()
 	    state = states.handstandjump;
 	}
 
-	if (key_up && key_slap2 && suplexmove == 0 && shotgunAnim == 0 && character == "P")
+	if (key_up && key_slap2 && suplexmove == false && shotgunAnim == false && character == "P")
 	{
 	    instance_create(x, y, obj_slaphitbox);
-	    suplexmove = 1;
+	    suplexmove = true;
 	    handstand = 1;
 	    vsp = 0;
 	    instance_create(x, y, obj_jumpdust);
@@ -157,11 +157,11 @@ function scr_player_mach1()
 	{
 	    var sounds = [va_noise_woag, va_noise_wawaoh, va_noise_waow];
 	    scr_sound(sounds[irandom(array_length_1d(sounds) - 1)]);
-	    landAnim = 0;
+	    landAnim = false;
 	    image_index = 0;
 	    sprite_index = spr_playerN_pogostart;
 	    vsp = -6;
-	    flash = 1;
+	    flash = true;
 	    state = states.machfreefall;
 	}
 	else if (key_taunt)
@@ -184,7 +184,7 @@ function scr_player_mach1()
 	        sprite_index = spr_player_pistolair;
 	        state = states.pistol;
 	        image_index = 0;
-	        shoot = 1;
+	        shoot = true;
 	    }
 	}
 }

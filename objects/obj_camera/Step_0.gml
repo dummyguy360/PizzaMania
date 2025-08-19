@@ -4,9 +4,9 @@ visible = !(room == rank_room || room == timesuproom || room == Realtitlescreen 
 if (!instance_exists(obj_stylebar) && global.hardmode == 1)
     instance_create(x, y, obj_stylebar);
 
-timestop = (global.panic == 1 || room == timesuproom) ? 0 : 1;
+timestop = (global.panic == true || room == timesuproom) ? 0 : 1;
 
-if (global.panic == 1)
+if (global.panic == true)
 {
     if (global.seconds == 0 && global.minutes == 0 && !instance_exists(obj_endlevelfade))
     {

@@ -9,6 +9,7 @@ function scr_enemy_hit()
 	if (straightthrow == 1)
 	    vsp = 0;
 
+	//Animation
 	if (vsp < 0 && floor(image_index) != 2 && sprite_index != flyingspr)
 	    sprite_index = hitspr;
 	else if (vsp < 0)

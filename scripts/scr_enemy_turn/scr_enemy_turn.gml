@@ -1,5 +1,6 @@
 function scr_enemy_turn()
 {
+	//Animation
 	sprite_index = turnspr;
 	image_speed = 0.35;
 

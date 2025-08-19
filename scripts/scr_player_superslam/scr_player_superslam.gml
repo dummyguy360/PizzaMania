@@ -16,8 +16,8 @@ function scr_player_superslam()
 	if (grounded && !place_meeting(x, y + 1, obj_destructibles) && sprite_index == spr_piledriver && vsp > 0)
 	{
 	    sprite_index = spr_piledriverland;
-	    jumpAnim = 1;
-	    jumpstop = 0;
+	    jumpAnim = true;
+	    jumpstop = false;
 	    image_index = 0;
     
 	    with (obj_camera)
@@ -27,7 +27,7 @@ function scr_player_superslam()
 	    }
     
 	    hsp = 0;
-	    bounce = 0;
+	    bounce = false;
     
 	    with (instance_create(x, y + 35, obj_bangeffect))
 	        xscale = obj_player.xscale;
@@ -46,14 +46,14 @@ function scr_player_superslam()
 	    }
 	}
 
-	jumpAnim = 1;
+	jumpAnim = true;
 	dashAnim = 1;
-	landAnim = 0;
-	machslideAnim = 1;
-	moveAnim = 1;
-	stopAnim = 1;
-	crouchslideAnim = 1;
-	crouchAnim = 1;
+	landAnim = false;
+	machslideAnim = true;
+	moveAnim = true;
+	stopAnim = true;
+	crouchslideAnim = true;
+	crouchAnim = true;
 
 	if (sprite_index == spr_piledriverland && floor(image_index) == (image_number - 1))
 	{

@@ -15,7 +15,7 @@ with (obj_player)
         if (character == "M")
         {
             image_index = 0;
-            flash = 1;
+            flash = true;
             global.was_grounded = 1;
             sprite_index = spr_pepperman_rolling;
             movespeed = 0;

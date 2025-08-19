@@ -2,12 +2,12 @@ function scr_player_highjump()
 {
 	move = key_left + key_right;
 
-	if (momemtum == 0)
+	if (momemtum == false)
 	    hsp = move * movespeed;
 	else
 	    hsp = xscale * movespeed;
 
-	if (move == 0 && momemtum == 0)
+	if (move == 0 && momemtum == false)
 	    movespeed = 0;
 
 	if (move != 0 && movespeed < 6)
@@ -22,32 +22,32 @@ function scr_player_highjump()
 	    movespeed = 2;
 	}
 
-	landAnim = 1;
+	landAnim = true;
 
-	if (!key_jump2 && jumpstop == 0 && vsp < 0)
+	if (!key_jump2 && jumpstop == false && vsp < 0)
 	{
 	    vsp /= 2;
-	    jumpstop = 1;
+	    jumpstop = true;
 	}
 
 	if (ladderbuffer > 0)
 	    ladderbuffer--;
 
-	if (scr_solid(x, y - 1) && jumpstop == 0 && jumpAnim == 1)
+	if (scr_solid(x, y - 1) && jumpstop == false && jumpAnim == true)
 	{
 	    vsp = grav;
-	    jumpstop = 1;
+	    jumpstop = true;
 	}
 
 	if (grounded && vsp > 0)
 	{
 	    if (key_attack)
-	        landAnim = 0;
+	        landAnim = false;
     
 	    state = states.normal;
 	    airtaunt = 0;
-	    jumpAnim = 1;
-	    jumpstop = 0;
+	    jumpAnim = true;
+	    jumpstop = false;
 	    image_index = 0;
     
 	    if (!place_meeting(x, y, obj_water2))
@@ -64,8 +64,8 @@ function scr_player_highjump()
 	{
 	    vsp = -9;
 	    state = states.jump;
-	    jumpAnim = 1;
-	    jumpstop = 0;
+	    jumpAnim = true;
+	    jumpstop = false;
 	    image_index = 0;
     
 	    if (!place_meeting(x, y, obj_water2))
@@ -81,15 +81,15 @@ function scr_player_highjump()
 	if (key_jump)
 	    input_buffer_jump = 0;
 
-	if (jumpAnim == 1)
+	if (jumpAnim == true)
 	{
 	    sprite_index = spr_player_Sjumpstart;
     
 	    if (floor(image_index) == 3)
-	        jumpAnim = 0;
+	        jumpAnim = false;
 	}
 
-	if (jumpAnim == 0)
+	if (jumpAnim == false)
 	    sprite_index = spr_player_Sjump;
 
 	if (move != 0)

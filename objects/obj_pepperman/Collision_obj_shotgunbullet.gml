@@ -4,7 +4,7 @@ if (slapped == 0)
     obj_camera.shake_mag_acc = 4 / room_speed;
     thrown = 0;
     hp -= 1;
-    flash = 1;
+    flash = true;
     charging = 0;
     stunned = 1;
     movespeed = 0;

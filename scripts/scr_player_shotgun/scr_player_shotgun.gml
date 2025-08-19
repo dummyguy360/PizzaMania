@@ -12,12 +12,12 @@ function scr_player_shotgun()
 	if (scr_solid(x + hsp, y))
 	    movespeed = 0;
 
-	landAnim = 0;
-	momemtum = 1;
+	landAnim = false;
+	momemtum = true;
 
 	if (floor(image_index) == (image_number - 1))
 	{
-	    shotgunAnim = 1;
+	    shotgunAnim = true;
     
 	    if (grounded)
 	    {

@@ -14,6 +14,7 @@ function scr_enemy_grabbed()
 	with (obj_player)
 	{
 	    suplexhavetomash = other.hp - 1;
+		//Suplex mash
 	    scr_getinput();
 	    move = key_left2 + key_right2;
     
@@ -31,7 +32,7 @@ function scr_enemy_grabbed()
 	        other.hp -= 1;
 	        instance_create(other.x, other.y, obj_slapstar);
 	        instance_create(other.x, other.y, obj_baddiegibs);
-	        other.flash = 1;
+	        other.flash = true;
         
 	        with (obj_camera)
 	        {
@@ -71,7 +72,7 @@ function scr_enemy_grabbed()
 	    global.combotime = 60;
 	    instance_create(x, y, obj_slapstar);
 	    instance_create(x, y, obj_baddiegibs);
-	    flash = 1;
+	    flash = true;
     
 	    with (obj_camera)
 	    {
@@ -100,7 +101,7 @@ function scr_enemy_grabbed()
 	    global.combotime = 60;
 	    instance_create(x, y, obj_slapstar);
 	    instance_create(x, y, obj_baddiegibs);
-	    flash = 1;
+	    flash = true;
     
 	    with (obj_camera)
 	    {
@@ -128,7 +129,7 @@ function scr_enemy_grabbed()
 	    global.combotime = 60;
 	    instance_create(x, y, obj_slapstar);
 	    instance_create(x, y, obj_baddiegibs);
-	    flash = 1;
+	    flash = true;
     
 	    with (obj_camera)
 	    {
@@ -173,7 +174,7 @@ function scr_enemy_grabbed()
 	    global.combotime = 60;
 	    instance_create(x, y, obj_slapstar);
 	    instance_create(x, y, obj_baddiegibs);
-	    flash = 1;
+	    flash = true;
     
 	    with (obj_camera)
 	    {
@@ -182,6 +183,7 @@ function scr_enemy_grabbed()
 	    }
 	}
 
+	//Charge
 	if (obj_player.state == states.charge)
 	{
 	    x = obj_player.x + (obj_player.xscale * 15);
@@ -192,7 +194,7 @@ function scr_enemy_grabbed()
 	{
 	    instance_create(x, y, obj_slapstar);
 	    instance_create(x, y, obj_baddiegibs);
-	    flash = 1;
+	    flash = true;
 	    global.combotime = 60;
 	    global.hit += 1;
     
@@ -287,7 +289,7 @@ function scr_enemy_grabbed()
 	        scr_sound(sound_explosion);
 	        instance_create(x, y, obj_slapstar);
 	        instance_create(x, y, obj_baddiegibs);
-	        flash = 1;
+	        flash = true;
 	        global.combotime = 60;
 	        global.hit += 1;
         

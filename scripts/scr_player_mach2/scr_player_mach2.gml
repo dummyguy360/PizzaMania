@@ -20,12 +20,12 @@ function scr_player_mach2()
     
 	    move2 = key_right2 + key_left2;
 	    move = key_right + key_left;
-	    crouchslideAnim = 1;
+	    crouchslideAnim = true;
     
-	    if (!key_jump2 && jumpstop == 0 && vsp < 0.5)
+	    if (!key_jump2 && jumpstop == false && vsp < 0.5)
 	    {
 	        vsp /= 2;
-	        jumpstop = 1;
+	        jumpstop = true;
 	    }
     
 	    if (movespeed < 12 && move != 0)
@@ -35,7 +35,7 @@ function scr_player_mach2()
 	        movespeed -= 0.1;
     
 	    if (grounded && vsp > 0)
-	        jumpstop = 0;
+	        jumpstop = false;
     
 	    if (input_buffer_jump < 8 && grounded && !(move == 1 && xscale == -1) && !(move == -1 && xscale == 1) && key_attack)
 	    {
@@ -60,7 +60,7 @@ function scr_player_mach2()
 	    {
 	        airtaunt = 0;
         
-	        if (machpunchAnim == 0 && sprite_index != spr_mach && sprite_index != spr_player_mach3 && sprite_index != spr_player_rollgetup && sprite_index != spr_playerN_rollgetup)
+	        if (machpunchAnim == false && sprite_index != spr_mach && sprite_index != spr_player_mach3 && sprite_index != spr_player_rollgetup && sprite_index != spr_playerN_rollgetup)
 	        {
 	            if (sprite_index != spr_player_rollgetup && sprite_index != spr_playerN_rollgetup && sprite_index != spr_playerV_mach1)
 	                sprite_index = spr_mach;
@@ -75,34 +75,34 @@ function scr_player_mach2()
 	                sprite_index = spr_mach;
 	        }
         
-	        if (machpunchAnim == 1)
+	        if (machpunchAnim == true)
 	        {
-	            if (punch == 0)
+	            if (punch == false)
 	                sprite_index = spr_machpunch1;
             
-	            if (punch == 1)
+	            if (punch == true)
 	                sprite_index = spr_machpunch2;
             
 	            if (floor(image_index) == 4 && sprite_index == spr_machpunch1)
 	            {
-	                punch = 1;
-	                machpunchAnim = 0;
+	                punch = true;
+	                machpunchAnim = false;
 	            }
             
 	            if (floor(image_index) == 4 && sprite_index == spr_machpunch2)
 	            {
-	                punch = 0;
-	                machpunchAnim = 0;
+	                punch = false;
+	                machpunchAnim = false;
 	            }
 	        }
 	    }
     
 	    if (!grounded)
-	        machpunchAnim = 0;
+	        machpunchAnim = false;
     
 	    if (key_down && !key_jump && !grounded && !place_meeting(x, y, obj_dashpad) && character != "V" && movespeed > 8)
 	    {
-	        flash = 0;
+	        flash = false;
 	        vsp = 15;
 	        image_index = 0;
 	        sprite_index = spr_dive;
@@ -110,7 +110,7 @@ function scr_player_mach2()
     
 	    if (key_down && !key_jump && !grounded && !place_meeting(x, y, obj_dashpad) && character == "V" && movespeed > 8)
 	    {
-	        flash = 0;
+	        flash = false;
 	        vsp = 15;
 	        image_index = 0;
 	        sprite_index = spr_dive;
@@ -129,9 +129,9 @@ function scr_player_mach2()
         
 	        if (mach2 >= 100)
 	        {
-	            machhitAnim = 0;
+	            machhitAnim = false;
 	            state = states.mach3;
-	            flash = 1;
+	            flash = true;
 	            sprite_index = spr_mach4;
 	            instance_create(x, y, obj_jumpdust);
             
@@ -175,7 +175,7 @@ function scr_player_mach2()
 	        sprite_index = spr_crouchslip;
         
 	        if (character == "P")
-	            machhitAnim = 0;
+	            machhitAnim = false;
         
 	        state = states.crouchslide;
 	    }
@@ -210,13 +210,13 @@ function scr_player_mach2()
 	            {
 	                xscale = -xscale;
 	                image_index = 0;
-	                machhitAnim = 0;
+	                machhitAnim = false;
 	            }
 	            else if (sprite_index == spr_dive && scr_solid(x - 1, y) && xscale == -1 && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(bbox_left - 1, y, obj_destructibles))
 	            {
 	                xscale = -xscale;
 	                image_index = 0;
-	                machhitAnim = 0;
+	                machhitAnim = false;
 	            }
 	        }
 	    }
@@ -245,10 +245,10 @@ function scr_player_mach2()
 	        }
 	    }
     
-	    if (key_slap2 && !key_up && !key_down && suplexmove == 0 && character != "M" && character != "V")
+	    if (key_slap2 && !key_up && !key_down && suplexmove == false && character != "M" && character != "V")
 	    {
 	        instance_create(x, y, obj_slaphitbox);
-	        suplexmove = 1;
+	        suplexmove = true;
 	        vsp = 0;
 	        instance_create(x, y, obj_jumpdust);
 	        image_index = 0;
@@ -256,10 +256,10 @@ function scr_player_mach2()
 	        state = states.handstandjump;
 	    }
     
-	    if (key_up && key_slap2 && suplexmove == 0 && shotgunAnim == 0 && character == "P")
+	    if (key_up && key_slap2 && suplexmove == false && shotgunAnim == false && character == "P")
 	    {
 	        instance_create(x, y, obj_slaphitbox);
-	        suplexmove = 1;
+	        suplexmove = true;
 	        handstand = 1;
 	        vsp = 0;
 	        instance_create(x, y, obj_jumpdust);
@@ -274,11 +274,11 @@ function scr_player_mach2()
 	    {
 	        var sounds = [va_noise_woag, va_noise_wawaoh, va_noise_waow];
 	        scr_sound(sounds[irandom(array_length_1d(sounds) - 1)]);
-	        landAnim = 0;
+	        landAnim = false;
 	        image_index = 0;
 	        sprite_index = spr_playerN_pogostart;
 	        vsp = -6;
-	        flash = 1;
+	        flash = true;
 	        state = states.machfreefall;
 	    }
     
@@ -296,7 +296,7 @@ function scr_player_mach2()
 	        scr_sound(sound_pistolshot);
 	        state = states.pistol;
 	        image_index = 0;
-	        shoot = 1;
+	        shoot = true;
 	    }
     
 	    if (key_slap && key_up && character == "V")
@@ -307,7 +307,7 @@ function scr_player_mach2()
 	        sprite_index = spr_playerV_dynamitethrow;
 	        state = states.pistol;
 	        image_index = 0;
-	        shoot = 1;
+	        shoot = true;
 	    }
     
 	    image_speed = 0.65;

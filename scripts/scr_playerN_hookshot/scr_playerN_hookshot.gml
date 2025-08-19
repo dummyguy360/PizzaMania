@@ -12,10 +12,10 @@ function scr_playerN_hookshot()
 	    instance_create(x, y, obj_washingmachine);
 	    scr_sound(sound_jump);
 	    sprite_index = spr_jump;
-	    stompAnim = 0;
+	    stompAnim = false;
 	    state = states.jump;
-	    jumpAnim = 1;
-	    jumpstop = 0;
+	    jumpAnim = true;
+	    jumpstop = false;
 	    image_index = 0;
 	    freefallstart = 0;
 	}

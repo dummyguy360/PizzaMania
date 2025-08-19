@@ -18,15 +18,15 @@ function scr_player_shotgunjump()
 	    movespeed = 0;
 	}
 
-	landAnim = 1;
+	landAnim = true;
 
 	if (ladderbuffer > 0)
 	    ladderbuffer--;
 
-	if (scr_solid(x, y - 1) && jumpstop == 0 && jumpAnim == 1)
+	if (scr_solid(x, y - 1) && jumpstop == false && jumpAnim == true)
 	{
 	    vsp = grav;
-	    jumpstop = 1;
+	    jumpstop = true;
 	}
 
 	if (sprite_index == spr_player_shotgunjump2 && floor(image_index) == (image_number - 1))
@@ -37,11 +37,11 @@ function scr_player_shotgunjump()
 
 	if (grounded && input_buffer_jump < 5 && !key_down && vsp > 0)
 	{
-	    stompAnim = 0;
+	    stompAnim = false;
 	    vsp = -9;
 	    state = states.jump;
-	    jumpAnim = 1;
-	    jumpstop = 0;
+	    jumpAnim = true;
+	    jumpstop = false;
 	    image_index = 0;
     
 	    if (!place_meeting(x, y, obj_water2))
@@ -54,7 +54,7 @@ function scr_player_shotgunjump()
 	        audio_play_sound(sfx_jump, 1, false);
 	}
 
-	if (shoot == 1 && floor(image_index) == 0)
+	if (shoot == true && floor(image_index) == 0)
 	{
 	    with (obj_camera)
 	    {
@@ -89,7 +89,7 @@ function scr_player_shotgunjump()
 	    ID5.vspeed = 20;
 	    ID5.image_angle = xscale * 2;
 	    ID5.sprite_index = spr_shotgunbulletdown;
-	    shoot = 0;
+	    shoot = false;
 	}
 
 	if (key_jump)

@@ -7,7 +7,7 @@ with (obj_player)
     if (grounded)
     {
         ds_list_add(global.saveroom, other.id);
-        global.treasure = 1;
+        global.treasure = true;
         hsp = 0;
         vsp = 0;
         

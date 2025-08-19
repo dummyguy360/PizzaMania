@@ -1,7 +1,7 @@
 function scr_player_freefall()
 {
 	hsp = 0;
-	landAnim = 1;
+	landAnim = true;
 	move = key_left + key_right;
 
 	if (!place_meeting(x, y + 1, obj_railh) && !place_meeting(x, y + 1, obj_railh2))
@@ -58,8 +58,8 @@ function scr_player_freefall()
 	    scr_sound(sound_maximumspeedland);
 	    image_index = 0;
 	    state = states.freefallland;
-	    jumpAnim = 1;
-	    jumpstop = 0;
+	    jumpAnim = true;
+	    jumpstop = false;
     
 	    with (obj_baddie)
 	    {
@@ -77,7 +77,7 @@ function scr_player_freefall()
 	    }
     
 	    combo = 0;
-	    bounce = 0;
+	    bounce = false;
 	    instance_create(x, y, obj_landcloud);
 	    freefallstart = 0;
 	}
@@ -88,9 +88,9 @@ function scr_player_freefall()
 	    image_index = 0;
 	    mach2 = 100;
 	    state = states.machroll;
-	    jumpAnim = 1;
-	    jumpstop = 0;
-	    bounce = 0;
+	    jumpAnim = true;
+	    jumpstop = false;
+	    bounce = false;
 	    instance_create(x, y, obj_landcloud);
 	    freefallstart = 0;
 	}

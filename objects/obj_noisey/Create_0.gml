@@ -17,7 +17,7 @@ thrown = 0;
 reset = 0;
 hp = 2;
 hitboxcreate = 0;
-grounded = 1;
+grounded = true;
 
 with (instance_create(x, y, obj_highjumpcloud1))
     sprite_index = spr_baddiespawn;
@@ -27,7 +27,7 @@ stunfallspr = spr_noisey_stun;
 walkspr = spr_noisey_walk;
 grabbedspr = spr_noisey_stun;
 image_xscale = -1;
-flash = 0;
+flash = false;
 slapped = 0;
 birdcreated = 0;
 boundbox = 0;

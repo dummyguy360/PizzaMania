@@ -7,14 +7,14 @@ if (obj_player.y < y && obj_player.state == states.jump)
         if (key_jump2)
         {
             instance_create(x, y + 50, obj_stompeffect);
-            stompAnim = 1;
+            stompAnim = true;
             vsp = -14;
             sprite_index = spr_player_stompprep;
         }
         else
         {
             instance_create(x, y + 50, obj_stompeffect);
-            stompAnim = 1;
+            stompAnim = true;
             vsp = -9;
             sprite_index = spr_player_stompprep;
         }
@@ -52,7 +52,7 @@ if (obj_player.state == states.mach3)
     instance_create(x, y, obj_slapstar);
     instance_create(x, y, obj_slapstar);
     hp -= 1;
-    flash = 1;
+    flash = true;
     charging = 0;
     stunned = 1;
     movespeed = 0;
@@ -136,7 +136,7 @@ if (obj_player.state == states.mach3)
 
 with (obj_player)
 {
-    if ((state != states.tackle && state != states.hurt) && !(y < other.y) && state != states.grab && state != states.superslam && grabbing == 0 && other.stunned == 0)
+    if ((state != states.tackle && state != states.hurt) && !(y < other.y) && state != states.grab && state != states.superslam && grabbing == false && other.stunned == 0)
     {
         if (x != other.x)
             xscale = -sign(x - other.x);

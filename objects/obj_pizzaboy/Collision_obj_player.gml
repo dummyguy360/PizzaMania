@@ -2,7 +2,7 @@ if (state != states.grabbed)
 {
     with (obj_player)
     {
-        if (y < other.y && attacking == 0 && state == states.jump && vsp > 0)
+        if (y < other.y && attacking == false && state == states.jump && vsp > 0)
         {
             scr_sound(sound_stomp);
             
@@ -21,7 +21,7 @@ if (state != states.grabbed)
                     other.hsp = -other.image_xscale * 3;
                     instance_create(x, y + 50, obj_stompeffect);
                     other.state = states.stun;
-                    stompAnim = 1;
+                    stompAnim = true;
                     other.image_index = 0;
                     vsp = -14;
                     sprite_index = spr_stompprep;
@@ -32,7 +32,7 @@ if (state != states.grabbed)
                     other.hsp = -other.image_xscale * 3;
                     instance_create(x, y + 50, obj_stompeffect);
                     other.state = states.stun;
-                    stompAnim = 1;
+                    stompAnim = true;
                     other.image_index = 0;
                     vsp = -9;
                     sprite_index = spr_stompprep;
@@ -53,7 +53,7 @@ if (state != states.grabbed)
             other.hsp = -other.image_xscale * 3;
             hsp = -xscale * 4;
             vsp = -4;
-            machpunchAnim = 1;
+            machpunchAnim = true;
             
             if (x != other.x)
                 other.image_xscale = -sign(other.x - x);
@@ -63,7 +63,7 @@ if (state != states.grabbed)
             state = states.tackle;
         }
         
-        if (state == states.mach2 && other.grounded == 1)
+        if (state == states.mach2 && other.grounded == true)
         {
             scr_sound(sound_tackleenemy);
             instance_create(x, y, obj_bumpeffect);
@@ -72,26 +72,26 @@ if (state != states.grabbed)
             other.image_index = 0;
             other.stunned = 200;
             other.state = states.stun;
-            machpunchAnim = 1;
+            machpunchAnim = true;
             
             if (!grounded && state != states.freefall)
                 vsp = -10;
         }
         
-        if (attacking == 1 && state != states.mach2)
+        if (attacking == true && state != states.mach2)
         {
             if (state == states.mach3)
                 other.shot = 1;
             
             image_index = 0;
             instance_destroy(other.id);
-            machpunchAnim = 1;
+            machpunchAnim = true;
             
             if (!grounded && state != states.freefall)
                 vsp = -10;
         }
         
-        if (attacking == 0 && state != states.tackle && state != states.hurt && !(y < other.y) && grabbing == 0 && other.state != states.stun)
+        if (attacking == false && state != states.tackle && state != states.hurt && !(y < other.y) && grabbing == false && other.state != states.stun)
         {
             if (x != other.x)
             {

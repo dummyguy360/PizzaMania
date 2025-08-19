@@ -39,7 +39,7 @@ function scr_player_chainsawpogo()
 	if (global.chainsawcooldown > 0)
 	    global.chainsawcooldown -= 0.05;
 
-	landAnim = 0;
+	landAnim = false;
 
 	if (sprite_index == spr_pepperman_groundpound && !audio_is_playing(sound_groundpoundloop))
 	    scr_sound(sound_groundpoundloop);
@@ -100,14 +100,14 @@ function scr_player_chainsawpogo()
 	        }
 	    }
     
-	    flash = 1;
+	    flash = true;
 	    combo = 0;
 	}
 
 	if (sprite_index == spr_pepperman_rolling)
 	    global.was_grounded = 1;
 
-	if ((grounded && sprite_index == spr_pepperman_rolling && global.was_grounded == 1 && flash == 0 && vsp > 0) || (grounded && !key_down && sprite_index == spr_pepperman_groundpound))
+	if ((grounded && sprite_index == spr_pepperman_rolling && global.was_grounded == 1 && flash == false && vsp > 0) || (grounded && !key_down && sprite_index == spr_pepperman_groundpound))
 	{
 	    image_index = 0;
 	    sprite_index = spr_pepperman_shoulderloop;
@@ -121,10 +121,10 @@ function scr_player_chainsawpogo()
 	if (ladderbuffer > 0)
 	    ladderbuffer--;
 
-	if (scr_solid(x, y - 1) && jumpstop == 0 && jumpAnim == 1)
+	if (scr_solid(x, y - 1) && jumpstop == false && jumpAnim == true)
 	{
 	    vsp = -9;
-	    jumpstop = 1;
+	    jumpstop = true;
 	}
 
 	if (scr_solid(x + 1, y) && xscale == 1 && !place_meeting(x + sign(hsp), y, obj_slope) && sprite_index == spr_pepperman_rolling)
@@ -166,12 +166,12 @@ function scr_player_chainsawpogo()
 
 	if ((key_slap2 || key_attack2) && sprite_index != spr_pepperman_groundpoundstart && sprite_index != spr_pepperman_groundpound)
 	{
-	    machpunchAnim = 1;
+	    machpunchAnim = true;
 	    sprite_index = spr_mach3hit;
 	    global.was_grounded = 0;
 	    movespeed = 12;
 	    mach2 = 100;
-	    machhitAnim = 0;
+	    machhitAnim = false;
 	    state = states.mach3;
 	    image_index = 0;
 	    instance_create_depth(x, y - 40, 0, obj_pogoeffect);

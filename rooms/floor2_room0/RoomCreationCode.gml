@@ -4,7 +4,7 @@ global.bgparalaxy = 1;
 
 with (obj_tv)
 {
-    if (global.panic == 0)
+    if (global.panic == false)
         message3 = "JOINING UNINVITED";
     else
         message3 = "LEAVING SO SOON?";

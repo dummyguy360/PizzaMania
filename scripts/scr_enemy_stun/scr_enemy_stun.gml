@@ -22,7 +22,7 @@ function scr_enemy_stun()
 	        alarm[3] = 20;
 	        stunned = 500;
 	        global.bosshealth -= 1;
-	        flash = 1;
+	        flash = true;
 	        vsp = -5;
 	        hsp = -image_xscale * 5;
 	        instance_create(x, y, obj_slapstar);

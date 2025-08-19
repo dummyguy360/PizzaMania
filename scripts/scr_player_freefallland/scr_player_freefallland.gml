@@ -4,18 +4,18 @@ function scr_player_freefallland()
 	    mach2 = 0;
 
 	falldamage = 0;
-	jumpAnim = 1;
+	jumpAnim = true;
 	dashAnim = 1;
-	landAnim = 0;
-	moveAnim = 1;
-	stopAnim = 1;
-	crouchslideAnim = 1;
-	crouchAnim = 0;
-	machhitAnim = 0;
+	landAnim = false;
+	moveAnim = true;
+	stopAnim = true;
+	crouchslideAnim = true;
+	crouchAnim = false;
+	machhitAnim = false;
 	movespeed = 0;
 
 	if (character != "V" && character != "N")
-	    facehurt = 1;
+	    facehurt = true;
 
 	start_running = 1;
 	alarm[4] = 14;
@@ -43,7 +43,7 @@ function scr_player_freefallland()
 	{
 	    var sounds = [va_noise_woag, va_noise_wawaoh, va_noise_waow];
 	    scr_sound(sounds[irandom(array_length_1d(sounds) - 1)]);
-	    flash = 1;
+	    flash = true;
 	    scr_sound(sound_noisepogo);
 	    sprite_index = spr_playerN_pogobounce;
 	    image_index = 0;

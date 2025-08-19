@@ -5,14 +5,14 @@ function scr_player_freefallprep()
 
 	start_running = 1;
 	alarm[4] = 14;
-	jumpAnim = 1;
+	jumpAnim = true;
 	dashAnim = 1;
-	landAnim = 0;
-	machslideAnim = 1;
-	moveAnim = 1;
-	stopAnim = 1;
-	crouchslideAnim = 1;
-	crouchAnim = 1;
+	landAnim = false;
+	machslideAnim = true;
+	moveAnim = true;
+	stopAnim = true;
+	crouchslideAnim = true;
+	crouchAnim = true;
 	move = key_left + key_right;
 
 	if (!place_meeting(x, y + 1, obj_railh) && !place_meeting(x, y + 1, obj_railh2))

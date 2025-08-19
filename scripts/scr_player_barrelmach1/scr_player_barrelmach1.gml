@@ -17,7 +17,7 @@ function scr_player_barrelmach1()
 	    {
 	        image_index = 0;
 	        state = states.barrelslipnslide;
-	        flash = 1;
+	        flash = true;
 	    }
 	}
 

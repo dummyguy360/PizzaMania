@@ -9,9 +9,9 @@ if (hooked == 1 && drop == 0)
     {
         with (obj_player)
         {
-            jumpAnim = 0;
+            jumpAnim = false;
             state = states.jump;
-            machslideAnim = 1;
+            machslideAnim = true;
             image_index = 0;
             vsp = 1;
         }

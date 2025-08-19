@@ -13,16 +13,16 @@ function scr_player_charge()
 	move2 = key_right2 + key_left2;
 	move = key_right + key_left;
 	movespeed = 10;
-	crouchslideAnim = 1;
+	crouchslideAnim = true;
 
-	if (!key_jump2 && jumpstop == 0 && vsp < 0.5)
+	if (!key_jump2 && jumpstop == false && vsp < 0.5)
 	{
 	    vsp /= 2;
-	    jumpstop = 1;
+	    jumpstop = true;
 	}
 
 	if (grounded && vsp > 0)
-	    jumpstop = 0;
+	    jumpstop = false;
 
 	if (input_buffer_jump < 8 && grounded)
 	{
