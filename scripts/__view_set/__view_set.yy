@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": true,
   "parent": {
-    "name": "view",
-    "path": "folders/Scripts/GMS1 Compatibility/view.yy",
+    "name": "View",
+    "path": "folders/Scripts/GMS1 Compatibility/View.yy",
   },
 }

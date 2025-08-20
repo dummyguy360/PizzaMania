@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": true,
   "parent": {
-    "name": "background",
-    "path": "folders/Scripts/GMS1 Compatibility/background.yy",
+    "name": "Background",
+    "path": "folders/Scripts/GMS1 Compatibility/Background.yy",
   },
 }

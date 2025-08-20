@@ -5,8 +5,8 @@ if (!pause)
         pause = 1;
         audio_pause_sound(obj_music.currentlyplaying);
         instance_deactivate_all(true);
-        instance_create(__view_get(0, 0) + 500, (__view_get(1, 0) + 270) - 0, obj_exit);
-        instance_create(__view_get(0, 0) + 500, (__view_get(1, 0) + 270) - 50, obj_retry);
+        instance_create(__view_get(e__VW.XView, 0) + 500, (__view_get(e__VW.YView, 0) + 270) - 0, obj_exit);
+        instance_create(__view_get(e__VW.XView, 0) + 500, (__view_get(e__VW.YView, 0) + 270) - 50, obj_retry);
     }
     else
     {

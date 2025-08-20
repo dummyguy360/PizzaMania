@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": true,
   "parent": {
-    "name": "action",
-    "path": "folders/Scripts/GMS1 Compatibility/action.yy",
+    "name": "Action",
+    "path": "folders/Scripts/GMS1 Compatibility/Action.yy",
   },
 }

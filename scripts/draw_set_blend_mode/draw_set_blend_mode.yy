@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": true,
   "parent": {
-    "name": "draw",
-    "path": "folders/Scripts/GMS1 Compatibility/draw.yy",
+    "name": "Draw",
+    "path": "folders/Scripts/GMS1 Compatibility/Draw.yy",
   },
 }

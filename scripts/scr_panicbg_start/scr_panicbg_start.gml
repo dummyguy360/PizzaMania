@@ -2,7 +2,7 @@ function scr_panicbg_start()
 {
 	//DDP This script is run every time the first background starts to draw
 	if (!variable_global_exists("panicbg_surface") || !surface_exists(global.panicbg_surface))
-	    global.panicbg_surface = surface_create(__view_get(2, 0), __view_get(3, 0));
+	    global.panicbg_surface = surface_create(__view_get(e__VW.WView, 0), __view_get(e__VW.HView, 0));
 
 	if (event_type == ev_draw && event_number == 0)
 	{

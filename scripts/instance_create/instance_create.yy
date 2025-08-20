@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": true,
   "parent": {
-    "name": "instance",
-    "path": "folders/Scripts/GMS1 Compatibility/instance.yy",
+    "name": "Instance",
+    "path": "folders/Scripts/GMS1 Compatibility/Instance.yy",
   },
 }

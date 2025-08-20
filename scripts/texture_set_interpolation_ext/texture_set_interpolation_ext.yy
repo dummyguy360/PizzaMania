@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": true,
   "parent": {
-    "name": "texture",
-    "path": "folders/Scripts/GMS1 Compatibility/texture.yy",
+    "name": "Texture",
+    "path": "folders/Scripts/GMS1 Compatibility/Texture.yy",
   },
 }

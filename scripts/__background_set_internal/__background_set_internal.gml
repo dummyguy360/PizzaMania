@@ -12,7 +12,7 @@ function __background_set_internal(argument0, argument1, argument2, argument3)
 	var __layerid = __backinfo[1];
 	var __isfore = __backinfo[2];
 
-	if (__prop == 1)
+	if (__prop == e__BG.Foreground)
 	{
 	    if (round(__val) != round(__isfore))
 	    {
@@ -34,67 +34,66 @@ function __background_set_internal(argument0, argument1, argument2, argument3)
 	}
 	else
 	{
-	    switch (__prop)
-	    {
-	        case 0:
-	            layer_set_visible(__layerid, __val);
-	            layer_background_visible(__backid, __val);
-	            break;
-        
-	        case 2:
-	            layer_background_change(__backid, __val);
-            
-	            if (sprite_exists(__val))
-	            {
-	                layer_background_blend(__backid, c_white);
-	                layer_background_alpha(__backid, 1);
-	            }
-            
-	            break;
-        
-	        case 3:
-	            layer_x(__layerid, __val);
-	            break;
-        
-	        case 4:
-	            layer_y(__layerid, __val);
-	            break;
-        
-	        case 7:
-	            layer_background_htiled(__backid, __val);
-	            break;
-        
-	        case 8:
-	            layer_background_vtiled(__backid, __val);
-	            break;
-        
-	        case 9:
-	            layer_background_xscale(__backid, __val);
-	            break;
-        
-	        case 10:
-	            layer_background_yscale(__backid, __val);
-	            break;
-        
-	        case 11:
-	            layer_hspeed(__layerid, __val);
-	            break;
-        
-	        case 12:
-	            layer_vspeed(__layerid, __val);
-	            break;
-        
-	        case 13:
-	            layer_background_blend(__backid, __val);
-	            break;
-        
-	        case 14:
-	            layer_background_alpha(__backid, __val);
-	            break;
-        
-	        default:
-	            break;
-	    }
+	    switch(__prop)
+		{
+			case e__BG.Visible: 
+				layer_set_visible(__layerid, __val); 
+				layer_background_visible(__backid, __val); 
+				break;
+				
+			case e__BG.Index: 		
+				layer_background_change(__backid, __val);  
+				
+				if (sprite_exists(__val)) 
+				{ 
+					layer_background_blend(__backid, c_white); 
+					layer_background_alpha(__backid, 1); 
+				}
+				break;
+				
+			case e__BG.X: 
+				layer_x(__layerid, __val); 
+				break;
+				
+			case e__BG.Y: 
+				layer_y(__layerid, __val); 
+				break;
+				
+			case e__BG.HTiled: 
+				layer_background_htiled(__backid, __val);
+				break;
+				
+			case e__BG.VTiled: 
+				layer_background_vtiled(__backid, __val); 
+				break;
+				
+			case e__BG.XScale: 
+				layer_background_xscale(__backid, __val); 
+				break;
+				
+			case e__BG.YScale: 
+				layer_background_yscale(__backid, __val); 
+				break;
+				
+			case e__BG.HSpeed: 
+				layer_hspeed(__layerid, __val); 
+				break;
+				
+			case e__BG.VSpeed: 
+				layer_vspeed(__layerid, __val); 
+				break;
+				
+			case e__BG.Blend: 
+				layer_background_blend(__backid, __val); 
+				break;
+				
+			case e__BG.Alpha: 
+				layer_background_alpha(__backid, __val); 
+				break;
+			
+			default: 
+				break;
+		};
 	}
 
 	return -1;

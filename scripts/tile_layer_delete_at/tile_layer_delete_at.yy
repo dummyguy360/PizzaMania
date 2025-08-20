@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": true,
   "parent": {
-    "name": "tile",
-    "path": "folders/Scripts/GMS1 Compatibility/tile.yy",
+    "name": "Tile",
+    "path": "folders/Scripts/GMS1 Compatibility/Tile.yy",
   },
 }

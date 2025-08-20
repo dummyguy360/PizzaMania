@@ -44,8 +44,8 @@ if (shake_mag > 0)
 if (instance_exists(obj_player) && obj_player.state != states.timesup && obj_player.state != states.gameover)
 {
     var target = obj_player;
-    var view_w = __view_get(2, 0);
-    var view_h = __view_get(3, 0);
+    var view_w = __view_get(e__VW.WView, 0);
+    var view_h = __view_get(e__VW.HView, 0);
     var desired_charge = 0;
     
     if (target.movespeed > 17)
